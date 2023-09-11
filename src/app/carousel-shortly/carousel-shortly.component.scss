@@ -1,0 +1,45 @@
+.carouselShortly {
+    
+    .carousel {
+        width: 100%;
+        // height: 300px;
+    
+        .carousel-item img {
+            max-width: auto;
+            height: 550px;
+            border-radius: 30px;
+            object-fit: cover;
+        }
+        .carousel-inner{
+            border-radius: 30px !important;
+        }
+        img{
+            filter: brightness(30%);
+        }
+        span {
+            background-color: black;
+            border-radius: 50%;
+            opacity: 1;
+        }
+        i {
+            font-size: 20px;
+        }
+        .buttonInside button {
+            background-color: #5A3E51;
+            border: none;
+        }
+}
+}
+
+#carouselExampleCaptions {
+    width: 100%;
+    height: auto;
+    border-radius: 100px;
+    margin-top: 250px;
+}
+
+#carouselExampleControlsNoTouching {
+    width: auto;
+    height: auto;
+}
+

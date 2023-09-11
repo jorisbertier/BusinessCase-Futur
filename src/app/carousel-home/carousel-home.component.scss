@@ -14,7 +14,6 @@ h2 {
     font-family: 'Lexend', sans-serif !important;
 }
 
-
 h3 {
     color: $main-color-purpleLight;
     font-size: 25px !important;
@@ -86,9 +85,7 @@ button {
         content: 'MANGA';
         animation: text 10s ease-out infinite;
     }
-    
 }
-
 
 /* CONTENU HIDDEN DESKTOP & VISIBLE MOBILE*/
 
@@ -151,7 +148,6 @@ button {
     }
 }
 
-
 @media screen and (max-width: 1470px) {
     .imgActu1 {
         height: 230px;
@@ -191,9 +187,7 @@ button {
     }
 }
 
-
 @media screen and (max-width: 991px) {
-
     /*CAROUSEL ACTUALITE*/
 
     #actualite {
@@ -229,24 +223,7 @@ button {
     }
 }
 
-@media screen and (max-width: 750px) {
-    #actualite {
-        height: 300px;
-        .imgActu1 {
-            height: 130px !important;
-            max-width: 80px;
-        }
-        h1 {
-            font-size: 21px !important;
-        }
-        h3 {
-            font-size: 16px !important;
-        }
-    }
-}
-
-@media screen and (max-width: 600px) {
-
+@media screen and (max-width: 764px) {
     .textMobile {
         visibility: visible;
         font-size: 20px;
@@ -285,16 +262,17 @@ button {
             height: 150px;
         }
     }
-    
     #actualite1 h1, #actualite1 h3, #actualite1 button {
         visibility: hidden;
         height: 0px;
     }
+}
+
+@media screen and (max-width: 600px) {
 
     h2 {
         font-size: 20px !important;
     }
-
 }
 
 @media screen and (max-width: 400px) {

@@ -1,0 +1,97 @@
+<header>
+<nav class="navbar navbar-expand-md fixed-top">
+    <!-- container -->
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="../../assets/img/logo/logoFutur.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <input type='checkbox' id='toggle-menu' />
+            <label type="button" class='toggle-btn' for='toggle-menu'>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </label>
+        </button>
+        <div class="collapse navbar-collapse">
+            <!-- ms-auto -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li>
+                    <input type="search" id="form1" class="form-control" placeholder="Rechercher collection,NFT,....">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./profil.html">PROFIL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">WALLET</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./galerie.html">GALERIE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./login.html">LOGIN</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        GALERIE
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">COLLECTION</a></li>
+                        <li><a class="dropdown-item" href="#">NFT</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">FUTURE PRO</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- MODAL NAVBAR -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="img/logo.png" alt="Logo">
+            </div>
+            <div class="modal-body">
+                <!-- ms-auto -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-wallet"></i> WALLET</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-folder-open"></i> GALERIE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-user"></i> LOGIN</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-panorama"></i> GALERIE
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">COLLECTION</a></li>
+                            <li><a class="dropdown-item" href="#">NFT</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">FUTURE PRO</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><label for='toggle-menu'>Close</label></button>
+            </div>
+        </div>
+    </div>
+</div>
+</header>

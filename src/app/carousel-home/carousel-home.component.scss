@@ -1,0 +1,304 @@
+@import '/src/assets/variables.scss';
+
+h1 {
+    color: $main-color-black;
+    font-weight: 700 !important;
+    font-size: 45px !important;
+}
+
+h2 {
+    color: $main-color-title;
+    margin-top: 55px !important;
+    font-size: 30px !important;
+    font-weight: 900 !important;
+    font-family: 'Lexend', sans-serif !important;
+}
+
+
+h3 {
+    color: $main-color-purpleLight;
+    font-size: 25px !important;
+}
+
+div i {
+    font-size: 60px;
+    color: white;
+    letter-spacing: 20px;
+}
+
+p {
+    font-size: 50px;
+}
+
+button {
+    font-weight: bold;
+    font-size: 55px;
+    padding: 20px;
+    color: $main-color-purpleLight;
+    background-color: $main-color-black;
+    border-radius: 15px;
+}
+
+/*ACTUALITE DESKTOP */
+
+#actualite {
+    height: 550px !important;
+    width: 90% !important;
+    border-radius: 30px;
+    background-color: $main-color-purple;
+    margin-top: 170px;
+
+    .carousel-indicators button {
+        width: 75px !important;
+        background-color: grey !important;
+        color: red !important;
+        bottom: 100px !important;
+        height: 5px;
+    }
+
+    p {
+        font-size: 15px;
+        color: grey;
+    }
+
+    .imgActu1 {
+        height: 250px !important;
+        border-radius: 30px;
+        max-width: 250px;
+    }
+
+    .button1 {
+        display: flex;
+        justify-content: center;
+        color: $main-color-purpleLight;
+        background-color: $main-color-black !important;
+        opacity: 1 !important;
+        font-size: 20px;
+        border-radius: 35px;
+        padding: 15px;
+        margin: 5px;
+        width: 200px;
+        border: 1px solid $main-color-black;
+    }
+    
+    .textChange:after{
+        color: $main-color-purpleLight;
+        content: 'MANGA';
+        animation: text 10s ease-out infinite;
+    }
+    
+}
+
+
+/* CONTENU HIDDEN DESKTOP & VISIBLE MOBILE*/
+
+.textHidden {
+    color: $main-color-title !important;
+    visibility: hidden;
+    height: 0px;
+
+    .textChange1:after {
+        color: $main-color-purple;
+        content: 'MANGA';
+        animation: text 10s ease-out infinite;
+    }
+    
+}
+
+#actualite1 {
+    height: 700px;
+    width: 95%;
+    border-radius: 30px;
+    background-color: $main-color-purple;
+    visibility: hidden;
+    height: 0px;
+    .imgActu {
+            height: 250px !important;
+            border-radius: 25px;
+        }
+}
+
+/* CONTENU CACHEE DESKTOP & TABLET */
+
+.textMobile {
+    visibility: hidden;
+    height: 0;
+}
+
+@keyframes text {
+    25% {
+        content: 'FUTUR'
+    }
+    50% {
+        content: 'ART';
+    }
+    75% {
+        content: 'META'
+    }
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1900px) {
+    .imgActu1 {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .imgActu1 {
+        height: 300px;
+    }
+}
+
+
+@media screen and (max-width: 1470px) {
+    .imgActu1 {
+        height: 230px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    #actualite {
+        margin-top: 150px;
+        height: 400px !important;
+        button {
+            width: 100px;
+            font-size: 20px;
+            height: 40px;
+        }
+        h1 {
+            font-size: 30px !important;
+        }
+        h3 {
+            font-size: 25px!important;
+        }
+        
+        .imgActu1 {
+            height: 180px !important;
+        }
+        .button1 {
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            font-size: 10px !important;
+            width: 105px !important;
+        }
+        .textActu {
+            font-size: 12px !important;
+        }
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+
+    /*CAROUSEL ACTUALITE*/
+
+    #actualite {
+        height: 300px !important;
+
+        .imgActu1 {
+            height: 160px !important;
+        }
+        h1 {
+            font-size: 25px;
+        }
+        h3 {
+            font-size: 20px !important;
+        }
+        .button1 {
+            font-size: 10px !important;
+            width: 110px !important;
+            height: 30px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 870px) {
+    #actualite{
+        
+        h1 {
+            font-size: 28px !important;
+        }
+        .imgActu1 {
+            height: 160px !important;
+            max-width: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #actualite {
+        height: 300px;
+        .imgActu1 {
+            height: 130px !important;
+            max-width: 80px;
+        }
+        h1 {
+            font-size: 21px !important;
+        }
+        h3 {
+            font-size: 16px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .textMobile {
+        visibility: visible;
+        font-size: 20px;
+        height: 150px;
+        margin-top: 0px;
+    }
+
+/* CONTENU HIDDEN DESKTOP & VISIBLE MOBILE*/
+    #actualite {
+        visibility: hidden;
+        height: 0px !important;
+        margin-top: 0px;
+        
+    }
+    .textHidden {
+        visibility: visible;
+        color: var(--main-color-black);
+        text-align: center;
+        margin-top: 110px;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    #actualite1 {
+        visibility: visible;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 0px;
+        height: 350px;
+        width: 100%;
+        margin-top: 120px;
+        
+        .imgActu {
+            height: 150px;
+        }
+    }
+    
+    #actualite1 h1, #actualite1 h3, #actualite1 button {
+        visibility: hidden;
+        height: 0px;
+    }
+
+    h2 {
+        font-size: 20px !important;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 30px !important;
+    }
+}

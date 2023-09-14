@@ -9,7 +9,7 @@
 <div class="card-group">
     <div *ngFor="let nft of nftList; let index = index">
       <div class="card" style="width: 18rem;">
-        <img src="https://127.0.0.1:8000/public/upload/{{nft.filePath}}" class="card-img-top" alt="...">
+        <img src="https://127.0.0.1:8000/upload/{{nft.filePath}}" class="card-img-top" alt="...">
         <img src="{{ nft.alt }}" class="card-img-top" alt="...">
         <!-- <div>{{nft.filePath}}</div> -->
         <div class="card-body">
@@ -27,7 +27,7 @@
   <div id="zone2">
   <div class="spaceElement Classique box" *ngFor="let nft of nftList; let index = index">
     <div class="imgGalerie">
-      <img src="{{ nft.alt }}" alt="image " class="groupeImage Classique image-0">
+      <img src="https://127.0.0.1:8000/upload/{{nft.filePath}}" alt="image " class="groupeImage Classique image-0">
     </div>
     <div class="ajoutPanier">
       <!-- <a><button class="btn">Ajouter au panier</button></a> -->

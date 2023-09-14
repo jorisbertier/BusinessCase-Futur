@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { INft, resultNft } from './nft.interface';
 import { FormGroup } from '@angular/forms';
-import { Observable } from "rxjs";
+import { Observable, catchError, throwError } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,8 @@ export class NftService {
     // const body = JSON.stringify(nft);
     // const header = { 'content-type': 'application/json'};
     // return this.http.post<INft>('https://127.0.0.1:8000/nft/api/new/', body, {'headers': header});
-    return this.http.post<INft>('https://127.0.0.1:8000/nft/api/new/', nft);
+    return this.http.post<INft>(this.url, nft);
+
   }
 
 }

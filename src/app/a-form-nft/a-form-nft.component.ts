@@ -31,12 +31,26 @@ export class AFormNftComponent {
 
   
   toList(nft: INft) {
-    this.service.newNft(nft).subscribe(data => this.list.push(data));
+    this.service.newNft(nft).subscribe(
+      (data) => {
+        console.log(data);
+        console.log(this.list);
+        this.list.push(data);
+        console.log(data);
+        console.log('NFT créé avec succès !');
+      },
+      (error) => {
+        console.error('Erreur lors de la création du NFT :', error);
+      }
+    );
   }
 
   handleSubmit(){
+    // console.log(this.form.value);
     
+    // console.log(this.list);
     console.log(this.list);
     this.toList(this.form.value);
+    console.log(this.list);
   }
 }

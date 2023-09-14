@@ -1,0 +1,84 @@
+<app-nav-bar></app-nav-bar>
+
+<div>Gallery works</div>
+<div>Gallery works</div>
+<div>Gallery works</div>
+<div>Gallery works</div>
+<div>Gallery works</div>
+
+<div class="card-group">
+    <div *ngFor="let nft of nftList; let index = index">
+      <div class="card" style="width: 18rem;">
+        <img src="https://127.0.0.1:8000/public/upload/{{nft.filePath}}" class="card-img-top" alt="...">
+        <img src="{{ nft.alt }}" class="card-img-top" alt="...">
+        <!-- <div>{{nft.filePath}}</div> -->
+        <div class="card-body">
+          <h5 class="card-title">{{ nft.title }}</h5>
+          <p class="card-text">CP : {{ nft.description }} | creer {{ nft.dateCreation | date}}</p>
+          <!-- <a (click)="deletePokemon(pokemon.id, index)" class="btn btn-danger">Supprimer</a> -->
+          <!-- <a (click)="wiewOnePokemon(pokemon.id)" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#affichePokemon"> -->
+            <h5 class="card-title text-center">View</h5>
+          <!-- </a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="zone2">
+  <div class="spaceElement Classique box" *ngFor="let nft of nftList; let index = index">
+    <div class="imgGalerie">
+      <img src="{{ nft.alt }}" alt="image " class="groupeImage Classique image-0">
+    </div>
+    <div class="ajoutPanier">
+      <!-- <a><button class="btn">Ajouter au panier</button></a> -->
+      <button (click)="viewOneUser(nft.id)"  class="btn" type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Details
+    </button>
+    </div><div class="details">
+      <h3>{{ nft.title }}<i class="bi bi-patch-check-fill"></i>
+      </h3>
+      <div class="infoCardGalerie">
+        <div>
+          <h6>Floor</h6>
+          <p>{{ nft.price }} ETH</p>
+        </div>
+        <div>
+          <h6>Floor</h6>
+          <p>{{ nft.price }} ETH</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content text-center">
+          <div class="modal-header">
+              <h1 class="modal-title text-center fs-5" id="exampleModalLabel">{{nftDetail?.title}}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="mb-3 text-center">
+              <img style="width: 350px; height: 500px; object-fit: cover; " src="{{nftDetail?.id}}" class="rounded-top card-img-top" alt="...">
+          </div>
+          <div class="mb-3">
+              <p>{{nftDetail?.title}}</p>
+          </div>
+          <!-- <div class="mb-3">
+              <p>CP : {{pokemonDetail?.cp}}</p>
+          </div>
+          <div class="mb-3">
+              <p>HP : {{pokemonDetail?.hp}}</p>
+          </div>
+          <div class="mb-3">
+              <p>TYPE : {{pokemonDetail?.types}}</p>
+          </div> -->
+
+      </div>
+  </div>
+</div>

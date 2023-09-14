@@ -1,0 +1,52 @@
+@import '/src/assets/variables.scss';
+
+footer {
+    border-top: 1px solid $main-color-purpleLight;
+    margin-top: 75px;
+    background-color: $main-color-black;
+    color: $main-color-purpleLight;
+    
+}
+
+footer div {
+    background-color: $main-color-black;
+}
+
+footer p, footer span {
+    font-weight: 500;
+    font-size: 12px !important;
+}
+footer p:hover, footer i:hover, footer h2:hover {
+    color: $main-color-purple;
+    cursor: pointer;
+}
+
+footer i {
+    font-size: 20px !important;
+    
+}
+footer .aPropos{
+    text-decoration: none;
+    color: $main-color-purpleLight;
+}
+footer h4 {
+    font-size: 20px !important;
+}
+
+
+@media screen and (max-width: 1700px) {
+    footer {
+        p, i {
+            font-size: 25px;
+        }
+        h4 {
+            font-size: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 991px){
+    .logo {
+        text-align: center;
+    }
+}

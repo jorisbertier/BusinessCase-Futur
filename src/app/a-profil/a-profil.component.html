@@ -1,0 +1,143 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-xl-2 col-md-2 col-sm-2 sidebar">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+
+                    <span class="d-none d-sm-inline menuProfil menuList">Principale</span>
+                    <hr>
+
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0  align-items-sm-start"
+                    id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fa-regular fa-images pr-2"></i><span class="ms-1 d-none d-sm-inline">Ma
+                                collection</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fa-regular fa-envelope-open"></i><span
+                                class="ms-1 d-none d-sm-inline">Message</span> </a>
+                    </li>
+                    <span class="d-none d-sm-inline my-3 menuList">Liste</span>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fa-regular fa-heart"></i><span class="ms-1 d-none d-sm-inline">Mes
+                                favoris</span></a>
+                    </li>
+                    <span class="d-none d-sm-inline my-3 menuList">Compte</span>
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fa-regular fa-user"></i><span
+                                class="ms-1 d-none d-sm-inline">Profil</span></a>
+                    </li>
+                    <li>
+                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fa-solid fa-gear"></i><span class="ms-1 d-none d-sm-inline">Paramètres</span>
+                        </a>
+                    </li>
+                    <li class="w-100">
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fa-solid fa-power-off"></i> <span
+                                class="ms-1 d-none d-sm-inline">Déconnexion</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                        id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
+                            class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">loser</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page mx-auto" >
+        <div class="col-xl-4 py-3 mx-auto bloc1">
+
+            <div class="blocProfil p-5">
+                <h2>Détails du profil</h2>
+                <hr>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Modifier la photo</label><br>
+                <input type="file" class="form-control-file">
+              </div><br>
+
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Prénom</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><br>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Nom</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><br>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"><br>
+                
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Numéro de télephone</label>
+                <input type="number" class="form-control" id="exampleInputEmail1"><br>
+                
+              </div>
+
+            <div class="form-group">
+                <label for="profilTextArea">À propos de moi</label>
+                <textarea class="form-control" id="profilTextArea" rows="3" onkeyup="reste(this.value);" maxlength="250"></textarea><br>
+                <small><span class="caractereRestant">250 </span>caractères restants</small>
+              </div>
+        </div>
+    </div>
+
+        <div class="col-xl-4 mx-auto bloc2">
+            <div class="blocProfil p-5">
+            <h2>Changer de mot passe</h2>
+            <hr>
+            <div class="consignePassword">Votre mot de passe doit au moins être<br> de 8 caractères de long,
+                contenir 1 lettre<br> majuscule, minuscule, un chiffre et ne<br> doit pas contenir d'espace ou d'emoji.
+            </div><br>
+            <div>
+                <label for="inputPassword5" class="form-label">Mot de passe actuel</label>
+                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"><br>
+
+            <div>
+                <label for="inputPassword5" class="form-label">Nouveau mot de passe</label>
+                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"><br>
+            </div>
+
+            <div>
+                <label for="inputPassword5" class="form-label">Confirmer nouveau mot de passe</label>
+                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            </div><br>
+            <button type="submit" class="btn mx-auto">Sauvegarder les modifications</button>
+        </div>
+
+            </div>
+
+            
+
+        </div>
+        </div><!-- dernier rajouter -->
+    </div>
+</div>
+<!-- </div> -->

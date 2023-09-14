@@ -6,10 +6,86 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
   <app-root></app-root>
+
+  <script async>
+    document.addEventListener('DOMContentLoaded', function() {
+    //Creation carousel click
+    
+    let changeImg = document.querySelector('.changeImg img');
+    let changeTitle = document.querySelector('.changeTitle');
+    let changeTitle2 = document.querySelector('.changeTitle2');
+    let changeText= document.querySelector('.changeText');
+    let gif= document.querySelector('.gif');
+    let point1 = document.querySelector('.point1');
+    let point2 = document.querySelector('.point2');
+    let point3 = document.querySelector('.point3');
+    console.log(changeImg);
+    
+    point1.addEventListener('click', function() {
+    console.log(changeImg);
+    changeImg.src = "./img/profil/itachi2.png";
+    changeTitle.innerHTML = "MINTING NOW";
+    changeTitle2.innerHTML = "ANON KATZ";
+    changeText.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
+    point1.style.backgroundColor = "black";
+    point2.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    point3.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    gif.src = "./img/profil/naruto.gif";
+    })
+    
+    point2.addEventListener('click', function() {
+    changeImg.src = "./img/profil/hisokamini.png";
+    changeTitle.innerHTML = "Jujustu Collection";
+    changeTitle2.innerHTML = "LOREM";
+    changeText.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`;
+    point2.style.backgroundColor = "black";
+    point1.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    point3.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    gif.src = "./img/profil/hisoka.webp";
+    })
+    
+    point3.addEventListener('click', function() {
+    changeImg.src = "./img/profil/ichigo.png";
+    changeTitle.innerHTML = "Jujustu Collection";
+    changeTitle2.innerHTML = "Tkt";
+    changeText.innerHTML = `Nouveau texte tkt<br> lopem djdks skdnd,d `;
+    point3.style.backgroundColor = "black";
+    point1.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    point2.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    gif.src = "./img/profil/scissorseven.webp";
+    })
+    
+    //timer
+    
+    const timer = document.querySelector('.timer');
+    let temp = 100000;
+    
+    
+    function compteur() {
+    
+    let secondes = parseInt(temp % 60, 10);
+    let minutes = parseInt((temp / 60) % 60, 10);
+    let heures = parseInt((temp / 3600) % 24, 10);
+    let jours = parseInt(temp / (3600 * 24), 10);
+    
+    
+    secondes = secondes < 10 ? "0"+ secondes : secondes;
+    minutes = minutes < 10 ? "0"+ minutes : minutes;
+    
+    timer.innerText = "Temps restant "+ jours + " jours " + heures+ " heures " +minutes + " minutes " +secondes+ " secondes";
+    temp--; 
+    }
+    
+    setInterval(compteur, 1000);
+  });
+  </script>
+
 </body>
 </html>

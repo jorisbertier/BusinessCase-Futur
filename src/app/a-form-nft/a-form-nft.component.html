@@ -1,0 +1,71 @@
+<app-nav-bar></app-nav-bar>
+
+<p>a-form-nft works!</p>
+
+<!-- <div class="container">
+    <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter un Pokemon</h1>
+    <br>
+     <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm)"> 
+      <div class="mb-3">
+        <input placeholder="title" type="text" class="form-control" name="title" ngModel required>
+      </div>
+      <div class="mb-3">
+        <input placeholder="price" type="number" class="form-control" name="price" ngModel required>
+      </div>
+      <div class="mb-3">
+        <label for="filePath">Choose Nft:</label>
+        <input type="file" class="form-control" name="filePath" ngModel required>
+      </div>
+      <div class="mb-3">
+        <input placeholder="Picture" type="text" class="form-control" name="picture" ngModel required>
+      </div>
+      <div class="mb-3">
+        <input placeholder="description" type="text" class="form-control" name="description" ngModel required>
+      </div>
+      <div class="mb-3">
+        <input placeholder="alt" type="text" class="form-control" name="alt" ngModel required>
+      </div>
+      <div class="mb-3">
+        <input placeholder="categories" type="text" class="form-control" name="categories" ngModel required>
+      </div>
+      <button type="submit" class="btn btn-primary">Ajouter Nft</button>
+    </form>
+  </div> -->
+  <br><br><br><br>
+
+  <form (ngSubmit)="handleSubmit()" [formGroup]="form">
+    <div>
+        <label for="title">Title</label>
+        <input type="text"  id="name" formControlName="title" />
+    </div>
+    <div>
+        <label for="price">Price</label>
+        <input type="number"  id="price" formControlName="price" >
+    </div>
+    <!-- <div>
+        <label for="filePath">filePath</label>
+        <input type="text" formControlName="filePath" id="filePath" >
+    </div> -->
+    <div>
+        <label for="alt">Alt (filePath)</label>
+        <input type="text" formControlName="alt" id="alt" >
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <input type="text" formControlName="description" id="description" >
+    </div>
+    <div>
+        <label for="user">User</label>
+        <input type="text" formControlName="user" id="user" >
+    </div>
+    <div>
+        <label for="categorie">Categorie</label>
+        <input type="text" formControlName="categorie" id="categorie" >
+    </div>
+    <div>
+        <label for="collection">Collection</label>
+        <input type="text" formControlName="collection" id="collection" >
+    </div>
+   
+    <button>Submit</button>
+</form>

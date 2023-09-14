@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-md fixed-top">
     <!-- container -->
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="../../assets/img/logo/logoFutur.png" alt="Logo"></a>
+        <a class="navbar-brand" routerLink=""><img src="../../assets/img/logo/logoFutur.png" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <input type='checkbox' id='toggle-menu' />
             <label type="button" class='toggle-btn' for='toggle-menu'>
@@ -18,18 +18,24 @@
                     <input type="search" id="form1" class="form-control" placeholder="Rechercher collection,NFT,....">
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/formNft">Form</a>
+                </li>
+                <!-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="./profil.html">PROFIL</a>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#">WALLET</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/gallery">Galerie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./galerie.html">GALERIE</a>
+                    <a class="nav-link" routerLink="/profil">Profil</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="./login.html">LOGIN</a>
-                </li>
-                <li class="nav-item dropdown">
+                </li> -->
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         GALERIE
@@ -42,7 +48,7 @@
                         </li>
                         <li><a class="dropdown-item" href="#">FUTURE PRO</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -67,7 +73,7 @@
                         <a class="nav-link" href="#"><i class="fa-solid fa-wallet"></i> WALLET</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-folder-open"></i> GALERIE</a>
+                        <a class="nav-link" routerLink="#"><i class="fas fa-folder-open"></i> GALERIE</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa-solid fa-user"></i> LOGIN</a>

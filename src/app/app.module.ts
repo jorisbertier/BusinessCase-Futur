@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AHomeComponent } from './a-home/a-home.component';
 import { CarouselHomeComponent } from './carousel-home/carousel-home.component';
 import { CarouselShortlyComponent } from './carousel-shortly/carousel-shortly.component';
+import { FooterComponent } from './footer/footer.component';
+import { CarouselDownComponent } from './carousel-down/carousel-down.component';
+import { AGalleryComponent } from './a-gallery/a-gallery.component';
+import { AFormNftComponent } from './a-form-nft/a-form-nft.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { AProfilComponent } from './a-profil/a-profil.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +23,19 @@ import { CarouselShortlyComponent } from './carousel-shortly/carousel-shortly.co
     NavBarComponent,
     AHomeComponent,
     CarouselHomeComponent,
-    CarouselShortlyComponent
+    CarouselShortlyComponent,
+    FooterComponent,
+    CarouselDownComponent,
+    AGalleryComponent,
+    AFormNftComponent,
+    AProfilComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

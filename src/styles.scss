@@ -4,3 +4,25 @@ $main-color-purple: #5A3E51;
 $main-color-purpleLight: #D9DAFF;
 $main-color-background: #d0d1fb;
 $main-color-title : #000000;
+
+
+.buttonCategorie {
+    color: $main-color-background;
+    background-color: $main-color-title !important;
+    border: 1px solid $main-color-title;
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+    width: 150px;
+    transition: 0.5s ease-in-out !important;
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, var(--main-color-title) 50%, var(--main-color-purple) 50%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.buttonCategorie:hover, .button1:hover {
+    background-position: -100% 0;
+    transition: all 0.3s ease;
+    color: $main-color-background;
+}

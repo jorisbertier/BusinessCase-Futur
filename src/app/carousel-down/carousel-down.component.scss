@@ -1,0 +1,47 @@
+@import '/src/assets/variables.scss';
+
+
+
+#carouselDown {
+    height: 550px !important;
+    width: 90% !important;
+    border-radius: 30px;
+    background-color: $main-color-purple;
+    margin-top: 170px;
+    .nomCollection {
+        color: $main-color-purpleLight;
+        font-size: 25px;
+        height: 20px;
+        width: 20px;
+    }
+    .gif {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .user {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .imgCarouselDown {
+        border-radius: 30px;
+        height: 350px;
+        max-width: 350px;
+        object-fit: cover;
+    }
+}
+
+.buttonSlider {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(255,255,255, 0.3);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    
+}

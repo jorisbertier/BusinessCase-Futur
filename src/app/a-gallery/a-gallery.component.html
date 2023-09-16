@@ -6,24 +6,6 @@
 <div>Gallery works</div>
 <div>Gallery works</div>
 
-<div class="card-group">
-    <div *ngFor="let nft of nftList; let index = index">
-      <div class="card" style="width: 18rem;">
-        <img src="https://127.0.0.1:8000/upload/{{nft.filePath}}" class="card-img-top" alt="...">
-        <img src="{{ nft.alt }}" class="card-img-top" alt="...">
-        <!-- <div>{{nft.filePath}}</div> -->
-        <div class="card-body">
-          <h5 class="card-title">{{ nft.title }}</h5>
-          <p class="card-text">CP : {{ nft.description }} | creer {{ nft.dateCreation | date}}</p>
-          <!-- <a (click)="deletePokemon(pokemon.id, index)" class="btn btn-danger">Supprimer</a> -->
-          <!-- <a (click)="wiewOnePokemon(pokemon.id)" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#affichePokemon"> -->
-            <h5 class="card-title text-center">View</h5>
-          <!-- </a> -->
-        </div>
-      </div>
-    </div>
-  </div>
-  
   <div id="zone2">
   <div class="spaceElement Classique box" *ngFor="let nft of nftList; let index = index">
     <div class="imgGalerie">
@@ -31,20 +13,22 @@
     </div>
     <div class="ajoutPanier">
       <!-- <a><button class="btn">Ajouter au panier</button></a> -->
-      <button (click)="viewOneUser(nft.id)"  class="btn" type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Details
-    </button>
+      <button (click)="viewOneNft(nft.id)"  class="btn" type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        view
+    </button><br>
+<a routerLink="/gallery/{{nft.id}}" class="btn btn-primary">Lire la suite</a>
     </div><div class="details">
       <h3>{{ nft.title }}<i class="bi bi-patch-check-fill"></i>
       </h3>
       <div class="infoCardGalerie">
         <div>
           <h6>Floor</h6>
-          <p>{{ nft.price }} ETH</p>
+          <p>{{ nft.collection }} ETH</p>
         </div>
         <div>
-          <h6>Floor</h6>
-          <p>{{ nft.price }} ETH</p>
+          <!-- <button (click)="viewOneNft(nft.id)"  class="btn" type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            view
+        </button><br> -->
         </div>
       </div>
     </div>

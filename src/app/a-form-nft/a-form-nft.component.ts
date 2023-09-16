@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NftService } from '../nft.service';
 import {FormControl, FormGroup} from "@angular/forms";
 import { INft } from '../nft.interface';
-import { ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-a-form-nft',
@@ -12,7 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class AFormNftComponent {
 
   list:INft[] = [];
-  constructor(private service: NftService){}
+  constructor(private service: NftService){
+    
+  }
 
   
 
@@ -24,33 +26,21 @@ export class AFormNftComponent {
     alt: new FormControl(''),
     description: new FormControl(''),
     user: new FormControl(''),
-    categorie: new FormControl(''),
+    category: new FormControl(''),
     collection: new FormControl(''),
 
   })
 
   
   toList(nft: INft) {
-    this.service.newNft(nft).subscribe(
-      (data) => {
-        console.log(data);
-        console.log(this.list);
-        this.list.push(data);
-        console.log(data);
-        console.log('NFT créé avec succès !');
-      },
-      (error) => {
-        console.error('Erreur lors de la création du NFT :', error);
-      }
-    );
+ this.service.newNft(nft).subscribe(data => this.list.push(data))
+ console.log("ok list");
+ 
   }
 
   handleSubmit(){
-    // console.log(this.form.value);
     
-    // console.log(this.list);
-    console.log(this.list);
-    this.toList(this.form.value);
-    console.log(this.list);
+  this.toList(this.form.value)
+    console.log(this.form.value);
   }
 }

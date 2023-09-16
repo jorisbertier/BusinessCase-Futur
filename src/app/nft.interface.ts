@@ -1,3 +1,6 @@
+import { ICollection } from "src/interface/collection/collection.interface";
+import { ICategory } from "src/interface/category/category.interface";
+
 export interface INft {
 
         id: number,
@@ -9,8 +12,8 @@ export interface INft {
         filePath: string,
         alt: string,
         user: string,
-        categories: [],
-        collection: [],
+        category: ICategory,
+        collection: ICollection,
 }
 
 export interface resultNft{

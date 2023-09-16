@@ -4,10 +4,12 @@ import { AHomeComponent } from './a-home/a-home.component';
 import { AGalleryComponent } from './a-gallery/a-gallery.component';
 import { AFormNftComponent } from './a-form-nft/a-form-nft.component';
 import { AProfilComponent } from './a-profil/a-profil.component';
+import { ANftDetailsComponent } from './a-nft-details/a-nft-details.component';
 
 const routes: Routes = [
   {path: '', component: AHomeComponent},
   {path: 'gallery', component: AGalleryComponent},
+  {path: 'gallery/:id', component: ANftDetailsComponent},
   {path: 'formNft', component: AFormNftComponent},
   {path: 'profil', component: AProfilComponent},
 ];

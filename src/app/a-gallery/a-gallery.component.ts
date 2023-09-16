@@ -22,7 +22,7 @@ export class AGalleryComponent implements OnInit {
         console.table(this.nftList);
       });
   }
-  viewOneUser(id: number){
+  viewOneNft(id: number){
     this.service.getNftById(id).subscribe(nftResult =>{
       this.nftDetail = nftResult;
     })

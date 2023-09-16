@@ -10,6 +10,7 @@ import { Observable, catchError, throwError } from "rxjs";
 export class NftService {
 
   url = "https://127.0.0.1:8000/nft/api/nft";
+  urlNaruto= "https://127.0.0.1:8000/nft/api/naruto";
   // header = {
   //   'Access-Control-Allow-Origin':'*',
   //   'Access-Control-Allow-Headers': '*',
@@ -28,12 +29,14 @@ export class NftService {
     return this.http.get<INft>('https://127.0.0.1:8000/nft/api/nft/' + id);
   }
 
-  newNft(nft:INft): Observable<any>  {
-    // const body = JSON.stringify(nft);
-    // const header = { 'content-type': 'application/json'};
-    // return this.http.post<INft>('https://127.0.0.1:8000/nft/api/new/', body, {'headers': header});
-    return this.http.post<INft>(this.url, nft);
+  newNft(nft:INft) {
+    return this.http.post<INft>('https://localhost:8000/nft/api/new', nft);
 
   }
 
+  getSixLastNaruto(): Observable<INft[]>{
+    
+    return this.http.get<INft[]>(this.urlNaruto);
+  }
+  
 }

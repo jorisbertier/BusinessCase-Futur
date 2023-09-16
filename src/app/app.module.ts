@@ -15,6 +15,9 @@ import { AGalleryComponent } from './a-gallery/a-gallery.component';
 import { AFormNftComponent } from './a-form-nft/a-form-nft.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AProfilComponent } from './a-profil/a-profil.component';
+import { CardCollectionComponent } from './card-collection/card-collection.component';
+import { ANftDetailsComponent } from './a-nft-details/a-nft-details.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { AProfilComponent } from './a-profil/a-profil.component';
     CarouselDownComponent,
     AGalleryComponent,
     AFormNftComponent,
-    AProfilComponent
+    AProfilComponent,
+    CardCollectionComponent,
+    ANftDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgChartsModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,

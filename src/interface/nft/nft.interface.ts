@@ -1,5 +1,6 @@
 import { ICollection } from "src/interface/collection/collection.interface";
 import { ICategory } from "src/interface/category/category.interface";
+import { IUser } from "src/interface/user/user.interface";
 
 export interface INft {
 
@@ -11,9 +12,9 @@ export interface INft {
         description?: string,
         filePath: string,
         alt: string,
-        user: string,
-        category: ICategory,
-        collection: ICollection,
+        user: IUser,
+        categories: ICategory[],
+        collection: ICollection
 }
 
 export interface resultNft{

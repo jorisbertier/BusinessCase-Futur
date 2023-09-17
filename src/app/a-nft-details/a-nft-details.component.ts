@@ -27,17 +27,16 @@ export class ANftDetailsComponent {
     this.route.params.subscribe(params => {
       this.nftService.getNftById(params['id']).subscribe(data =>{
         this.nft = data;
+        console.table(this.nft);
         }) 
     })
-
+    
     this.ethService.getPriceEthLastSevenWeek().subscribe(ethListResult => {
       this.ethList = ethListResult;
-        console.table(this.ethList);
       });
 
     this.ethService.getActualPriceEth().subscribe(ethResultOne => {
       this.ethActualPrice = ethResultOne;
-        console.log(this.ethActualPrice);
       });
 
       const ethPrices: number [] = [];

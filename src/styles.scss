@@ -5,7 +5,9 @@ $main-color-purpleLight: #D9DAFF;
 $main-color-background: #d0d1fb;
 $main-color-title : #000000;
 
-
+body {
+    background-color: $main-color-purpleLight;
+}
 .buttonCategorie {
     color: $main-color-background;
     background-color: $main-color-title !important;

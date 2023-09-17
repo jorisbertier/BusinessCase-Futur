@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NftService } from '../nft.service';
 import {FormControl, FormGroup} from "@angular/forms";
-import { INft } from '../nft.interface';
+import { INft } from '../../interface/nft/nft.interface';
 
 
 @Component({
@@ -12,6 +12,8 @@ import { INft } from '../nft.interface';
 export class AFormNftComponent {
 
   list:INft[] = [];
+
+  
   constructor(private service: NftService){
     
   }
@@ -26,21 +28,27 @@ export class AFormNftComponent {
     alt: new FormControl(''),
     description: new FormControl(''),
     user: new FormControl(''),
-    category: new FormControl(''),
+    categories: new FormControl(''),
     collection: new FormControl(''),
 
   })
 
   
   toList(nft: INft) {
+    console.log(this.list);
+    
  this.service.newNft(nft).subscribe(data => this.list.push(data))
  console.log("ok list");
+ console.log(this.list);
  
   }
 
-  handleSubmit(){
+
+
+
+  // handleSubmit(){
     
-  this.toList(this.form.value)
-    console.log(this.form.value);
-  }
+  // this.toList(this.form.value)
+  //   console.log(this.form.value);
+  // }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { INft } from '../nft.interface';
+import { INft } from '../../interface/nft/nft.interface';
 import { NftService } from '../nft.service';
 
 

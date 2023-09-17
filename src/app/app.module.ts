@@ -18,6 +18,8 @@ import { AProfilComponent } from './a-profil/a-profil.component';
 import { CardCollectionComponent } from './card-collection/card-collection.component';
 import { ANftDetailsComponent } from './a-nft-details/a-nft-details.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ARegisterComponent } from './a-register/a-register.component';
+import { ABasketComponent } from './a-basket/a-basket.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { NgChartsModule } from 'ng2-charts';
     AFormNftComponent,
     AProfilComponent,
     CardCollectionComponent,
-    ANftDetailsComponent
+    ANftDetailsComponent,
+    ARegisterComponent,
+    ABasketComponent
   ],
   imports: [
     BrowserModule,

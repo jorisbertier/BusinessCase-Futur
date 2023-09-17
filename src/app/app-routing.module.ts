@@ -6,6 +6,8 @@ import { AFormNftComponent } from './a-form-nft/a-form-nft.component';
 import { AProfilComponent } from './a-profil/a-profil.component';
 import { ANftDetailsComponent } from './a-nft-details/a-nft-details.component';
 import { ARegisterComponent } from './a-register/a-register.component';
+import { ABasketComponent } from './a-basket/a-basket.component';
+import { AFavorisComponent } from './a-favoris/a-favoris.component';
 
 const routes: Routes = [
   {path: '', component: AHomeComponent},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path: 'formNft', component: AFormNftComponent},
   {path: 'profil', component: AProfilComponent},
   {path: 'registerrr', component: ARegisterComponent},
+  {path: 'cart', component: ABasketComponent},
+  {path: 'favoris', component: AFavorisComponent},
 ];
 
 @NgModule({

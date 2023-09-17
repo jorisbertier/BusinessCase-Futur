@@ -5,6 +5,11 @@ import { IEth } from 'src/interface/eth/eth.interface';
 import { EthService } from '../../service/Eth/eth.service';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
+import { CookieService } from 'ngx-cookie-service';
+import { INft } from '../../interface/nft/nft.interface';
+import { CartService } from '../../service/Cart/cart.service';
+
+import { FavorisService } from '../favoris.service';
 
 @Component({
   selector: 'app-a-nft-details',
@@ -16,10 +21,17 @@ export class ANftDetailsComponent {
   nft: any;
   ethList: IEth[] = [];
   ethActualPrice: IEth | undefined;
+  public productList: any;
 
 
  
-  constructor(private nftService: NftService, private route: ActivatedRoute, private ethService: EthService) {
+  constructor(
+    private nftService: NftService,
+    private route: ActivatedRoute,
+    private ethService: EthService,
+    private favorisService: FavorisService,
+    private CartService: CartService,
+    ) {
 
   }
 
@@ -80,10 +92,42 @@ export class ANftDetailsComponent {
         }
       });
 
+      this.productList.array.forEach((a:any) => {
+        Object.assign(a,{quantity:1, total:a.price})
+      });
   }
 
   getNftById(id:number) {
     this.nft = this.nftService.getNftById(id);
   }
+// cookie
 
+  // addToCart(nft: INft) {
+  //   const currentCart = this.cookieService.get('cart') || '[]';
+  //   const cart = JSON.parse(currentCart);
+    
+  //   cart.push(nft);
+    
+  //   this.cookieService.set('cart', JSON.stringify(cart));
+
+  //   console.log('Contenu du cookie après ajout :', this.cookieService.get('cart'));
+  // }
+
+  addToCart(nft : any) {
+    this.CartService.addToCart(nft);
+  }
+
+  addToFavoris(nft: INft) {
+    this.favorisService.addToFavoris(nft);
+    console.log(nft);
+    
+  }
+
+  removeFromFavoris(nft: any) {
+    this.favorisService.removeFromFavoris(nft);
+  }
+
+  getFavoris() {
+    return this.favorisService.getFavoris();
+  }
 }

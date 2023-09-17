@@ -20,6 +20,8 @@ import { ANftDetailsComponent } from './a-nft-details/a-nft-details.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ARegisterComponent } from './a-register/a-register.component';
 import { ABasketComponent } from './a-basket/a-basket.component';
+import { AFavorisComponent } from './a-favoris/a-favoris.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { ABasketComponent } from './a-basket/a-basket.component';
     CardCollectionComponent,
     ANftDetailsComponent,
     ARegisterComponent,
-    ABasketComponent
+    ABasketComponent,
+    AFavorisComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,9 @@ import { ABasketComponent } from './a-basket/a-basket.component';
     AppRoutingModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    CookieService 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -65,5 +65,8 @@ export class AGalleryComponent implements OnInit {
     this.nftList = filteredNftList2;
   }
 
+  reloadPage() {
+    window.location.reload(); // Rechargez la page pour réinitialiser tout
+  }
 
 }

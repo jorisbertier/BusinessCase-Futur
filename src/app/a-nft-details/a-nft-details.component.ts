@@ -19,6 +19,7 @@ import { FavorisService } from '../favoris.service';
 export class ANftDetailsComponent {
 
   nft: any;
+  nftCart: any;
   ethList: IEth[] = [];
   ethActualPrice: IEth | undefined;
   public productList: any;
@@ -113,14 +114,23 @@ export class ANftDetailsComponent {
   //   console.log('Contenu du cookie après ajout :', this.cookieService.get('cart'));
   // }
 
-  addToCart(nft : any) {
-    this.CartService.addToCart(nft);
+  addToCart(nftCart : INft) {
+    this.CartService.addToCart(nftCart);
+    console.log(nftCart);
+    
+  }
+
+  removeFromCart(nftCart : any) {
+    this.CartService.removeFromCart(nftCart);
+  }
+
+  getCarts() {
+    this.CartService.getCarts();
   }
 
   addToFavoris(nft: INft) {
     this.favorisService.addToFavoris(nft);
     console.log(nft);
-    
   }
 
   removeFromFavoris(nft: any) {

@@ -13,8 +13,8 @@ export class NavBarComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.cartService.getProducts().subscribe( res => {
-      this.totalItem = res.length;
-    })
+    // this.cartService.getProducts().subscribe( res => {
+    //   this.totalItem = res.length;
+    // })
   }
 }

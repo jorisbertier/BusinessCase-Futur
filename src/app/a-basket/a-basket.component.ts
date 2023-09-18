@@ -10,32 +10,44 @@ import { CartService } from 'src/service/Cart/cart.service';
 })
 export class ABasketComponent implements OnInit {
 
-  cart: INft[] = [];
-  public products : any = [];
-  public grandTotal!: number;
- 
-  constructor(private cartService: CartService, private cookieService: CookieService) {
+  carts: any[] = [];
+
+  constructor(private cartService: CartService) {}
+  ngOnInit() {
+    this.carts = this.cartService.getCarts();
+    console.log(this.carts);
   }
 
-  ngOnInit() {
+  removeFromCart(nft: any) {
+    this.cartService.removeFromCart(nft);
+  }
+
+  // cart: INft[] = [];
+  // public products : any = [];
+  // public grandTotal!: number;
+ 
+  // constructor(private cartService: CartService, private cookieService: CookieService) {
+  // }
+
+  // ngOnInit() {
     // this.showCartContents();
     // this.getCart(); 
-    this.cartService.getProducts().subscribe(res => {
-      this.products = res;
-      this.grandTotal = this.cartService.getTotalPrice();
-      console.log(this.grandTotal);
+    // this.cartService.getProducts().subscribe(res => {
+    //   this.products = res;
+    //   this.grandTotal = this.cartService.getTotalPrice();
+    //   console.log(this.grandTotal);
       
-    })
+    // })
     
-  }
+  // }
 
-  removeItem(item: any) {
-    this.cartService.removeCartItem(item);
-  }
+  // removeItem(item: any) {
+  //   this.cartService.removeCartItem(item);
+  // }
 
-  emptyCart() {
-    this.cartService.removeAllCart();
-  }
+  // emptyCart() {
+  //   this.cartService.removeAllCart();
+  // }
   // getCart(): INft[] {
   //   const currentCart = this.cookieService.get('cart') || '[]';
   //   return JSON.parse(currentCart);

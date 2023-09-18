@@ -4,7 +4,7 @@
 <br>
 <br>
 
-<ng-container class="container" *ngIf="products.length !== 0">
+<ng-container class="container" *ngIf="carts.length !== 0">
     <h1>Mon Panier</h1>
     <table class="table">
       <thead>
@@ -16,30 +16,28 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of products; let i = index">
+        <tr *ngFor="let item of carts; let i = index">
           <td>{{i+1}}</td>
           <td><img src="https://127.0.0.1:8000/upload/{{item.filePath}}" alt="{{ item.alt }}" class="imgBasket"></td>
           <td>{{ item.title }}</td>
           <td>{{ item.price }} ♦️ ({{ 1600000 / 1000 * item.price }} €)</td>
           <td>{{ item.total }}</td>
-          <td><button (click)="removeItem(item)" class="btn bg-danger">X</button>></td>
+          <td><button (click)="removeFromCart(item)" class="btn bg-danger">X</button>></td>
         </tr>
         <tr>
             <td colspan="4"></td>
-            <td><button (click)="emptyCart()" class="btn bg-danger">Empty Card</button></td>
+            <td><button class="btn bg-danger">Empty Card</button></td>
             <td><button routerLink="/gallery" class="btn bg-primary">Shop More</button></td>
             <td><button class="btn bg-success">Checkout</button></td>
-            <td>Total : {{grandTotal}} €</td>
+            <td>Total :  €</td>
         </tr>
       </tbody>
     </table>
   </ng-container>
 
-<div *ngFor="let item of cart">
-    <p>{{item.title}}</p>
-</div>
 
-<ng-container *ngIf="products.length == 0">
+
+<ng-container *ngIf="carts.length == 0">
     <div>
         <img>
         <h4>Your cart is empty</h4>

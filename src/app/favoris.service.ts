@@ -5,14 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class FavorisService {
 
+  private favoris: any[] = [];
+
   constructor() {
     // Récupérez les données des NFT favoris depuis le stockage local lors de l'initialisation du service
     const favorisStr = localStorage.getItem('favoris');
     this.favoris = favorisStr ? JSON.parse(favorisStr) : [];
   }
-
   
-  private favoris: any[] = [];
   addToFavoris(nft: any) {
     if (!this.favoris.some((fav: any) => fav.id === nft.id)) {
       this.favoris.push(nft);

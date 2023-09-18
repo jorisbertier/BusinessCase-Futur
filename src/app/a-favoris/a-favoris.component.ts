@@ -15,4 +15,8 @@ export class AFavorisComponent implements OnInit {
     this.favoris = this.favorisService.getFavoris();
     console.log(this.favoris);
   }
+
+  removeFromFavoris(nft: any) {
+    this.favorisService.removeFromFavoris(nft);
+  }
 }

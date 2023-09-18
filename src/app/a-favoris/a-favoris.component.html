@@ -6,10 +6,18 @@
 
 <h1>Mes NFT Favoris</h1>
 
-<div *ngFor="let nft of favoris">
-  <h2>{{nft.title}}</h2>
-  <h2>{{nft.price}}</h2>
-  <h2>{{nft.description}}</h2>
-</div>
+<div class="row">
+<div class="col-4"  *ngFor="let nft of favoris">
 
+    
+<article>
+  <h2>{{nft.title}}</h2>
+  <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris">
+  <span>{{nft.price}}</span>
+  <h2>{{nft.description}}</h2>
+  <button class="btn btn-danger" (click)="removeFromFavoris(nft)">Delete</button>
+</article>
+
+</div>
+</div>
 

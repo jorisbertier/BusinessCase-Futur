@@ -23,11 +23,11 @@
                 <article class="col-12 blocDetails2 mt-5">
                     <h2>Description</h2><br>
                     <p>{{nft?.description}}<br>
-                    Créer par : {{nft?.user.pseudo}} ~<br>
-                    <span>Categorie   <ng-container *ngFor="let category of nft?.categories">
+                    <!-- Créer par : {{nft?.user}} ~<br> -->
+                    <!-- <span>Categorie   <ng-container *ngFor="let category of nft?.categories">
                         <p>{{ category.label }}</p>
                         
-                    </ng-container></span>~<br>
+                    </ng-container></span>~<br> -->
                     Collection : {{nft?.collection.label}} ~<br>
                 </p>
                 </article>
@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-12 blocDetails3 d-flex align-items-center flex-column mt-5">
                     <div class="d-flex  align-items-center flex-column">
-                        <h2 *ngIf="nft?.user.pseudo">Propriété de : {{nft?.user.pseudo}}</h2>
+                        <!-- <h2 *ngIf="nft?.user.pseudo">Propriété de : {{nft?.user.pseudo}}</h2> -->
                         <p>Prix actuel :<br>
                             {{nft?.price}} ♦️ ({{1600000 /1000 * nft?.price}} €)
                         </p>

@@ -5,8 +5,8 @@
 <div>works</div>
 <div>works</div>
 <div>works</div>
-<!-- 
- <form class="container" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+ <form class="container" [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
     <div class="mb-3">
       <label class="form-label">Prénom</label>
@@ -30,7 +30,7 @@
     </div>
     <div class="mb-3">
         <label class="form-label">Date de naissance</label>
-        <input type="date" formControlName="birthDate" required>
+        <input type="date" formControlName="birth" required>
       </div>
     <div class="mb-3">
       <label class="form-label">Téléphone:</label>
@@ -62,9 +62,9 @@
     </div>
 
   
-    <button type="submit" [disabled]="!form.valid">Valider</button>
+    <button type="submit" >Valider</button>
     <br><br>
-  </form>  -->
+  </form> 
 
 <!--   
  <form class="container" #userPost="ngForm" (ngSubmit)="onSubmit(userPost)">

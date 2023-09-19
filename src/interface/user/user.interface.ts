@@ -6,12 +6,16 @@ export interface IUser {
     pseudo: string,
     email: string,
     password: string,
-    birthDate: any,
+    birth: any,
     phoneNumber: string,
     avatar: string,
     gender: string,
-    adress : IAdress
+    adresses : IAdress
+}
 
+export interface Icredentials {
+    username: string,
+    password : string,
 }
 
 export interface result {

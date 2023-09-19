@@ -58,6 +58,7 @@ export class AGalleryComponent implements OnInit {
   }
 
   filterByPriceHight() {
+    
     const filteredNftList2 = this.nftList.filter((nft) => {
       const price = nft.price; 
       return price > this.filterValue2;

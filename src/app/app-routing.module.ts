@@ -8,6 +8,7 @@ import { ANftDetailsComponent } from './a-nft-details/a-nft-details.component';
 import { ARegisterComponent } from './a-register/a-register.component';
 import { ABasketComponent } from './a-basket/a-basket.component';
 import { AFavorisComponent } from './a-favoris/a-favoris.component';
+import { ALoginComponent } from './a-login/a-login.component';
 
 const routes: Routes = [
   {path: '', component: AHomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'registerrr', component: ARegisterComponent},
   {path: 'cart', component: ABasketComponent},
   {path: 'favoris', component: AFavorisComponent},
+  {path: 'login', component: ALoginComponent},
 ];
 
 @NgModule({

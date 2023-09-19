@@ -22,6 +22,7 @@ import { ARegisterComponent } from './a-register/a-register.component';
 import { ABasketComponent } from './a-basket/a-basket.component';
 import { AFavorisComponent } from './a-favoris/a-favoris.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ALoginComponent } from './a-login/a-login.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +41,15 @@ import { CookieService } from 'ngx-cookie-service';
     ANftDetailsComponent,
     ARegisterComponent,
     ABasketComponent,
-    AFavorisComponent
+    AFavorisComponent,
+    ALoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgChartsModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
   ],

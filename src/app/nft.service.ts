@@ -20,6 +20,13 @@ export class NftService {
 
   constructor(private http: HttpClient) { }
 
+  addNft(nft: INft): Observable<any> {
+    const body = JSON.stringify(nft);
+    const header = { 'content-type': 'application/x-www-form-urlencoded'};
+    return this.http.post<any>("https://localhost:8000/nft/api/nft", body, {'headers': header})
+
+  }
+
   getAllNfts(): Observable<INft[]>{
     
     return this.http.get<INft[]>(this.url);

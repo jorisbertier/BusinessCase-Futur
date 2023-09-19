@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/interface/user/user.interface';
 import { UserService } from './../../service/user/user.service';
-import {FormControl, FormGroup} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import {DatePipe} from "@angular/common";
 
 @Component({
@@ -9,37 +9,34 @@ import {DatePipe} from "@angular/common";
   templateUrl: './a-register.component.html',
   styleUrls: ['./a-register.component.scss']
 })
-export class ARegisterComponent implements OnInit {
+export class ARegisterComponent {
 
-  listUsers: IUser[] = [];
-  userDetail: IUser | undefined;
+  // listUsers: IUser[] = [];
+  // userDetail: IUser | undefined;
 
-  public form: FormGroup = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    pseudo: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-    birthDate: new FormControl(''),
-    phoneNumber: new FormControl(''),
-    avatar: new FormControl(''),
-    gender: new FormControl(''),
-    street: new FormControl(''),
-    city: new FormControl(''),
-    zipCode: new FormControl(''),
-    country: new FormControl(''),
-  });
+  // public form: FormGroup = new FormGroup({
+  //   firstName: new FormControl(''),
+  //   lastName: new FormControl(''),
+  //   pseudo: new FormControl(''),
+  //   email: new FormControl(''),
+  //   password: new FormControl(''),
+  //   birthDate: new FormControl(''),
+  //   phoneNumber: new FormControl(''),
+  //   avatar: new FormControl(''),
+  //   gender: new FormControl(''),
+  //   street: new FormControl(''),
+  //   city: new FormControl(''),
+  //   zipCode: new FormControl(''),
+  //   country: new FormControl(''),
+  // });
 
-  constructor(private service: UserService) {
-  }
-
-  ngOnInit() {
-    console.log(this.listUsers);
-    this.service.getAllUser().subscribe(userListResult => {
-      this.listUsers = userListResult;
-      });
+  // ngOnInit() {
+  //   console.log(this.listUsers);
+  //   this.service.getAllUser().subscribe(userListResult => {
+  //     this.listUsers = userListResult;
+  //     });
     
-  }
+  // }
 
   // getUser(){
   //   this.service.getAllUser().subscribe(Users => {
@@ -82,5 +79,62 @@ export class ARegisterComponent implements OnInit {
   //     console.log('Formulaire invalide');
   //   }
   // }
+  userForm: FormGroup;
+  constructor(private formBuilder: FormBuilder, private userService: UserService) {
+    this.userForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      pseudo: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      birth: ['', Validators.required],
+      phoneNumber: ['', Validators.required],
+      avatar: [''],
+      gender: ['', Validators.required],
+      city: ['', Validators.required],
+      zipCode: ['', Validators.required],
+      street: ['', Validators.required],
+      country: ['', Validators.required],
+    });
+  }
+
+  onSubmit() {
+    console.log('test');
+    
+    // if (this.userForm.valid) {
+      console.log('onSubmit() called');
+      const formData = this.userForm.value;
+      const user = {
+        email: formData.email,
+        password: formData.password,
+        pseudo: formData.pseudo,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        birth: formData.birth, // Make sure the date format matches what your Symfony API expects
+        phoneNumber: formData.phoneNumber,
+        avatar: formData.avatar,
+        gender: formData.gender,
+        adresses: [
+          {
+            city: formData.city,
+            zipCode: formData.zipCode,
+            street: formData.street,
+            country: formData.country,
+          },
+        ],
+      };
+      console.log(formData.pseudo);
+      console.log(formData);
+      
+      this.userService.createUser(user).subscribe(
+        (response) => {
+          console.log('User created successfully', response);
+        },
+        (error) => {
+          console.error('Error creating user', error);
+        }
+      );
+    // }
+  }
 
 }

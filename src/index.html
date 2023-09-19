@@ -15,76 +15,76 @@
   <app-root></app-root>
 
   <script async>
-    document.addEventListener('DOMContentLoaded', function() {
-    //Creation carousel click
+    // document.addEventListener('DOMContentLoaded', function() {
+    // //Creation carousel click
     
-    let changeImg = document.querySelector('.changeImg img');
-    let changeTitle = document.querySelector('.changeTitle');
-    let changeTitle2 = document.querySelector('.changeTitle2');
-    let changeText= document.querySelector('.changeText');
-    let gif= document.querySelector('.gif');
-    let point1 = document.querySelector('.point1');
-    let point2 = document.querySelector('.point2');
-    let point3 = document.querySelector('.point3');
-    console.log(changeImg);
+    // let changeImg = document.querySelector('.changeImg img');
+    // let changeTitle = document.querySelector('.changeTitle');
+    // let changeTitle2 = document.querySelector('.changeTitle2');
+    // let changeText= document.querySelector('.changeText');
+    // let gif= document.querySelector('.gif');
+    // let point1 = document.querySelector('.point1');
+    // let point2 = document.querySelector('.point2');
+    // let point3 = document.querySelector('.point3');
+    // console.log(changeImg);
     
-    point1.addEventListener('click', function() {
-    console.log(changeImg);
-    changeImg.src = "./img/profil/itachi2.png";
-    changeTitle.innerHTML = "MINTING NOW";
-    changeTitle2.innerHTML = "ANON KATZ";
-    changeText.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
-    point1.style.backgroundColor = "black";
-    point2.style.backgroundColor = "rgba(255,255,255, 0.3)";
-    point3.style.backgroundColor = "rgba(255,255,255, 0.3)";
-    gif.src = "./img/profil/naruto.gif";
-    })
+    // point1.addEventListener('click', function() {
+    // console.log(changeImg);
+    // changeImg.src = "./img/profil/itachi2.png";
+    // changeTitle.innerHTML = "MINTING NOW";
+    // changeTitle2.innerHTML = "ANON KATZ";
+    // changeText.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
+    // point1.style.backgroundColor = "black";
+    // point2.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    // point3.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    // gif.src = "./img/profil/naruto.gif";
+    // })
     
-    point2.addEventListener('click', function() {
-    changeImg.src = "./img/profil/hisokamini.png";
-    changeTitle.innerHTML = "Jujustu Collection";
-    changeTitle2.innerHTML = "LOREM";
-    changeText.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`;
-    point2.style.backgroundColor = "black";
-    point1.style.backgroundColor = "rgba(255,255,255, 0.3)";
-    point3.style.backgroundColor = "rgba(255,255,255, 0.3)";
-    gif.src = "./img/profil/hisoka.webp";
-    })
+    // point2.addEventListener('click', function() {
+    // changeImg.src = "./img/profil/hisokamini.png";
+    // changeTitle.innerHTML = "Jujustu Collection";
+    // changeTitle2.innerHTML = "LOREM";
+    // changeText.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`;
+    // point2.style.backgroundColor = "black";
+    // point1.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    // point3.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    // gif.src = "./img/profil/hisoka.webp";
+    // })
     
-    point3.addEventListener('click', function() {
-    changeImg.src = "./img/profil/ichigo.png";
-    changeTitle.innerHTML = "Jujustu Collection";
-    changeTitle2.innerHTML = "Tkt";
-    changeText.innerHTML = `Nouveau texte tkt<br> lopem djdks skdnd,d `;
-    point3.style.backgroundColor = "black";
-    point1.style.backgroundColor = "rgba(255,255,255, 0.3)";
-    point2.style.backgroundColor = "rgba(255,255,255, 0.3)";
-    gif.src = "./img/profil/scissorseven.webp";
-    })
+    // point3.addEventListener('click', function() {
+    // changeImg.src = "./img/profil/ichigo.png";
+    // changeTitle.innerHTML = "Jujustu Collection";
+    // changeTitle2.innerHTML = "Tkt";
+    // changeText.innerHTML = `Nouveau texte tkt<br> lopem djdks skdnd,d `;
+    // point3.style.backgroundColor = "black";
+    // point1.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    // point2.style.backgroundColor = "rgba(255,255,255, 0.3)";
+    // gif.src = "./img/profil/scissorseven.webp";
+    // })
     
-    //timer
+    // //timer
     
-    const timer = document.querySelector('.timer');
-    let temp = 100000;
-    
-    
-    function compteur() {
-    
-    let secondes = parseInt(temp % 60, 10);
-    let minutes = parseInt((temp / 60) % 60, 10);
-    let heures = parseInt((temp / 3600) % 24, 10);
-    let jours = parseInt(temp / (3600 * 24), 10);
+    // const timer = document.querySelector('.timer');
+    // let temp = 100000;
     
     
-    secondes = secondes < 10 ? "0"+ secondes : secondes;
-    minutes = minutes < 10 ? "0"+ minutes : minutes;
+    // function compteur() {
     
-    timer.innerText = "Temps restant "+ jours + " jours " + heures+ " heures " +minutes + " minutes " +secondes+ " secondes";
-    temp--; 
-    }
+    // let secondes = parseInt(temp % 60, 10);
+    // let minutes = parseInt((temp / 60) % 60, 10);
+    // let heures = parseInt((temp / 3600) % 24, 10);
+    // let jours = parseInt(temp / (3600 * 24), 10);
     
-    setInterval(compteur, 1000);
-  });
+    
+    // secondes = secondes < 10 ? "0"+ secondes : secondes;
+    // minutes = minutes < 10 ? "0"+ minutes : minutes;
+    
+    // timer.innerText = "Temps restant "+ jours + " jours " + heures+ " heures " +minutes + " minutes " +secondes+ " secondes";
+    // temp--; 
+    // }
+    
+    // setInterval(compteur, 1000);
+    // );
   </script>
 
 </body>

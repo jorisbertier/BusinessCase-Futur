@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NftService } from '../nft.service';
 import {FormControl, FormGroup} from "@angular/forms";
 import { INft } from '../../interface/nft/nft.interface';
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 
 
 @Component({
@@ -10,42 +11,59 @@ import { INft } from '../../interface/nft/nft.interface';
   styleUrls: ['./a-form-nft.component.scss']
 })
 export class AFormNftComponent {
+  nftData: any = {}; // Un objet pour stocker les données du formulaire
 
-  list:INft[] = [];
+  constructor(private http: HttpClient) { }
 
-  
-  constructor(private service: NftService){
-    
+  createNft() {
+    // Envoyer les données du formulaire à votre API
+    this.http.post('https://localhost:8000/nft/api/nft', this.nftData).subscribe(
+      (response: any) => {
+        console.log(response);
+        this.nftData = {};
+        console.log(this.nftData);
+        
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
-  
 
-  public form:FormGroup = new FormGroup({
 
-    title: new FormControl(''),
-    price: new FormControl(''),
-    filePath: new FormControl(''),
-    alt: new FormControl(''),
-    description: new FormControl(''),
-    user: new FormControl(''),
-    categories: new FormControl(''),
-    collection: new FormControl(''),
 
-  })
+  // list:INft[] = [];
 
   
-  toList(nft: INft) {
-    console.log(this.list);
+  // constructor(private service: NftService){
     
- this.service.newNft(nft).subscribe(data => this.list.push(data))
- console.log("ok list");
- console.log(this.list);
+  // }
+
+  
+
+//   public form:FormGroup = new FormGroup({
+
+//     title: new FormControl(''),
+//     price: new FormControl(''),
+//     filePath: new FormControl(''),
+//     alt: new FormControl(''),
+//     description: new FormControl(''),
+//     user: new FormControl(''),
+//     categories: new FormControl(''),
+//     collection: new FormControl(''),
+
+//   })
+
+  
+//   toList(nft: INft) {
+//     console.log(this.list);
+    
+//  this.service.newNft(nft).subscribe(data => this.list.push(data))
+//  console.log("ok list");
+//  console.log(this.list);
  
-  }
-
-
-
-
+//   }
   // handleSubmit(){
     
   // this.toList(this.form.value)

@@ -23,6 +23,7 @@ import { ABasketComponent } from './a-basket/a-basket.component';
 import { AFavorisComponent } from './a-favoris/a-favoris.component';
 import { CookieService } from 'ngx-cookie-service';
 import { ALoginComponent } from './a-login/a-login.component';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ALoginComponent } from './a-login/a-login.component';
     ReactiveFormsModule,
   ],
   providers: [
-    CookieService 
+    CookieService,
+    TokenInterceptor,
   ],
   bootstrap: [AppComponent]
 })

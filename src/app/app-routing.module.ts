@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { authGuard } from './auth/auth.guard';
 import { RouterModule, Routes } from '@angular/router';
 import { AHomeComponent } from './a-home/a-home.component';
 import { AGalleryComponent } from './a-gallery/a-gallery.component';
@@ -12,7 +13,7 @@ import { ALoginComponent } from './a-login/a-login.component';
 
 const routes: Routes = [
   {path: '', component: AHomeComponent},
-  {path: 'gallery', component: AGalleryComponent},
+  {path: 'gallery', component: AGalleryComponent, canActivate:[authGuard]},
   {path: 'gallery/:id', component: ANftDetailsComponent},
   {path: 'formNft', component: AFormNftComponent},
   {path: 'profil', component: AProfilComponent},

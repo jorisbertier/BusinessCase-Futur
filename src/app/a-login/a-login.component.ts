@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LoginService } from 'src/service/login/login.service';
+import { IToken } from '../../interface/token/itoken.interface';
+import { AuthService } from 'src/service/Auth/auth.service';
 
 @Component({
   selector: 'app-a-login',
@@ -9,7 +11,7 @@ import { LoginService } from 'src/service/login/login.service';
 })
 export class ALoginComponent implements OnInit {
 
-  constructor(private service: LoginService) {
+  constructor(private service: LoginService, private auth: AuthService) {
 
   }
   ngOnInit(): void {}
@@ -24,8 +26,12 @@ export class ALoginComponent implements OnInit {
     console.log('test');
     
     this.service.login(this.form.value).subscribe(
-      data => console.log(data),
+      (data:IToken) => {
+        console.log(data.token);
+        this.auth.saveToken(data.token);
+      },
       err => console.log(err)
     )
+
   }
 }

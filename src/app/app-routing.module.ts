@@ -14,12 +14,12 @@ import { ALoginComponent } from './a-login/a-login.component';
 const routes: Routes = [
   {path: '', component: AHomeComponent},
   {path: 'gallery', component: AGalleryComponent, canActivate:[authGuard]},
-  {path: 'gallery/:id', component: ANftDetailsComponent},
-  {path: 'formNft', component: AFormNftComponent},
-  {path: 'profil', component: AProfilComponent},
-  {path: 'registerrr', component: ARegisterComponent},
-  {path: 'cart', component: ABasketComponent},
-  {path: 'favoris', component: AFavorisComponent},
+  {path: 'gallery/:id', component: ANftDetailsComponent, canActivate:[authGuard]},
+  {path: 'formNft', component: AFormNftComponent, canActivate:[authGuard]},
+  {path: 'profil', component: AProfilComponent, canActivate:[authGuard]},
+  {path: 'register', component: ARegisterComponent},
+  {path: 'cart', component: ABasketComponent, canActivate:[authGuard]},
+  {path: 'favoris', component: AFavorisComponent, canActivate:[authGuard]},
   {path: 'login', component: ALoginComponent},
 ];
 

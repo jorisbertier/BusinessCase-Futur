@@ -17,10 +17,14 @@ export class NavBarComponent implements OnInit {
     // this.cartService.getProducts().subscribe( res => {
     //   this.totalItem = res.length;
     // })
-    
+
   }
 
   logout() {
     this.auth.clearToken();
+  }
+
+  checkIsLogged(): boolean {
+    return this.auth.isLogged();
   }
 }

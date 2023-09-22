@@ -20,7 +20,7 @@
                     <input type="search" id="form1" class="form-control" placeholder="Rechercher collection,NFT,....">
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/formNft">Form</a>
+                    <a class="nav-link active" aria-current="page" routerLink="/formNft" *ngIf="checkIsLogged()">AddNft</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="./profil.html">PROFIL</a>
@@ -29,25 +29,25 @@
                     <a class="nav-link" href="#">WALLET</a>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/gallery">Galerie</a>
+                    <a class="nav-link" routerLink="/gallery" *ngIf="checkIsLogged()">Galerie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/favoris">Favoris</a>
+                    <a class="nav-link" routerLink="/favoris" *ngIf="checkIsLogged()">Favoris</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/registerrr">Register</a>
+                    <a class="nav-link" routerLink="/register">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/login">Login</a>
+                    <a class="nav-link" routerLink="/profil" *ngIf="checkIsLogged()">Profil</a>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-danger" (click)="logout()">Logout</button>
+                    <a class="nav-link" routerLink="/cart" *ngIf="checkIsLogged()">Cart<span>{{totalItem}}</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/profil">Profil</a>
+                    <a class="btn btn-success" routerLink="/login" *ngIf="!checkIsLogged()">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/cart">Cart<span>{{totalItem}}</span></a>
+                    <button class="btn btn-danger" (click)="logout()" *ngIf="checkIsLogged()">Logout</button>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="./login.html">LOGIN</a>

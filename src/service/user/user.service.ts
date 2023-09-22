@@ -23,6 +23,6 @@ export class UserService {
 
 
   createUser(user: any): Observable<any> {
-    return this.http.post('https://localhost:8000/user/api/user/', user);
+    return this.http.post('https://localhost:8000/user/api/user/', user, { responseType: 'text' as 'json' });
   }
 }

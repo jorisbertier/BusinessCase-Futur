@@ -3,6 +3,7 @@ import { IUser } from 'src/interface/user/user.interface';
 import { UserService } from './../../service/user/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import {DatePipe} from "@angular/common";
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-a-register',
@@ -10,6 +11,8 @@ import {DatePipe} from "@angular/common";
   styleUrls: ['./a-register.component.scss']
 })
 export class ARegisterComponent {
+
+  subscriptionValid: boolean = false;
 
   // listUsers: IUser[] = [];
   // userDetail: IUser | undefined;
@@ -80,11 +83,11 @@ export class ARegisterComponent {
   //   }
   // }
   userForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private userService: UserService) {
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private cd: ChangeDetectorRef) {
     this.userForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      pseudo: ['', Validators.required],
+      pseudo: ['', [Validators.required, Validators.minLength(3)]],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       birth: ['', Validators.required],
@@ -104,13 +107,15 @@ export class ARegisterComponent {
     // if (this.userForm.valid) {
       console.log('onSubmit() called');
       const formData = this.userForm.value;
+      const birthDate = new Date(formData.birth);
+      const formattedBirthDate = birthDate.toISOString().split('T')[0]; // Format to YYYY-MM-DD
       const user = {
         email: formData.email,
         password: formData.password,
         pseudo: formData.pseudo,
         firstName: formData.firstName,
         lastName: formData.lastName,
-        birth: formData.birth, // Make sure the date format matches what your Symfony API expects
+        birth: formattedBirthDate, // Make sure the date format matches what your Symfony API expects
         phoneNumber: formData.phoneNumber,
         avatar: formData.avatar,
         gender: formData.gender,
@@ -129,6 +134,12 @@ export class ARegisterComponent {
       this.userService.createUser(user).subscribe(
         (response) => {
           console.log('User created successfully', response);
+          this.subscriptionValid = true;
+          this.userForm.reset();
+          console.log(this.subscriptionValid);
+          console.log(this.userForm.value);
+          
+          this.cd.detectChanges();
         },
         (error) => {
           console.error('Error creating user', error);

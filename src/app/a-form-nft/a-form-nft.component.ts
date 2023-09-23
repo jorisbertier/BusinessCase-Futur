@@ -31,11 +31,11 @@ export class AFormNftComponent implements OnInit {
   }
 
   createNft() {
+
     // Envoyer les données du formulaire à votre API
     this.http.post('https://localhost:8000/nft/api/nft', this.nftData, { responseType: 'text' as 'json' }).subscribe(
       (response: any) => {
         console.log(response);
-        
         this.nftData = {};
         this.nftCreated = true;
         // this.nftForm.reset();

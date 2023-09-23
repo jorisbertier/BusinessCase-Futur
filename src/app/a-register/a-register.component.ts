@@ -87,7 +87,7 @@ export class ARegisterComponent {
     this.userForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      pseudo: ['', [Validators.required, Validators.minLength(3)]],
+      pseudo: ['', [Validators.required, Validators.minLength(5)]],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       birth: ['', Validators.required],

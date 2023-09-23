@@ -18,7 +18,7 @@
     </div>
     <div class="mb-3">
       <label class="form-label">Pseudo</label>
-      <input type="pseudo" formControlName="pseudo" required>
+      <input type="text" formControlName="pseudo" required>
         <div *ngIf="userForm.get('pseudo')?.hasError('required')">
     Le pseudo est requis.
   </div>

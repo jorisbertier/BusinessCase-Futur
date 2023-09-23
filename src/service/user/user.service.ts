@@ -9,8 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  connectedUser?: IUser;
-
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   getAllUser(): Observable<IUser[]>{

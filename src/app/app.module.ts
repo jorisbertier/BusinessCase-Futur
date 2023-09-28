@@ -43,7 +43,7 @@ import { TokenInterceptor } from './token.interceptor';
     ARegisterComponent,
     ABasketComponent,
     AFavorisComponent,
-    ALoginComponent
+    ALoginComponent,
   ],
   imports: [
     BrowserModule,

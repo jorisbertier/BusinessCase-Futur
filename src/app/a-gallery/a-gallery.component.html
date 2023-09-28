@@ -35,80 +35,43 @@
 
 </div>
 
-  <div id="zone2">
-<!--     
-    <div>
-      <div class="spaceElement Classique box" >
+<div id="zone2">
+  <div *ngFor="let nft of nftList; let index = index">
+    <div class="spaceElement Classique box"  *ngIf="nft.title.toLowerCase().includes(searchQuery.toLowerCase())" [class.hidden]="!nft.title.toLowerCase().includes(searchQuery.toLowerCase())">
+        
+      <div class="imgGalerie">
+        <img src="https://127.0.0.1:8000/upload/{{nft.filePath}}" alt="image " class="groupeImage classique image-0">
+      </div>
 
-        <div class="imgGalerie">
-          <img class="groupeImage Classique image-0">
-          <img src="{{nft.filePath}}" alt="image " class="groupeImage Classique image-0"> 
-           <img [src]="nft.filePath" alt="image" class="groupeImage Classique image-0"> 
+      <div class="ajoutPanier">
+        <a><button class="btn" routerLink="/gallery/{{nft.id}}">Voir article</button></a>
+      </div>
 
-        </div>
-        <div class="ajoutPanier">
-          <a><button class="btn">Voir article</button></a>
-        <button (click)="viewOneNft(nft.id)"  class="btn" type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            view
-          </button><br
-          <a routerLink="/gallery/{{nft.id}}" class="btn btn-primary">Lire la suite</a>
-        </div>
-        <div class="details">
-          <h3><i class="bi bi-patch-check-fill"></i>
-          </h3>
-          <div class="infoCardGalerie">
-            <div>
-              <h6>Floor</h6>
-              <p>ETH</p>
-            </div>
-            <div>
-              <button class="btn view" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Aperçu
-            </button><br>
+      <div class="details">
+        <h3>{{ nft.title }}<i class="bi bi-patch-check-fill"></i>
+        </h3>
+
+        <div class="infoCardGalerie">
+          <div>
+            <h6 class="mt-2">Prix</h6>
+            <div class="d-flex flex-row">
+              <p class="me-2">{{ nft.price }}</p><img src="../../assets/img/eth/eth.png" class="eth">
             </div>
           </div>
+
+        <div class="mt-2" (click)="viewOneNft(nft.id)">
+          <button class="btn view" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Aperçu
+          </button><br>
         </div>
 
-    </div>
-  </div> -->
-
-    <div *ngFor="let nft of nftList; let index = index">
-      <div class="spaceElement Classique box"  *ngIf="nft.title.toLowerCase().includes(searchQuery.toLowerCase())" [class.hidden]="!nft.title.toLowerCase().includes(searchQuery.toLowerCase())">
-
-        <div class="imgGalerie">
-          <img src="https://127.0.0.1:8000/upload/{{nft.filePath}}" alt="image " class="groupeImage classique image-0">
-          <!-- <img src="{{nft.filePath}}" alt="image " class="groupeImage Classique image-0"> -->
-          <!-- <img [src]="nft.filePath" alt="image" class="groupeImage Classique image-0"> -->
-
-        </div>
-        <div class="ajoutPanier">
-          <a><button class="btn" routerLink="/gallery/{{nft.id}}">Voir article</button></a>
-          <!-- <button (click)="viewOneNft(nft.id)"  class="btn" type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            view
-          </button><br> -->
-          <!-- <a routerLink="/gallery/{{nft.id}}" class="btn btn-primary">Lire la suite</a> -->
-        </div>
-        <div class="details">
-          <h3>{{ nft.title }}<i class="bi bi-patch-check-fill"></i>
-          </h3>
-          <div class="infoCardGalerie">
-            <div>
-              <h6 class="mt-2">Prix</h6>
-              <div class="d-flex flex-row">
-                <p class="me-2">{{ nft.price }}</p><img src="../../assets/img/eth/eth.png" class="eth">
-              </div>
-            </div>
-            <div class="mt-2" (click)="viewOneNft(nft.id)">
-              <button class="btn view" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Aperçu
-            </button><br>
-            </div>
-          </div>
-        </div>
-
+      </div>
     </div>
   </div>
 </div>
+        
+
+
 
 
 <!-- Modal -->

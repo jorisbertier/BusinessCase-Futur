@@ -24,7 +24,7 @@
   </div>
 
   <div class="mt-4">
-    <label for="filterPrice2">Filtrer par prix superieure à : </label>
+    <label for="filterPrice2">Filtrer par prix supérieure à : </label>
     <input type="number" class="form-control mt-2" id="filterPriceHight" [(ngModel)]="filterValue2" step="0.1">
     <button (click)="filterByPriceHight()" class="btn mt-2">Filtrer</button>
   </div>
@@ -82,7 +82,7 @@
 
         </div>
         <div class="ajoutPanier">
-          <a routerLink="/gallery/{{nft.id}}"><button class="btn">Voir article</button></a>
+          <a><button class="btn" routerLink="/gallery/{{nft.id}}">Voir article</button></a>
           <!-- <button (click)="viewOneNft(nft.id)"  class="btn" type="button" class="btn btn-primary m-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
             view
           </button><br> -->
@@ -93,13 +93,13 @@
           </h3>
           <div class="infoCardGalerie">
             <div>
-              <h6>Prix</h6>
+              <h6 class="mt-2">Prix</h6>
               <div class="d-flex flex-row">
                 <p class="me-2">{{ nft.price }}</p><img src="../../assets/img/eth/eth.png" class="eth">
               </div>
             </div>
-            <div>
-              <button (click)="viewOneNft(nft.id)" class="btn view" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="mt-2" (click)="viewOneNft(nft.id)">
+              <button class="btn view" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Aperçu
             </button><br>
             </div>
@@ -114,29 +114,22 @@
 <!-- Modal -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
       <div class="modal-content text-center">
           <div class="modal-header">
               <h1 class="modal-title text-center fs-5" id="exampleModalLabel">{{nftDetail?.title}}</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
-          <div class="mb-3 text-center">
-              <img style="width: 350px; height: 500px; object-fit: cover; " src="{{nftDetail?.id}}" class="rounded-top card-img-top" alt="...">
+          <div class="mb-3 mt-2 d-flex justify-content-between mx-auto">
+            <div class="ms-2">
+              <img src="https://127.0.0.1:8000/upload/{{nftDetail?.filePath}}" class="rounded-top card-img-top imgModal" alt="...">
+            </div>
+            <div class="ms-2">
+              <h3>Date de création {{nftDetail?.dateCreation | date}}</h3>
+              <p *ngIf="ethActualPrice">Prix actuel en euro : {{nftDetail?.price * ethActualPrice.currentPrice / 100}} €</p>
+            </div>
           </div>
-          <div class="mb-3">
-              <p>{{nftDetail?.title}}</p>
-          </div>
-          <!-- <div class="mb-3">
-              <p>CP : {{pokemonDetail?.cp}}</p>
-          </div>
-          <div class="mb-3">
-              <p>HP : {{pokemonDetail?.hp}}</p>
-          </div>
-          <div class="mb-3">
-              <p>TYPE : {{pokemonDetail?.types}}</p>
-          </div> -->
-
       </div>
   </div>
 </div>

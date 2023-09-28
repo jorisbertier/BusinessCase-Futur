@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { INft } from '../../interface/nft/nft.interface';
 import { NftService } from '../nft.service';
+import { EthService } from 'src/service/Eth/eth.service';
+import { IEth } from 'src/interface/eth/eth.interface';
 
 @Component({
   selector: 'app-a-gallery',
@@ -10,18 +12,27 @@ import { NftService } from '../nft.service';
 export class AGalleryComponent implements OnInit {
 
   nftList: INft[] = [];
-  nftDetail: INft | undefined;
+  nftDetail: INft | any;
   searchQuery: string = '';
+  ethActualPrice: IEth | any;
  
-  constructor(private service: NftService) {
+  constructor(
+    private service: NftService,
+    private ethService: EthService
+    ) {
   }
   ngOnInit() {
 
     this.service.getAllNfts().subscribe(nftListResult => {
-  
       this.nftList = nftListResult;
-        console.table(this.nftList);
+        // console.table(this.nftList);
       });
+
+      this.ethService.getActualPriceEth().subscribe(ethResultOne => {
+        this.ethActualPrice = ethResultOne;
+        console.log(this.ethActualPrice);
+        });
+
   }
   viewOneNft(id: number){
     this.service.getNftById(id).subscribe(nftResult =>{

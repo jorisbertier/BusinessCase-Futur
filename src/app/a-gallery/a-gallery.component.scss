@@ -1,8 +1,24 @@
 
-h1 {
-    margin-top: 40px;
-}
+@import '/src/assets/variables.scss';
 
+
+// h1 {
+//     margin-top: 40px;
+// }
+
+.search{
+  width: 60vw;
+  margin-top: 50px;
+  background-color: $main-color-purple;
+  border-radius: 15px;
+  color: $main-color-background;
+  font-size: 18px;
+  button {
+    background-color: $main-color-black;
+    color: $main-color-background;
+    font-size: 18px;
+  }
+}
 /* figcaption {
     text-align: center;
 }
@@ -31,13 +47,7 @@ figure {
     text-align: center;
 }
 */
-#zone2 {
 
-    margin-top: 100px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
 /* #zone2 img {
     object-fit: cover;
     width: 250px;
@@ -57,10 +67,15 @@ figure {
 } */
 
 /* CARD */
-.box{
+
+#zone2 {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  .box{
     position: relative;
-    /* top: 50%;
-    left: 50%; */
     width: 200px;
     height: 300px;
     border-radius: 15px;
@@ -68,152 +83,157 @@ figure {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     margin: 15px;
 
-  }
-  
-  .box:hover .imgGalerie {
-    transform: translateY(-100px);
-  }
-  
-  img {
-    object-fit: contain;
-    height: 320px;
-    
-  }
-  .infoCardGalerie {
-    display: flex;
-    justify-content: space-between;
-    
-  }
-  .box .imgGalerie {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: 0.5s;
-    z-index: 2;
-    background-color: #000;
-  }
-  
-  .box .details {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    z-index: 1;
-    width: 100%;
-    height: 110px;
-    box-sizing: border-box;
-    padding: 10px;
-  }
-  
-  .box .details h3 {
-    font-size: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  
-  .box .details h6 {
-    margin-top: 2px;
-    font-size: 12px;
-  }
-  
-  .box .details p {
-    font-size: 12px;
-  }
-  
-  .box:hover .imgGalerie img {
-    opacity: 0.5;
-  }
-  
-  .box .imgGalerie img {
-    transition: 0.5s;
-    width: 100%;
-  }
-  
-  .box .ajoutPanier {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  .box .ajoutPanier a {
-    position: relative;
-    display: block;
-    text-align: center;
-    transition: 0.5s;
-    opacity: 0;
-  }
-  
-  .box .ajoutPanier a .btn{
-    font-weight: 500;
-    color: white;
-    height: 40px;
-    font-size: 15px;
-    transition: 0.5s;
-    background-color: #5A3E51;
-    border-radius: 20px;
-    width: auto;
-    cursor: pointer;
-  }
-.test{
-  display:flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.details button {
-  width: auto;
-  height: 40px;
-  font-size: 14px;
-  font-weight: 600;
-  background-color: #5A3E51;
-  color: #fff;
-}
-  
-  .box:hover .ajoutPanier a {
-    transform: translateY(140px);
-    opacity: 1;
-    height: 300px;
-  }
+    .imgGalerie {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s;
+      z-index: 2;
+      background-color: #000;
+    }
 
-  .hidden {
-    display: none;
-  }
+    .details {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      z-index: 1;
+      width: 100%;
+      height: 110px;
+      box-sizing: border-box;
+      padding: 10px;
 
-  //button search
+      h3 {
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      
+      h6 {
+        margin-top: 2px;
+        font-size: 15px;
+      }
+      
+      p {
+        font-size: 15px;
+      }
 
-  .InputContainer {
-    width: 210px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to bottom,rgb(227, 213, 255),rgb(255, 231, 231));
-    border-radius: 30px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
-      .input {
-        width: 200px;
-        height: 40px;
-        border: none;
-        outline: none;
-        caret-color: rgb(255, 81, 0);
-        background-color: rgb(255, 255, 255);
-        border-radius: 30px;
-        padding-left: 15px;
-        letter-spacing: 0.8px;
-        color: rgb(19, 19, 19);
-        font-size: 13.4px;
+      .infoCardGalerie {
+        display: flex;
+        justify-content: space-between;
+        
+      }
+    }
+
+      classique {
+        object-fit: contain;
+        height: 320px;
       }
   }
-  
-  
+
+  .eth {
+    width: 10px;
+    height: 20px;
+  }
+}
+
+.box:hover .imgGalerie {
+  transform: translateY(-100px);
+}
+
+.box:hover .imgGalerie img {
+  opacity: 0.5;
+}
+
+.box .imgGalerie img {
+  transition: 0.5s;
+  width: 100%;
+}
+
+.box .ajoutPanier {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+
+.box .ajoutPanier a {
+  position: relative;
+  display: block;
+  text-align: center;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.box .ajoutPanier a .btn{
+  font-weight: 500;
+  color: white;
+  height: 40px;
+  font-size: 15px;
+  transition: 0.5s;
+  background-color: #5A3E51;
+  border-radius: 20px;
+  width: auto;
+  cursor: pointer;
+}
+.test{
+display:flex;
+justify-content: center;
+align-items: flex-start;
+}
+.details button {
+width: auto;
+height: 40px;
+font-size: 14px;
+font-weight: 600;
+background-color: #5A3E51;
+color: #fff;
+}
+
+.box:hover .ajoutPanier a {
+  transform: translateY(140px);
+  opacity: 1;
+  height: 300px;
+}
+
+.hidden {
+  display: none;
+}
+
+//button search
+
+.InputContainer {
+  width: 210px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom,rgb(227, 213, 255),rgb(255, 231, 231));
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+    .input {
+      width: 200px;
+      height: 40px;
+      border: none;
+      outline: none;
+      caret-color: rgb(255, 81, 0);
+      background-color: rgb(255, 255, 255);
+      border-radius: 30px;
+      padding-left: 15px;
+      letter-spacing: 0.8px;
+      color: rgb(19, 19, 19);
+      font-size: 13.4px;
+    }
+}
+

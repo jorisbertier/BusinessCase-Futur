@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NftService } from '../nft.service';
 import {FormControl, FormGroup} from "@angular/forms";
 import { INft } from '../../interface/nft/nft.interface';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
@@ -31,58 +30,40 @@ export class AFormNftComponent implements OnInit {
     }
   }
 
-  uploadedFile: any;
-  addFile(event: any): void {
-    if (event.target.files.length > 0) {
-      this.uploadedFile = event.target.files[0];
+  // uploadedFile: any;
+  // addFile(event: any): void {
+  //   if (event.target.files.length > 0) {
+  //     this.uploadedFile = event.target.files[0];
   
-      const reader = new FileReader();
-      console.log(reader);
+  //     const reader = new FileReader();
+  //     console.log(reader);
   
-      reader.onload = (e: any) => {
+  //     reader.onload = (e: any) => {
         
-        this.nftData.base64Image = e.target.result;
-        console.log(this.nftData.base64Image);
-      };
+  //       this.nftData.base64Image = e.target.result;
+  //       console.log(this.nftData.base64Image);
+  //     };
   
-      reader.readAsDataURL(this.uploadedFile);
-      console.log(this.uploadedFile);
-    } else {
-      this.uploadedFile = null;
-    }
-  }
+  //     reader.readAsDataURL(this.uploadedFile);
+  //     console.log(this.uploadedFile);
+  //   } else {
+  //     this.uploadedFile = null;
+  //   }
+  // }
 
   createNft() {
-    this.userService.getUserData().subscribe(
-      (userData) => {
-        if (userData) {
-          // this.nftData.userPseudo = userData.pseudo;
-          this.nftData.filePath = this.nftData.base64Image; // Utilisez la base64 au lieu du fichier
-  
-          // Autres données du formulaire
-          let formData = new FormData();
-          formData.append("title", this.nftData.title);
-          formData.append("description", this.nftData.description);
-          // ...
-  
-          this.http
-            .post('https://localhost:8000/nft/api/nft', formData)
-            .subscribe(
-              (response: any) => {
-                console.log(response);
-                this.nftData = {};
-                this.nftCreated = true;
-              },
-              (error) => {
-                console.error(error);
-              }
-            );
-        } else {
-          console.error("Données de l'utilisateur connecté non disponibles.");
-        }
+    // Envoyer les données du formulaire à votre API
+    this.http.post('https://localhost:8000/nft/api/nft', this.nftData, { responseType: 'text' as 'json' }).subscribe(
+      (response: any) => {
+        console.log(response);
+        this.nftData = {};
+        this.nftCreated = true;
+        // this.nftForm.reset();
+        console.log(this.nftData);
+
       },
       (error) => {
-        console.error("Erreur lors de la récupération des données de l'utilisateur :", error);
+        console.error(error);
       }
     );
   }

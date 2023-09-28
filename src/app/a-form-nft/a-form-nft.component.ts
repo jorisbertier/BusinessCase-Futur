@@ -22,13 +22,13 @@ export class AFormNftComponent implements OnInit {
   constructor(private http: HttpClient, private authService: AuthService, private userService: UserService) { }
 
   ngOnInit() {
-    // this.loggedInUser = this.authService.getLoggedInUser();
-    // if (this.loggedInUser) {
-    //   console.log('Utilisateur connecté :', this.loggedInUser);
-    //   // Vous pouvez accéder aux propriétés de l'utilisateur ici, par exemple : this.loggedInUser.pseudo
-    // } else {
-    //   console.log('Aucun utilisateur connecté.');
-    // }
+    this.loggedInUser = this.authService.getLoggedInUser();
+    if (this.loggedInUser) {
+      console.log('Utilisateur connecté :', this.loggedInUser);
+      // Vous pouvez accéder aux propriétés de l'utilisateur ici, par exemple : this.loggedInUser.pseudo
+    } else {
+      console.log('Aucun utilisateur connecté.');
+    }
   }
 
   uploadedFile: any;

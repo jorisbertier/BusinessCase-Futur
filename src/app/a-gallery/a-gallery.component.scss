@@ -156,15 +156,27 @@ figure {
   .box .ajoutPanier a .btn{
     font-weight: 500;
     color: white;
-    height: 50px;
+    height: 40px;
     font-size: 15px;
     transition: 0.5s;
     background-color: #5A3E51;
     border-radius: 20px;
     width: auto;
     cursor: pointer;
-  
   }
+.test{
+  display:flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.details button {
+  width: auto;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #5A3E51;
+  color: #fff;
+}
   
   .box:hover .ajoutPanier a {
     transform: translateY(140px);

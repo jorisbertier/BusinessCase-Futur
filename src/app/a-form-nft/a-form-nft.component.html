@@ -29,7 +29,7 @@
   </div>
   <div class="form-outline mb-4">
     <label for="filePath">Chemin du fichier :</label>
-    <input type="file" id="filePath" name="filePath" class="form-control" [(ngModel)]="nftData.filePath" required>
+    <input type="file" id="filePath" name="filePath" class="form-control" (change)="addFile($event)" [(ngModel)]="nftData.filePath" required>
   </div>
   <div class="form-group">
     <label for="alt">Texte alternatif :</label>
@@ -44,7 +44,7 @@
     <input type="text" id="collection" name="collection" class="form-control" [(ngModel)]="nftData.collection" required>
   </div>
   <div *ngIf="nftCreated" class="alert alert-success">
-    Inscription validée
+    Nft à été créée et publié
   </div>
   <button type="submit" class="btn btn-success" [disabled]="!nftForm.form.valid">Créer NFT</button>
 </form>

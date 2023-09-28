@@ -4,6 +4,8 @@ import {HttpClient} from "@angular/common/http";
 import { AuthService } from '../Auth/auth.service';
 import { Observable } from 'rxjs';
 
+import { map } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +15,15 @@ export class UserService {
 
   getAllUser(): Observable<IUser[]>{
     return this.http.get<IUser[]>("https://127.0.0.1:8000/user/api/user/");
+  }
+
+  getUserData(): Observable<IUser | undefined> {
+    return this.getAllUser().pipe(
+      map((users: IUser[]) => {
+        const loggedInUserEmail = this.authService.getLoggedInUserEmail(); // Remplacez par la méthode appropriée pour obtenir l'e-mail de l'utilisateur connecté
+        return users.find(user => user.email === loggedInUserEmail);
+      })
+    );
   }
 
   // addUser(user: IUser): Observable<result> {

@@ -12,6 +12,7 @@ import { AuthService } from 'src/service/Auth/auth.service';
 export class AProfilComponent implements OnInit{
 
   userList: IUser[] = [];
+  userData: any;
 
   constructor(private userService: UserService, private http: HttpClient) {}
 
@@ -23,6 +24,24 @@ export class AProfilComponent implements OnInit{
         console.table(this.userList);
       });
 
+      this.onSubmit();
+
+    }
+
+    onSubmit() {
+      // Appel de la fonction getUserData() pour obtenir les données de l'utilisateur connecté
+      this.userService.getUserData().subscribe(
+        (userData) => {
+          // Utilisez les données de l'utilisateur connecté ici, par exemple :
+          console.log('Données de l\'utilisateur connecté :', userData);
+          this.userData = userData;
+        },
+        (error) => {
+          console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
+        }
+      );
+  
+      // Autres actions à effectuer lors de la soumission du formulaire
     }
 }
 

@@ -38,4 +38,19 @@ export class AuthService {
     return null; // Aucun utilisateur connecté ou token manquant
   }
 
+  getLoggedInUserEmail(): string | null {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const tokenParts = token.split('.');
+      if (tokenParts.length === 3) {
+        const payload = JSON.parse(atob(tokenParts[1]));
+        const email = payload.username; // Remplacez 'email' par la clé correcte dans votre payload
+        console.log(email);
+        
+        return email;
+      }
+    }
+    return null;
+  }
+
 }

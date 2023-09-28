@@ -1,6 +1,7 @@
 import { IAdress } from "../adress/adress.interface"
 
 export interface IUser {
+    id:number,
     firstName: string,
     lastName: string,
     pseudo: string,

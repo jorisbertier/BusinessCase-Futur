@@ -65,82 +65,85 @@
                 </div>
             </div>
         </div>
-        <div class="page mx-auto" >
-        <div class="col-xl-4 py-3 mx-auto bloc1">
 
-            <div class="blocProfil p-5">
+
+        <div class="page mx-auto w-100" >
+            <div class="col-xl-4 py-3 mx-auto bloc1">
+                <div class="blocProfil p-5">
+                <form [formGroup]="editUser" (ngSubmit)="update()">
+
                 <h2>Détails du profil</h2>
                 <hr>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Modifier la photo</label><br>
-                <input type="file" class="form-control-file">
-              </div><br>
+                <!-- <div class="form-group">
+                    <label for="exampleFormControlFile1">Modifier la photo</label><br>
+                    <input type="file" class="form-control-file">
+                </div><br> -->
 
+                <div class="form-group mt-3">
+                    <label for="firstName" class="form-label">firstName</label>
+                    <input type="text" id="firstName" formControlName="firstName" class="form-control">
+                </div>
 
-              <div class="form-group">
-                <label for="exampleInputEmail1">Prénom</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{userData.firstName}}"><br>
-                
-              </div>
+                <div class="form-group mt-3">
+                    <label for="lastName" class="form-label">lastName</label>
+                    <input type="text" id="lastName" formControlName="lastName" class="form-control">
+                </div>
 
-              <div class="form-group">
-                <label for="exampleInputEmail1">Nom</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{userData.lastName}}"><br>
-                
-              </div>
+                <div class="form-group mt-3">
+                    <label for="pseudo" class="form-label">Pseudo</label>
+                    <input type="text" id="pseudo" formControlName="pseudo" class="form-control">
+                </div>
 
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{userData.email}}"><br>
-                
-              </div>
+                <div class="form-group mt-3">
+                    <label for="email" class="form-label">email</label>
+                    <input type="text" id="email" formControlName="email" class="form-control">
+                </div>
 
-              <div class="form-group">
-                <label for="exampleInputEmail1">Numéro de télephone</label>
-                <input type="number" class="form-control" id="exampleInputEmail1" placeholder="{{userData.phoneNumber}}"><br>
-                
-              </div>
+                <div class="form-group mt-3">
+                    <label for="phoneNumber" class="form-label">phoneNumber</label>
+                    <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control">
+                </div>
 
-            <div class="form-group">
-                <label for="profilTextArea">À propos de moi</label>
-                <textarea class="form-control" id="profilTextArea" rows="3" onkeyup="reste(this.value);" maxlength="250"></textarea><br>
-                <small><span class="caractereRestant">250 </span>caractères restants</small>
-              </div>
+                <!-- <div class="form-group">
+                    <label for="profilTextArea">À propos de moi</label>
+                    <textarea class="form-control" id="profilTextArea" rows="3" onkeyup="reste(this.value);" maxlength="250"></textarea><br>
+                    <small><span class="caractereRestant">250 </span>caractères restants</small>
+                </div> -->
+            </form>
         </div>
     </div>
-
-        <div class="col-xl-4 mx-auto bloc2">
-            <div class="blocProfil p-5">
+    <div class="col-xl-4 mx-auto bloc2">
+        <div class="blocProfil p-5">
+        <form [formGroup]="editUser" (ngSubmit)="update()">
             <h2>Changer de mot passe</h2>
             <hr>
             <div class="consignePassword">Votre mot de passe doit au moins être<br> de 8 caractères de long,
                 contenir 1 lettre<br> majuscule, minuscule, un chiffre et ne<br> doit pas contenir d'espace ou d'emoji.
             </div><br>
-            <div>
+            <!-- <div>
                 <label for="inputPassword5" class="form-label">Mot de passe actuel</label>
                 <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder=""><br>
-
+            </div> -->
             <div>
-                <label for="inputPassword5" class="form-label">Nouveau mot de passe</label>
-                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"><br>
+                <label for="password" class="form-label">password</label>
+                <input type="password" id="password" formControlName="password" class="form-control">
             </div>
-
+<!-- 
             <div>
                 <label for="inputPassword5" class="form-label">Confirmer nouveau mot de passe</label>
                 <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-            </div><br>
-            <button type="submit" class="btn mx-auto">Sauvegarder les modifications</button>
-        </div>
+            </div><br> -->
+            <div *ngIf="updateUser" class="alert alert-success">Profil mis à jour</div>
+            <button type="submit" [disabled]="!editUser.valid" class="btn mx-auto mt-3">Sauvegarder les modifications</button>
 
+    </form>
             </div>
-
-            
-
         </div>
-        </div><!-- dernier rajouter -->
+    </div><!-- dernier rajouter -->
+
     </div>
 </div>
-
+<!-- 
 <div *ngIf="userData" > {{userData.pseudo}}</div>
 <div class="container text-light">
     <form [formGroup]="editUser" (ngSubmit)="update()">
@@ -148,6 +151,11 @@
       <div class="mb-3">
         <label for="firstName" class="form-label">firstName</label>
         <input type="text" id="firstName" formControlName="firstName" class="form-control">
+    </div>
+        
+      <div class="mb-3">
+        <label for="lastName" class="form-label">lastName</label>
+        <input type="text" id="lastName" formControlName="lastName" class="form-control">
     </div>
 
       <div class="mb-3">
@@ -166,10 +174,15 @@
     </div>
 
       <div class="mb-3">
+        <label for="phoneNumber" class="form-label">phoneNumber</label>
+        <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control">
+    </div>
+
+      <div class="mb-3">
         <label for="avatar" class="form-label">avatar</label>
         <input type="text" id="avatar" formControlName="avatar" class="form-control">
     </div>
-
+    <div *ngIf="updateUser" class="alert alert-success">Profil mis à jour</div>
       <button type="submit" [disabled]="!editUser.valid" class="btn btn-primary">Save modification</button>
     </form>
-  </div>
+  </div> -->

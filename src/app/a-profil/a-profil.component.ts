@@ -14,6 +14,7 @@ export class AProfilComponent implements OnInit{
 
   userList: IUser[] = [];
   userData: any;
+  updateUser: boolean = false;
 
   constructor(
     private userService: UserService,
@@ -44,8 +45,10 @@ export class AProfilComponent implements OnInit{
     
             // Remplissez les FormControl avec les données de l'utilisateur connecté
             this.editUser.controls['firstName'].setValue(userData.firstName);
+            this.editUser.controls['lastName'].setValue(userData.lastName);
             this.editUser.controls['pseudo'].setValue(userData.pseudo);
             this.editUser.controls['email'].setValue(userData.email);
+            this.editUser.controls['phoneNumber'].setValue(userData.phoneNumber);
             this.editUser.controls['avatar'].setValue(userData.avatar);
           }
         },
@@ -61,6 +64,7 @@ export class AProfilComponent implements OnInit{
         (userData) => {
           console.log('Données de l\'utilisateur connecté :', userData);
           this.userData = userData;
+          
         },
         (error) => {
           console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
@@ -71,15 +75,18 @@ export class AProfilComponent implements OnInit{
     
       public editUser: FormGroup = new FormGroup({
         firstName: new FormControl(''),
+        lastName: new FormControl(''),
         pseudo: new FormControl(''),
         email: new FormControl(''),
         password: new FormControl(''),
+        phoneNumber: new FormControl(''),
         avatar: new FormControl(''),
       });
 
       update(){
       this.userService.updateUser(this.route.snapshot.params['id'], this.editUser.value).subscribe((result)  => {
         console.log(result);
+        this.updateUser = true;
         this.router.navigate(['/profil/'+ this.route.snapshot.params['id']]);
       })
       }

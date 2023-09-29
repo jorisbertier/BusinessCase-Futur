@@ -23,5 +23,4 @@ export interface result {
     true:string | undefined
     err: string | undefined
     userApi: string | undefined
-
 }

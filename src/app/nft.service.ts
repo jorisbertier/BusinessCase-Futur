@@ -13,12 +13,6 @@ export class NftService {
 
   url = "https://127.0.0.1:8000/nft/api/nft/";
   urlNaruto= "https://127.0.0.1:8000/nft/api/naruto";
-  // header = {
-  //   'Access-Control-Allow-Origin':'*',
-  //   'Access-Control-Allow-Headers': '*',
-  //   'Access-Control-Allow-Methods': '*',
-  //   'content-type': 'application/json'
-  // };
 
   constructor(private http: HttpClient, private authService: AuthService, private userService: UserService) { }
 
@@ -67,5 +61,9 @@ export class NftService {
         return throwError(error);
       })
     );
+  }
+
+  deleteNftById(id: number): Observable<resultNft>{
+    return this.http.delete<resultNft>('https://127.0.0.1:8000/nft/api/delete/' + id);
   }
 }

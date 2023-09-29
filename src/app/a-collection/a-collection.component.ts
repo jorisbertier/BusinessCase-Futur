@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NftService } from '../nft.service';
 import { UserService } from 'src/service/user/user.service';
+import { INft } from 'src/interface/nft/nft.interface';
 
 @Component({
   selector: 'app-a-collection',
@@ -11,6 +12,9 @@ export class ACollectionComponent implements OnInit {
 
   userData: any;
   nfts: any;
+  nftList: INft[] = [];
+
+
   constructor(private userService: UserService, private nftService: NftService ) {}
 
   ngOnInit() {
@@ -38,13 +42,27 @@ export class ACollectionComponent implements OnInit {
     );
   }
 
-  nftList: any;
+  
   
   getNftsForUser(id : number) {
     this.nftService.getNftsForUser(id).subscribe(nftListResult => {
       this.nftList = nftListResult;
         console.table(this.nftList);
       });
+  }
+
+  deleteNftById(id: number, index: number) {
+    this.nftService.deleteNftById(id).subscribe(resultatDelete => {
+      this.nftList.splice(index,1);
+      console.log(this.nftList);
+    });
+  }
+
+  confirmDeleteNft(id: number, index: number): void {
+    const confirmation = window.confirm('Êtes-vous sûr de vouloir supprimer cet élément ? Cela sera définitif !!');
+    if (confirmation) {
+      this.deleteNftById(id, index);
+    }
   }
 
 }

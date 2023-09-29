@@ -94,12 +94,12 @@
       <div class="page col-10" >
         <!-- <div class="col-10 py-3 mx-auto d-flex flex-row"> -->
          <div class="row text-center w-100 mx-auto">
-          <div class="col-3 mt-3" *ngFor="let nft of nftList">
+          <div class="col-3 mt-3" *ngFor="let nft of nftList; let index = index;">
             
             <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris">
             <h2>{{nft.title}} #{{nft.id}}</h2>
               <span>{{nft.price}} </span><img src="../../assets/img/eth/eth.png" class="eth"> <br>
-              <button class="btn button1 me-2">Ajouter</button><button class="btn btn-danger">Supprimer</button>
+              <button class="btn button1 me-2">Ajouter</button><button (click)="confirmDeleteNft(nft.id, index)" class="btn btn-danger">Supprimer</button>
         </div>
       </div>
 

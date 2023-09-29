@@ -17,10 +17,6 @@ export interface INft {
         collection: ICollection
 }
 
-// expordt interface user {
-//         pseudo: string
-// }
-
 export interface resultNft{
         true:string | undefined
         err: string | undefined

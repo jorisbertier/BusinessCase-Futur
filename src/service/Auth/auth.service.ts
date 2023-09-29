@@ -46,7 +46,6 @@ export class AuthService {
         const payload = JSON.parse(atob(tokenParts[1]));
         const email = payload.username; // Remplacez 'email' par la clé correcte dans votre payload
         console.log(email);
-        
         return email;
       }
     }

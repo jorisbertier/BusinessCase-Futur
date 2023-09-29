@@ -25,6 +25,10 @@
         height: 50px;
         border-radius: 50%;
     }
+
+    .changeImg {
+        border-radius: 30px;
+    }
     .imgCarouselDown {
         border-radius: 30px;
         height: 350px;
@@ -53,8 +57,31 @@
         transition: all 0.15s ease-in-out 0s;
         transform-origin: center center;
         user-select: none;
-        color: white;
+        color: $main-color-background;
     }
+
+    .nomCollection {
+        font-weight: 700;
+        font-size: 25px;
+    }
+    h2 {
+        font-weight: 700;
+        font-size: 25px;
+    }
+    h3 {
+        font-weight: 700;
+        font-size: 30px;
+        color: $main-color-background;
+    }
+    p {
+        color: $main-color-background;
+        font-weight: 600;
+    }
+    .changeText {
+        color: $main-color-background;
+        font-weight: 600;
+    }
+
 }
 
 .buttonSlider {

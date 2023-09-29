@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient, HttpHeaders  } from "@angular/common/http";
 import { INft, resultNft } from '../interface/nft/nft.interface';
 import { FormGroup } from '@angular/forms';
 import { Observable, catchError, throwError } from "rxjs";
@@ -20,12 +20,12 @@ export class NftService {
 
   constructor(private http: HttpClient) { }
 
-  addNft(nft: INft): Observable<any> {
-    const body = JSON.stringify(nft);
-    const header = { 'content-type': 'application/x-www-form-urlencoded'};
-    return this.http.post<any>("https://localhost:8000/nft/api/nft", body, {'headers': header})
+  // addNft(nft: INft): Observable<any> {
+  //   const body = JSON.stringify(nft);
+  //   const header = { 'content-type': 'application/x-www-form-urlencoded'};
+  //   return this.http.post<any>("https://localhost:8000/nft/api/nft", body, {'headers': header})
 
-  }
+  // }
 
   getAllNfts(): Observable<INft[]>{
     
@@ -44,6 +44,17 @@ export class NftService {
   getSixLastNaruto(): Observable<INft[]>{
     
     return this.http.get<INft[]>(this.urlNaruto);
+  }
+
+  
+  createNft(nft: INft, token: string): Observable<any> {
+    const body = JSON.stringify(nft);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.post<any>('https://127.0.0.1:8000/nft/api/nft', body, { headers });
   }
   
 }

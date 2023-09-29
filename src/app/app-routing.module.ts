@@ -10,6 +10,7 @@ import { ARegisterComponent } from './a-register/a-register.component';
 import { ABasketComponent } from './a-basket/a-basket.component';
 import { AFavorisComponent } from './a-favoris/a-favoris.component';
 import { ALoginComponent } from './a-login/a-login.component';
+import { ACollectionComponent } from './a-collection/a-collection.component';
 
 const routes: Routes = [
   {path: '', component: AHomeComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'cart', component: ABasketComponent, canActivate:[authGuard]},
   {path: 'favoris', component: AFavorisComponent, canActivate:[authGuard]},
   {path: 'login', component: ALoginComponent},
+  {path: 'collection', component: ACollectionComponent},
 ];
 
 @NgModule({

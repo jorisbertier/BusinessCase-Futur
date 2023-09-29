@@ -23,7 +23,7 @@ hr {
 }
 
 ul li span, ul li a{
-    color : white !important;
+    color : white;
 }
 
 input {
@@ -50,10 +50,11 @@ ul li i {
 }
 
 ul li span:hover {
-    background-color: #5A3E51;
-    padding: 10px;
-    border-radius: 25px;
+    // background-color: #5A3E51;
+//     padding: 10px;
+//     border-radius: 25px;
     transition: 400ms;
+color: #5A3E51;
 }
 
 .page {

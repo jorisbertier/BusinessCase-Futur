@@ -25,6 +25,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ALoginComponent } from './a-login/a-login.component';
 import { TokenInterceptor } from './token.interceptor';
 import { ArticleComponent } from './article/article.component';
+import { ACollectionComponent } from './a-collection/a-collection.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ArticleComponent } from './article/article.component';
     AFavorisComponent,
     ALoginComponent,
     ArticleComponent,
+    ACollectionComponent,
   ],
   imports: [
     BrowserModule,

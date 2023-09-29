@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from "@angular/common/http";
 import { INft, resultNft } from '../interface/nft/nft.interface';
-import { FormGroup } from '@angular/forms';
-import { Observable, catchError, throwError } from "rxjs";
+import { Observable, catchError, throwError, switchMap} from "rxjs";
+import { AuthService } from 'src/service/Auth/auth.service';
+import { UserService } from 'src/service/user/user.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +20,7 @@ export class NftService {
   //   'content-type': 'application/json'
   // };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService, private userService: UserService) { }
 
   // addNft(nft: INft): Observable<any> {
   //   const body = JSON.stringify(nft);
@@ -57,4 +59,13 @@ export class NftService {
     return this.http.post<any>('https://127.0.0.1:8000/nft/api/nft', body, { headers });
   }
   
+
+  getNftsForUser(userId: number): Observable<INft[]> {
+    return this.http.get<INft[]>(`https://127.0.0.1:8000/nft/api/nft/user/${userId}`).pipe(
+      catchError((error: any) => {
+        // Gérer les erreurs de requête ici
+        return throwError(error);
+      })
+    );
+  }
 }

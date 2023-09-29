@@ -1,0 +1,108 @@
+<app-nav-bar></app-nav-bar>
+
+<app-nav-bar></app-nav-bar>
+<!-- <p>a-favoris works!</p>
+<p>a-favoris works!</p>
+<p>a-favoris works!</p>
+<p>a-favoris works!</p> -->
+
+<!-- <h1>Mes NFT Favoris</h1>
+<div class="container">
+<div class="row">
+<div class="col-4"  *ngFor="let nft of favoris">
+
+    
+<article>
+  <h2>{{nft.title}}</h2>
+  <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris">
+  <span>{{nft.price}}</span>
+  <h2>{{nft.description}}</h2>
+  <button class="btn btn-danger" (click)="removeFromFavoris(nft)">Delete</button>
+</article>
+
+</div>
+</div>
+</div> -->
+
+
+<div class="container-fluid profiler">
+  <div class="row flex-nowrap">
+      <div class="col-2 col-xl-2 col-md-2 col-sm-2 sidebar">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+
+                  <span class="d-none d-sm-inline menuProfil menuList">Principale</span>
+                  <hr>
+
+              <ul class="nav nav-pills flex-column mb-sm-auto mb-0  align-items-sm-start"
+                  id="menu">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link align-middle px-0">
+                          <i class="fa-regular fa-images pr-2"></i><span class="ms-1 d-none d-sm-inline">Ma
+                              collection</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                          <i class="fa-regular fa-envelope-open"></i><span
+                              class="ms-1 d-none d-sm-inline">Message</span> </a>
+                  </li>
+                  <span class="d-none d-sm-inline my-3 menuList">Liste</span>
+                  <li>
+                      <a routerLink="/favoris" class="nav-link px-0 align-middle">
+                          <i class="fa-regular fa-heart"></i><span class="ms-1 d-none d-sm-inline">Mes
+                              favoris</span></a>
+                  </li>
+                  <span class="d-none d-sm-inline my-3 menuList">Compte</span>
+                  <li>
+                      <a routerLink="/profil" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                          <i class="fa-regular fa-user"></i><span
+                              class="ms-1 d-none d-sm-inline">Profil</span></a>
+                  </li>
+                  <li>
+                      <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                          <i class="fa-solid fa-gear"></i><span class="ms-1 d-none d-sm-inline">Paramètres</span>
+                      </a>
+                  </li>
+                  <li class="w-100">
+                      <a href="#" class="nav-link px-0 align-middle">
+                          <i class="fa-solid fa-power-off"></i> <span
+                              class="ms-1 d-none d-sm-inline">Déconnexion</span>
+                      </a>
+                  </li>
+              </ul>
+              <hr>
+              <div class="dropdown pb-4">
+                  <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                      id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
+                          class="rounded-circle">
+                      <span class="d-none d-sm-inline mx-1">loser</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                      <li><a class="dropdown-item" href="#">New project...</a></li>
+                      <li><a class="dropdown-item" href="#">Settings</a></li>
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Sign out</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+      <div class="page col-10" >
+        <!-- <div class="col-10 py-3 mx-auto d-flex flex-row"> -->
+         <div class="row text-center w-100 mx-auto">
+          <div class="col-3 mt-3" *ngFor="let nft of nftList">
+            
+            <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris">
+            <h2>{{nft.title}} #{{nft.id}}</h2>
+              <span>{{nft.price}} </span><img src="../../assets/img/eth/eth.png" class="eth"> <br>
+              <button class="btn button1 me-2">Ajouter</button><button class="btn btn-danger">Supprimer</button>
+        </div>
+      </div>
+
+  </div>
+</div>
+

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/interface/user/user.interface';
 import { UserService } from 'src/service/user/user.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AuthService } from 'src/service/Auth/auth.service';
+import {ActivatedRoute, Router} from "@angular/router";
+import { HttpClient } from '@angular/common/http';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-a-profil',
@@ -14,7 +15,12 @@ export class AProfilComponent implements OnInit{
   userList: IUser[] = [];
   userData: any;
 
-  constructor(private userService: UserService, private http: HttpClient) {}
+  constructor(
+    private userService: UserService,
+    private http: HttpClient,
+    private route:ActivatedRoute,
+    private router: Router
+    ) {}
 
   ngOnInit() {
     console.log(this.userService.getAllUser());
@@ -26,13 +32,33 @@ export class AProfilComponent implements OnInit{
 
       this.onSubmit();
 
+      //test
+      const userId = this.route.snapshot.params['id'];
+      this.userService.getUserData().subscribe(
+        (userData) => {
+          console.log('Données de l\'utilisateur connecté :', userData);
+    
+          // Vérifiez si userData n'est pas undefined avant d'accéder à ses propriétés
+          if (userData) {
+            this.userData = userData;
+    
+            // Remplissez les FormControl avec les données de l'utilisateur connecté
+            this.editUser.controls['firstName'].setValue(userData.firstName);
+            this.editUser.controls['pseudo'].setValue(userData.pseudo);
+            this.editUser.controls['email'].setValue(userData.email);
+            this.editUser.controls['avatar'].setValue(userData.avatar);
+          }
+        },
+        (error) => {
+          console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
+        }
+      );
+
     }
 
     onSubmit() {
-      // Appel de la fonction getUserData() pour obtenir les données de l'utilisateur connecté
       this.userService.getUserData().subscribe(
         (userData) => {
-          // Utilisez les données de l'utilisateur connecté ici, par exemple :
           console.log('Données de l\'utilisateur connecté :', userData);
           this.userData = userData;
         },
@@ -40,8 +66,22 @@ export class AProfilComponent implements OnInit{
           console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
         }
       );
-  
-      // Autres actions à effectuer lors de la soumission du formulaire
     }
+
+    
+      public editUser: FormGroup = new FormGroup({
+        firstName: new FormControl(''),
+        pseudo: new FormControl(''),
+        email: new FormControl(''),
+        password: new FormControl(''),
+        avatar: new FormControl(''),
+      });
+
+      update(){
+      this.userService.updateUser(this.route.snapshot.params['id'], this.editUser.value).subscribe((result)  => {
+        console.log(result);
+        this.router.navigate(['/profil/'+ this.route.snapshot.params['id']]);
+      })
+      }
 }
 

@@ -53,8 +53,8 @@
                               favoris</span></a>
                   </li>
                   <span class="d-none d-sm-inline my-3 menuList">Compte</span>
-                  <li>
-                      <a routerLink="/profil" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                  <li *ngIf="userData">
+                      <a [routerLink]="'/profil/' + (userData?.id || '')" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
                           <i class="fa-regular fa-user"></i><span
                               class="ms-1 d-none d-sm-inline">Profil</span></a>
                   </li>

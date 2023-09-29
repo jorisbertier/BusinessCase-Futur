@@ -42,4 +42,10 @@ export class UserService {
   // getUserInfo(): Observable<any> {
   //   return this.http.get('https://127.0.0.1:8000/user/api/user/info'); // L'URL doit correspondre à votre route Symfony
   // }
+
+  updateUser(id :number, data :any){
+    const body = JSON.stringify(data);
+    const header = { 'content-type': 'application/x-www-form-urlencoded'};
+    return this.http.put<result>(`https://127.0.0.1:8000/user/api/user/${id}`, body,  {'headers': header});
+  }
 }

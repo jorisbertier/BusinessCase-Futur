@@ -37,8 +37,8 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/register">Register</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/profil" *ngIf="checkIsLogged()">Profil</a>
+                <li class="nav-item" *ngIf="userData">
+                    <a class="nav-link" [routerLink]="'/profil/' + (userData?.id || '')" *ngIf="checkIsLogged()">Profil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/cart" *ngIf="checkIsLogged()">Cart<span>{{totalItem}}</span></a>

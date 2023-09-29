@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../service/Cart/cart.service';
 import { AuthService } from 'src/service/Auth/auth.service';
+import { UserService } from 'src/service/user/user.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,13 +11,23 @@ import { AuthService } from 'src/service/Auth/auth.service';
 export class NavBarComponent implements OnInit {
 
   public totalItem : number = 0;
-  constructor(private cartService: CartService, private auth: AuthService) {
+  userData: any;
 
-  }
-  ngOnInit(): void {
+  constructor(
+    private cartService: CartService,
+    private auth: AuthService,
+    private userService: UserService
+    )
+    {}
+
+  ngOnInit() : void {
     // this.cartService.getProducts().subscribe( res => {
     //   this.totalItem = res.length;
     // })
+
+    this.getUserData();
+    console.log(this.getUserData());
+    console.log('yoooo');
 
   }
 
@@ -26,5 +37,17 @@ export class NavBarComponent implements OnInit {
 
   checkIsLogged(): boolean {
     return this.auth.isLogged();
+  }
+
+  getUserData() {
+    this.userService.getUserData().subscribe(
+      (userData) => {
+        console.log('Données de l\'utilisateur connecté :', userData);
+        this.userData = userData;
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
+      }
+    );
   }
 }

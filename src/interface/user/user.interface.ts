@@ -13,6 +13,15 @@ export interface IUser {
     gender: string,
     adresses : IAdress
 }
+export interface IUserEdit {
+    firstName: string,
+    // lastName: string,
+    pseudo: string,
+    email: string,
+    password: string,
+    // phoneNumber: string,
+    avatar: string,
+}
 
 export interface Icredentials {
     username: string,

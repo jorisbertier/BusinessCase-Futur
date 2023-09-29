@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'gallery', component: AGalleryComponent, canActivate:[authGuard]},
   {path: 'gallery/:id', component: ANftDetailsComponent, canActivate:[authGuard]},
   {path: 'formNft', component: AFormNftComponent, canActivate:[authGuard]},
-  {path: 'profil', component: AProfilComponent, canActivate:[authGuard]},
+  {path: 'profil/:id', component: AProfilComponent, canActivate:[authGuard]},
   {path: 'register', component: ARegisterComponent},
   {path: 'cart', component: ABasketComponent, canActivate:[authGuard]},
   {path: 'favoris', component: AFavorisComponent, canActivate:[authGuard]},

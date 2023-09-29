@@ -79,9 +79,12 @@ export class AProfilComponent implements OnInit{
         pseudo: new FormControl(''),
         email: new FormControl(''),
         password: new FormControl(''),
+        confirmPassword: new FormControl(''),
         phoneNumber: new FormControl(''),
         avatar: new FormControl(''),
       });
+
+      
 
       update(){
       this.userService.updateUser(this.route.snapshot.params['id'], this.editUser.value).subscribe((result)  => {

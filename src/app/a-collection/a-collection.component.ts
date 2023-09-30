@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NftService } from '../nft.service';
 import { UserService } from 'src/service/user/user.service';
 import { INft } from 'src/interface/nft/nft.interface';
+import { EthService } from 'src/service/Eth/eth.service';
+import { IEth } from 'src/interface/eth/eth.interface';
 
 @Component({
   selector: 'app-a-collection',
@@ -13,9 +15,14 @@ export class ACollectionComponent implements OnInit {
   userData: any;
   nfts: any;
   nftList: INft[] = [];
+  ethActualPrice: IEth | undefined;
 
 
-  constructor(private userService: UserService, private nftService: NftService ) {}
+  constructor(
+    private userService: UserService,
+     private nftService: NftService,
+     private ethService: EthService
+      ) {}
 
   ngOnInit() {
     this.getNftUserConnected();
@@ -26,6 +33,16 @@ export class ACollectionComponent implements OnInit {
         this.getNftsForUser(userId);
       }
     });
+
+    this.totalPriceNft();
+
+    this.ethService.getActualPriceEth().subscribe(ethResultOne => {
+      this.ethActualPrice = ethResultOne;
+      });
+      console.log(this.ethActualPrice);
+      console.log('test');
+      
+
   }
 
   getNftUserConnected() {
@@ -62,6 +79,14 @@ export class ACollectionComponent implements OnInit {
     if (confirmation) {
       this.deleteNftById(id, index);
     }
+  }
+
+    totalPriceNft(): number {
+    let total = 0;
+    for (const nft of this.nftList) {
+      total += nft.price;
+    }
+    return total;
   }
 
 }

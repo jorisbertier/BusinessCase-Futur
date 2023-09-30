@@ -203,9 +203,6 @@ ul li span:hover {
     }
 }
 
-
-//test
-
 .manageBloc {
     background-color: $main-color-black;
     height: 350px;
@@ -257,7 +254,7 @@ ul li span:hover {
 
     h2 {
         font-size:20px;
-        // font-weight: ;
+
     }
 
     span {
@@ -279,4 +276,23 @@ ul li span:hover {
     button {
         height: 40px;
     }
+}
+
+.dash {
+    color: $main-color-background;
+    .dash1 {
+        background-color: $main-color-black;
+        border-radius: 30px;
+        height: 150px;
+        
+    }
+    .dash2 {
+        background-color: $main-color-black;
+        border-radius: 30px;
+        height: 150px;
+        h2{
+            color: $main-color-background;
+        }
+    }
+
 }

@@ -51,6 +51,7 @@ export class ANftDetailsComponent {
     this.ethService.getActualPriceEth().subscribe(ethResultOne => {
       this.ethActualPrice = ethResultOne;
       });
+      console.log(this.ethActualPrice);
 
       const ethPrices: number [] = [];
       const ethUpdateDates: string [] = [];

@@ -102,7 +102,7 @@
             <div class="mt-5">
                 <div class="explore1"><h3>EXPLORE ALL</h3></div>
                 <div class="explore2"><h3>EXPLORE ALL</h3></div>
-                <div  class="explore3"><h3>EXPLORE ALL</h3></div>
+                <div class="explore3"><h3>EXPLORE ALL</h3></div>
             </div>
     </div>
     <div class="col-10 mx-auto">
@@ -123,8 +123,8 @@
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="ms-2">
-                        <h2>#{{nft.id}}</h2>
-                        <span>{{nft.title}}</span><br>
+                        <h2>{{nft.title}}</h2>
+                        <span>#{{nft.id}}</span><br>
                         <img src="../../assets/img/eth/eth.png" class="eth"> <span class="ms-2 ">{{nft.price}} </span> <br>
                         
                     </div>
@@ -139,26 +139,41 @@
     </div>
 
 
-    <div class="page col-10 mx-auto dash" >
+    <div class="page col-10 mx-auto dash mb-5" >
         <div class="container-fluid">
         <div class="row d-flex justify-content-between">
-            <div class="col-6 dash1"></div>
-            <div class="col-5 dash2" *ngIf="ethActualPrice">
-                <h2>Kulte owner</h2>
+
+            <div class="col-6 dash1">
+                    <h2 class="title">Kulte owner</h2>
+
+                
+                <div class="bloc1 mb-3">
+                    <img src="../../assets/img/article/sparkle4.png">
+                    
+                </div>
+                <div class="bloc2 mb-5 ms-2"  *ngIf="ethActualPrice">
+                    <h3 *ngIf="ethYesterdayPrice">Ta balance {{ ((totalPriceNft() * ethActualPrice.currentPrice / 100) - (totalPriceNft() * ethYesterdayPrice.currentPrice / 100)) / (totalPriceNft() * ethActualPrice.currentPrice / 100) * 100 | number:'1.0-0'}} %</h3>
+                </div>
+            </div>
+
+            <div class="col-5 dash2 d-flex flex-column align-items-center" *ngIf="ethActualPrice">
+                <h2>TA BALANCE</h2>
+
                 <h3>Valeur totale Aujourd'hui - J0</h3>
                 <p>{{ totalPriceNft() * ethActualPrice.currentPrice /100 | number : '1.2-2' }} €</p>
-                <p> {{ethActualPrice.currentPrice / 100}} € cours actuel</p>
+                
                 <h3>Valeur total Hier - J-1</h3>
-                <div *ngIf="ethYesterdayPrice">{{ totalPriceNft() * ethYesterdayPrice.currentPrice / 100 | number : '1.2-2'}} €</div>
+                <p *ngIf="ethYesterdayPrice">{{ totalPriceNft() * ethYesterdayPrice.currentPrice / 100 | number : '1.2-2'}} €</p>
+
                 <h3>Différence entre J0 et J-1</h3>
-                <div *ngIf="ethYesterdayPrice">{{(totalPriceNft() * ethActualPrice.currentPrice /100) - (totalPriceNft() * ethYesterdayPrice.currentPrice / 100) | number : '1.2-2' }} €</div>
+                <p *ngIf="ethYesterdayPrice">{{(totalPriceNft() * ethActualPrice.currentPrice /100) - (totalPriceNft() * ethYesterdayPrice.currentPrice / 100) | number : '1.2-2' }} €</p>
+
+                <h3>Cours Actuel</h3>
+                <p> {{ethActualPrice.currentPrice / 100}} €</p>
             </div>
         </div>
         </div>
     </div>
-
-
-
 
 
 </div>

@@ -91,18 +91,53 @@
           </div>
       </div>
 
-      <div class="page col-10" >
-        <!-- <div class="col-10 py-3 mx-auto d-flex flex-row"> -->
-         <div class="row text-center w-100 mx-auto">
-          <div class="col-3 mt-3" *ngFor="let nft of nftList; let index = index;">
+      <div class="page col-10 mx-auto" >
+        <div class="container-fluid manageBloc d-flex justify-content-between mt-3">
+            <div class="mt-5 ms-4">
+                <h1>MANAGE TES NFTS</h1>
+                <p class="mt-4">Dashboard de gestion de tes NFTS.<br>
+                Achète, créer, vend et découvre des items digitales exclusifs.
+                </p>
+            </div>
+            <div class="mt-5">
+                <div class="explore1"><h3>EXPLORE ALL</h3></div>
+                <div class="explore2"><h3>EXPLORE ALL</h3></div>
+                <div  class="explore3"><h3>EXPLORE ALL</h3></div>
+            </div>
+    </div>
+    <div class="col-10 mx-auto">
+        
+            <!-- <div class="col-3 mt-3" *ngFor="let nft of nftList; let index = index;">
+                <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris">
+                <h2>{{nft.title}} #{{nft.id}}</h2>
+                <span>{{nft.price}} </span><img src="../../assets/img/eth/eth.png" class="eth"> <br>
+                <button class="btn button1 me-2">Ajouter</button><button (click)="confirmDeleteNft(nft.id, index)" class="btn btn-danger">Supprimer</button>
+            </div> -->
             
-            <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris">
-            <h2>{{nft.title}} #{{nft.id}}</h2>
-              <span>{{nft.price}} </span><img src="../../assets/img/eth/eth.png" class="eth"> <br>
-              <button class="btn button1 me-2">Ajouter</button><button (click)="confirmDeleteNft(nft.id, index)" class="btn btn-danger">Supprimer</button>
+        <div class="row w-100 mx-auto d-flex justify-content-around">
+            <div class="col-3 globe" *ngFor="let nft of nftList; let index = index;">
+                <div class="text-center">
+                    <img src="./assets/img/actualite/itachi.webp"  class="imgFavoris2">
+                    <!-- <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris2"> -->
+                    <a (click)="confirmDeleteNft(nft.id, index)" class="text-danger"><i class="fas fa-trash fa-lg icon-overlay"></i></a>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="ms-2">
+                        <h2>#{{nft.id}}</h2>
+                        <span>{{nft.title}}</span><br>
+                        <img src="../../assets/img/eth/eth.png" class="eth"> <span class="ms-2 ">{{nft.price}} </span> <br>
+                        
+                    </div>
+                    <div class="d-flex text-left">
+                        <!-- <button class="btn btn-danger">Supprimer</button> -->
+                        <button class="btn button1 me-2">Edit</button>
+                    </div>
+                </div>             
+            </div>
         </div>
-      </div>
-
+    
+    </div>
+</div>
   </div>
 </div>
 

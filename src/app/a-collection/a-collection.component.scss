@@ -202,3 +202,81 @@ ul li span:hover {
         width: 130px;
     }
 }
+
+
+//test
+
+.manageBloc {
+    background-color: $main-color-black;
+    height: 350px;
+    border-radius: 30px;
+    color: $main-color-background;
+    position: relative;
+    z-index: 1;
+
+    h1 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .explore1{
+        color: $main-color-background;
+        opacity: 0.7;
+        margin-right: 150px;
+    }
+    .explore2{
+        color: #47484F;
+    }
+    .explore3{
+        color: #2C2D36;
+    }
+}
+
+.globe {
+    margin-top: -100px;
+    background-color: white;
+    z-index: 2;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+    width: auto;
+    z-index: 2;
+    margin-bottom: 130px;
+    .imgFavoris2 {
+        object-fit: fill;
+        height: 200px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size:20px;
+        // font-weight: ;
+    }
+
+    span {
+        font-weight: bold;
+    }
+    .icon-overlay {
+        position: relative;
+        bottom: 19px;
+        right: -53px;
+        background-color: white;
+        border-radius: 50%;
+        padding: 18px;
+        z-index: 1;
+    }
+    .icon-overlay i {
+        font-size: 20px;
+    }
+
+    button {
+        height: 40px;
+    }
+}

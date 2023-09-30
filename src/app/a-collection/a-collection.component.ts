@@ -41,7 +41,6 @@ export class ACollectionComponent implements OnInit {
       }
     );
   }
-
   
   
   getNftsForUser(id : number) {

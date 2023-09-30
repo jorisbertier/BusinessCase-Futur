@@ -16,6 +16,7 @@ export class ACollectionComponent implements OnInit {
   nfts: any;
   nftList: INft[] = [];
   ethActualPrice: IEth | undefined;
+  ethYesterdayPrice: IEth | undefined;
 
 
   constructor(
@@ -39,8 +40,8 @@ export class ACollectionComponent implements OnInit {
     this.ethService.getActualPriceEth().subscribe(ethResultOne => {
       this.ethActualPrice = ethResultOne;
       });
-      console.log(this.ethActualPrice);
-      console.log('test');
+
+    this.getYesterdayPriceEth();
       
 
   }
@@ -81,7 +82,7 @@ export class ACollectionComponent implements OnInit {
     }
   }
 
-    totalPriceNft(): number {
+  totalPriceNft(): number {
     let total = 0;
     for (const nft of this.nftList) {
       total += nft.price;
@@ -89,4 +90,9 @@ export class ACollectionComponent implements OnInit {
     return total;
   }
 
+  getYesterdayPriceEth() {
+    this.ethService.getYesterdayPriceEth().subscribe(ethResultYesterday => {
+      this.ethYesterdayPrice = ethResultYesterday;
+      });
+  }
 }

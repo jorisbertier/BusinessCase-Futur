@@ -142,12 +142,16 @@
     <div class="page col-10 mx-auto dash" >
         <div class="container-fluid">
         <div class="row d-flex justify-content-between">
-            <div class="col-7 dash1"></div>
-            <div class="col-4 dash2" *ngIf="ethActualPrice">
+            <div class="col-6 dash1"></div>
+            <div class="col-5 dash2" *ngIf="ethActualPrice">
                 <h2>Kulte owner</h2>
-                <h3>Total balance</h3>
+                <h3>Valeur totale Aujourd'hui - J0</h3>
                 <p>{{ totalPriceNft() * ethActualPrice.currentPrice /100 | number : '1.2-2' }} €</p>
-                <p> {{ethActualPrice.currentPrice / 100}} cours actuel</p>
+                <p> {{ethActualPrice.currentPrice / 100}} € cours actuel</p>
+                <h3>Valeur total Hier - J-1</h3>
+                <div *ngIf="ethYesterdayPrice">{{ totalPriceNft() * ethYesterdayPrice.currentPrice / 100 | number : '1.2-2'}} €</div>
+                <h3>Différence entre J0 et J-1</h3>
+                <div *ngIf="ethYesterdayPrice">{{(totalPriceNft() * ethActualPrice.currentPrice /100) - (totalPriceNft() * ethYesterdayPrice.currentPrice / 100) | number : '1.2-2' }} €</div>
             </div>
         </div>
         </div>

@@ -15,13 +15,13 @@
     
     h2 {
         font-size: 1.4em !important;
-        color: #D9DAFF;
+        color: $main-color-background;
     }
 }
 
 hr {
     height: 2px !important;
-    color: black !important;
+    color: $main-color-black !important;
 }
 
 ul {
@@ -29,7 +29,7 @@ ul {
 }
 
 ul li span, ul li a{
-    color : white;
+    color : $main-color-background;
 }
 
 input {
@@ -39,11 +39,11 @@ input {
 small {
     font-size: 16px !important;
     font-weight: 400;
-    color: #D9DAFF;
+    color: $main-color-background;
 }
 
 span small {
-    color:#D9DAFF;
+    color:$main-color-background;
 }
 
 label, input {
@@ -103,10 +103,10 @@ ul li span:hover {
 
 .sidebar {
     background-color: #100E0E;
+    width: 15%;
     .sidebarBloc {
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 }
 
@@ -148,7 +148,12 @@ ul li span:hover {
         display: flex;
         flex-direction: column;
         .sidebar {
+            width: 100%;
             height: 180px;
+            .sidebarBloc {
+                align-items: center;
+
+            }
             .menuList {
                 visibility: hidden;
                 width: 0px;

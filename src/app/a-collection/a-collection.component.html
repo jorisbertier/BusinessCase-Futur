@@ -9,9 +9,9 @@
                 <span class="d-sm-inline menuProfil menuList">Principale</span>
                 <hr>
 
-              <ul class="nav mb-sm-auto mb-0 align-items-sm-start" id="menu">
+              <ul class="nav mb-sm-auto mb-sm-auto mb-0 align-items-sm-start" id="menu">
                   <li class="nav-item">
-                      <a href="#" class="nav-link align-middle px-0">
+                      <a class="nav-link align-middle px-0">
                           <i class="fa-regular fa-images pr-2"></i><span class="ms-1 d-sm-inline">Ma
                               collection</span>
                       </a>
@@ -145,7 +145,7 @@
                 <h3>Différence entre J0 et J-1</h3>
                 <p *ngIf="ethYesterdayPrice">{{(totalPriceNft() * ethActualPrice.currentPrice /100) - (totalPriceNft() * ethYesterdayPrice.currentPrice / 100) | number : '1.2-2' }} €</p>
 
-                <h3>Cours Actuel</h3>
+                <h3>Cours Actuel ETH en EUR</h3>
                 <p> {{ethActualPrice.currentPrice / 100}} €</p>
             </div>
         </div>

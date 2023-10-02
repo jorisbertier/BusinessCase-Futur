@@ -7,14 +7,6 @@
     border-radius: 10px;
 }
 
-
-
-body {
-    background-color: $main-color-background !important;
-    color: $main-color-black;
-    width: 100%;
-}
-
 #profiler {
     h1 {
         font-size: 45px !important;
@@ -30,6 +22,10 @@ body {
 hr {
     height: 2px !important;
     color: black !important;
+}
+
+ul {
+    flex-direction: column;
 }
 
 ul li span, ul li a{
@@ -83,6 +79,11 @@ ul li span:hover {
         background-color: $main-color-purple;
         color: $main-color-background;
     }
+    .explore {
+        display: flex;
+        flex-direction: column;
+
+    }
 }
 
 .menuProfil {
@@ -102,7 +103,11 @@ ul li span:hover {
 
 .sidebar {
     background-color: #100E0E;
-    width: auto;
+    .sidebarBloc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .blocProfil {
@@ -124,7 +129,7 @@ ul li span:hover {
 }
 .consignePassword {
     padding: 5px;
-    color: #D9DAFF;
+    color: $main-color-background;
     background-color: #100E0E;
     border-radius: 5px;
     font-weight: 400;
@@ -136,70 +141,154 @@ ul li span:hover {
         flex-direction: column !important;
         width: auto;
     }
-    input {
-        width : 400px !important;
-    }
     .bloc1, .bloc2 {
         width: 500px;
     }
-
+    .profiler {
+        display: flex;
+        flex-direction: column;
+        .sidebar {
+            height: 180px;
+            .menuList {
+                visibility: hidden;
+                width: 0px;
+                margin-top: 30px;
+            }
+            ul {
+                justify-content: space-between;
+                flex-direction: row;
+                li {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
 
 }
-@media screen and (max-width: 900px) {
-    .menuList {
-        font-size: 17px;
-    }
-    input {
-        width : 300px !important;
-    }
-    .bloc1, .bloc2 {
-        width: 400px;
-    }
-}
-@media screen and (max-width: 767px) {
-    ul li span {
-        font-size: 12px;
-    }
-    ul li {
-        font-size: 12px;
-    }
-    .menuList {
-        font-size: 15px;
+
+
+@media screen and (max-width: 901px) {
+    .profiler {
+        .sidebar {
+            ul {
+                li {
+                    font-size: 10px;
+                }
+            }
+        }
     }
 }
 
-@media screen and (max-width: 700px) {
-    ul li span {
-        font-size: 10px;
+@media screen and (max-width: 657px) {
+    .profiler {
+        .sidebar {
+            ul {
+                li {
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .page {
+        width: 95%;
+        h1 {
+            font-size: 20px !important;
+        }
+        p {
+            font-size: 10px !important;
+        }
+        h3 {
+            font-size: 10px !important;
+            margin-right: 0px !important;
+        }
+        .explore {
+            display: flex;
+            justify-content: right;
+        }
+    }
+    .manageBloc {
+        width: 95%;
+        height: 250px !important;
+    }
+    .page {
+        margin-top: -5px;
+    }
+    
+    .dash {
+        .dash1 {
+            margin-bottom: 30px;
+        }
     }
 }
 
-@media screen and (max-width: 575px) {
-    input {
-        width : 200px !important;
-    }
-    .bloc1, .bloc2 {
-        width: 280px;
-    }
-    .consignePassword {
-        width: 200px;
-    }
-    .sidebar i {
-        font-size: 20px;
-        margin-top: 65px;
+@media screen and (max-width: 550px) {
+    
+    .dash {
+        display: flex !important;
+        justify-content: center !important;
+        .dash1, .dash2 {
+            width: 80% !important;
+            height: 300px !important;
+        }
+        .dash2 {
+            h2{
+                font-size: 18px;
+            }
+            h3 {
+                font-size: 13px;
+            }
+
+        }
     }
 }
 
 @media screen and (max-width: 445px) {
-    input {
-        width : 130px !important;
+
+    .globe {
+        height: 210px;
+        width: 120px !important;
+
+        .imgFavoris2 {
+            height: 100px !important;
+            border-radius: 10px;
+        }
+        .icon-overlay {
+            bottom: 19px;
+            right: -29px !important;
+            padding: 10px !important;
+            font-size: 12px !important;
+        }
+        h2 {
+            font-size:10px !important;
+        }
+        span {
+            font-size: 10px;
+        }
+        button {
+            font-size: 10px !important;
+            height: 25px !important;
+            width: 30px;
+        }
+        .eth {
+            width: 5px;
+            height: 15px;
+        }
     }
-    .bloc1, .bloc2 {
-        width: 230px;
-        text-align: center;
+}
+
+@media screen and (max-width: 375px) {
+    .manageBloc{
+        height: 280px !important;
     }
-    .consignePassword {
-        width: 130px;
+}
+
+@media screen and (max-width: 350px) {
+    .manageBloc{
+        height: 300px !important;
     }
 }
 
@@ -224,7 +313,7 @@ ul li span:hover {
     .explore1{
         color: $main-color-background;
         opacity: 0.7;
-        margin-right: 150px;
+        margin-right: 30px;
     }
     .explore2{
         color: #47484F;
@@ -241,17 +330,16 @@ ul li span:hover {
     border-radius: 15px;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
-    width: auto;
+    width: 200px;
     z-index: 2;
     margin-bottom: 130px;
+
     .imgFavoris2 {
         object-fit: fill;
         height: 200px;
         width: 100%;
         border-radius: 10px;
     }
-
     h2 {
         font-size:20px;
     }
@@ -281,7 +369,7 @@ ul li span:hover {
     color: $main-color-background;
     margin-top: -100px;
     .dash1 {
-        background: url('../../assets/img/article/sparkle4.png');
+        background: url('../../assets/img/article/sparkle4.png') no-repeat;
         filter: brightness(99%);
         border-radius: 30px;
         height: 400px;
@@ -305,7 +393,7 @@ ul li span:hover {
                 height: 90%;
                 width: 90%;
                 border-radius: 15px;
-                object-fit: none; /* Empêche l'image de s'adapter automatiquement au conteneur */
+                object-fit: none;
                 object-position: -70px -150px;
             }
 
@@ -324,16 +412,18 @@ ul li span:hover {
         height: 400px;
         h2{
             color: $main-color-background;
+            font-size: 25px;
         }
         h3 {
             color: $main-color-background;
+            font-size: 20px;
             opacity: 0.8;
         }
         p{
-            font-size: 20px;
+            font-size: 16px;
             color: #47484F;
             font-weight: bold;
         }
     }
-
 }
+

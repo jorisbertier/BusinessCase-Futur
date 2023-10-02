@@ -1,77 +1,52 @@
 <app-nav-bar></app-nav-bar>
 
-<app-nav-bar></app-nav-bar>
-<!-- <p>a-favoris works!</p>
-<p>a-favoris works!</p>
-<p>a-favoris works!</p>
-<p>a-favoris works!</p> -->
-
-<!-- <h1>Mes NFT Favoris</h1>
-<div class="container">
-<div class="row">
-<div class="col-4"  *ngFor="let nft of favoris">
-
-    
-<article>
-  <h2>{{nft.title}}</h2>
-  <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris">
-  <span>{{nft.price}}</span>
-  <h2>{{nft.description}}</h2>
-  <button class="btn btn-danger" (click)="removeFromFavoris(nft)">Delete</button>
-</article>
-
-</div>
-</div>
-</div> -->
-
 
 <div class="container-fluid profiler">
-  <div class="row flex-nowrap">
-      <div class="col-2 col-xl-2 col-md-2 col-sm-2 sidebar">
-          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+  <div class="row">
+      <div class="col-lg-12 col-xl-2 col-md-12 col-sm-12 col-xs-12 sidebar">
+          <div class="px-3 pt-2 min-vh-100 sidebarBloc">
 
-                  <span class="d-none d-sm-inline menuProfil menuList">Principale</span>
-                  <hr>
+                <span class="d-sm-inline menuProfil menuList">Principale</span>
+                <hr>
 
-              <ul class="nav nav-pills flex-column mb-sm-auto mb-0  align-items-sm-start"
-                  id="menu">
+              <ul class="nav mb-sm-auto mb-0 align-items-sm-start" id="menu">
                   <li class="nav-item">
                       <a href="#" class="nav-link align-middle px-0">
-                          <i class="fa-regular fa-images pr-2"></i><span class="ms-1 d-none d-sm-inline">Ma
+                          <i class="fa-regular fa-images pr-2"></i><span class="ms-1 d-sm-inline">Ma
                               collection</span>
                       </a>
                   </li>
                   <li>
-                      <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                      <a data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                           <i class="fa-regular fa-envelope-open"></i><span
-                              class="ms-1 d-none d-sm-inline">Message</span> </a>
+                              class="ms-1 d-sm-inline">Message</span> </a>
                   </li>
-                  <span class="d-none d-sm-inline my-3 menuList">Liste</span>
+                  <span class=" d-sm-inline my-3 menuList">Liste</span>
                   <li>
                       <a routerLink="/favoris" class="nav-link px-0 align-middle">
-                          <i class="fa-regular fa-heart"></i><span class="ms-1 d-none d-sm-inline">Mes
+                          <i class="fa-regular fa-heart"></i><span class="ms-1 d-sm-inline">Mes
                               favoris</span></a>
                   </li>
-                  <span class="d-none d-sm-inline my-3 menuList">Compte</span>
+                  <span class="d-sm-inline my-3 menuList">Compte</span>
                   <li *ngIf="userData">
                       <a [routerLink]="'/profil/' + (userData?.id || '')" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
                           <i class="fa-regular fa-user"></i><span
-                              class="ms-1 d-none d-sm-inline">Profil</span></a>
+                              class="ms-1 d-sm-inline">Profil</span></a>
                   </li>
                   <li>
                       <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                          <i class="fa-solid fa-gear"></i><span class="ms-1 d-none d-sm-inline">Paramètres</span>
+                          <i class="fa-solid fa-gear"></i><span class="ms-1 d-sm-inline">Paramètres</span>
                       </a>
                   </li>
-                  <li class="w-100">
+                  <!-- <li>
                       <a href="#" class="nav-link px-0 align-middle">
                           <i class="fa-solid fa-power-off"></i> <span
-                              class="ms-1 d-none d-sm-inline">Déconnexion</span>
+                              class="ms-1 d-sm-inline">Déconnexion</span>
                       </a>
-                  </li>
+                  </li> -->
               </ul>
               <hr>
-              <div class="dropdown pb-4">
+              <!-- <div class="dropdown pb-4">
                   <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
                       id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                       <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
@@ -87,11 +62,11 @@
                       </li>
                       <li><a class="dropdown-item" href="#">Sign out</a></li>
                   </ul>
-              </div>
+              </div> -->
           </div>
       </div>
 
-      <div class="page col-10 mx-auto" >
+      <div class="page col-lg-10 col-md-12 mx-auto" >
         <div class="container-fluid manageBloc d-flex justify-content-between mt-3">
             <div class="mt-5 ms-4">
                 <h1>MANAGE TES NFTS</h1>
@@ -99,13 +74,15 @@
                 Achète, créer, vend et découvre des items digitales exclusifs.
                 </p>
             </div>
-            <div class="mt-5">
+            <div class="mt-5 explore">
                 <div class="explore1"><h3>EXPLORE ALL</h3></div>
                 <div class="explore2"><h3>EXPLORE ALL</h3></div>
                 <div class="explore3"><h3>EXPLORE ALL</h3></div>
             </div>
-    </div>
-    <div class="col-10 mx-auto">
+        </div>
+    
+    
+    <div class="col-md-10 col-lg-12 mx-auto">
         
             <!-- <div class="col-3 mt-3" *ngFor="let nft of nftList; let index = index;">
                 <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris">
@@ -114,10 +91,10 @@
                 <button class="btn button1 me-2">Ajouter</button><button (click)="confirmDeleteNft(nft.id, index)" class="btn btn-danger">Supprimer</button>
             </div> -->
             
-        <div class="row w-100 mx-auto d-flex justify-content-around">
-            <div class="col-3 globe" *ngFor="let nft of nftList; let index = index;">
+        <div class="row mx-auto d-flex justify-content-around">
+            <div class="col-md-3 col-sm-1 globe" *ngFor="let nft of nftList; let index = index;">
                 <div class="text-center">
-                    <img src="./assets/img/actualite/itachi.webp"  class="imgFavoris2">
+                    <img src="./assets/img/actualite/itachi.webp" class="imgFavoris2">
                     <!-- <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris2"> -->
                     <a (click)="confirmDeleteNft(nft.id, index)" class="text-danger"><i class="fas fa-trash fa-lg icon-overlay"></i></a>
                 </div>
@@ -130,7 +107,7 @@
                     </div>
                     <div class="d-flex text-left">
                         <!-- <button class="btn btn-danger">Supprimer</button> -->
-                        <button class="btn button1 me-2">Edit</button>
+                        <button class="btn button1 d-flex justify-content-center align-items-center">Edit</button>
                     </div>
                 </div>             
             </div>
@@ -139,11 +116,11 @@
     </div>
 
 
-    <div class="page col-10 mx-auto dash mb-5" >
-        <div class="container-fluid">
-        <div class="row d-flex justify-content-between">
+    <div class="page col-md-10 mx-auto dash mb-5" >
+        <div class="container-fluid mx-auto">
+        <div class="row d-flex justify-content-between align-items-center mx-auto">
 
-            <div class="col-6 dash1">
+            <div class="col-sm-12 col-md-6 dash1 mx-auto">
                     <h2 class="title">Kulte owner</h2>
 
                 
@@ -156,8 +133,8 @@
                 </div>
             </div>
 
-            <div class="col-5 dash2 d-flex flex-column align-items-center" *ngIf="ethActualPrice">
-                <h2>TA BALANCE</h2>
+            <div class="col-sm-12 col-md-5 dash2 d-flex flex-column justify-content-center align-items-center mx-auto" *ngIf="ethActualPrice">
+                <h2>WALLET</h2>
 
                 <h3>Valeur totale Aujourd'hui - J0</h3>
                 <p>{{ totalPriceNft() * ethActualPrice.currentPrice /100 | number : '1.2-2' }} €</p>

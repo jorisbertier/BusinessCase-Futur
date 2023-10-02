@@ -155,8 +155,4 @@ export class ACollectionComponent implements OnInit {
       this.ethYesterdayPrice = ethResultYesterday;
       });
   }
-
-  /////CHART
-  
-
 }

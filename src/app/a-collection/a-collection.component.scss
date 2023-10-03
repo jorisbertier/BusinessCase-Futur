@@ -29,7 +29,7 @@ ul {
 }
 
 ul li span, ul li a{
-    color : $main-color-background;
+    color : white;
 }
 
 input {
@@ -47,7 +47,7 @@ span small {
 }
 
 label, input {
-    color: #D9DAFF;
+    color: $main-color-background;
     font-weight: 400;
 }
 
@@ -56,7 +56,7 @@ ul li i {
 }
 
 ul li span:hover {
-    color: #5A3E51;
+    color: $main-color-purple;
     transition: 400ms;
 }
 
@@ -92,7 +92,7 @@ ul li span:hover {
 }
 
 .menuProfil, .menuList {
-    color: #5A3E51;
+    color: $main-color-purple;
     font-size: 24px;
 }
 
@@ -102,7 +102,7 @@ ul li span:hover {
 
 
 .sidebar {
-    background-color: #100E0E;
+    background-color: $main-color-black;
     width: 15%;
     .sidebarBloc {
         display: flex;
@@ -111,7 +111,7 @@ ul li span:hover {
 }
 
 .blocProfil {
-    background-color: #5A3E51;
+    background-color: $main-color-purple;
     border-radius: 25px;
 }
 .bloc1 {
@@ -122,18 +122,148 @@ ul li span:hover {
 }
 
 .bloc2 .btn {
-    background-color: #100E0E;
-    color: #D9DAFF;
+    background-color: $main-color-black;
+    color: $main-color-background;
     border-radius: 25px;
     padding: 10px;
 }
-.consignePassword {
-    padding: 5px;
+
+.manageBloc {
+    background-color: $main-color-black;
+    height: 350px;
+    border-radius: 30px;
     color: $main-color-background;
-    background-color: #100E0E;
-    border-radius: 5px;
-    font-weight: 400;
+    position: relative;
+    z-index: 1;
+
+    h1 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .explore1{
+        color: $main-color-background;
+        opacity: 0.7;
+        margin-right: 30px;
+    }
+    .explore2{
+        color: #47484F;
+    }
+    .explore3{
+        color: #2C2D36;
+    }
 }
+
+.globe {
+    margin-top: -100px;
+    background-color: white;
+    z-index: 2;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 200px;
+    z-index: 2;
+    margin-bottom: 130px;
+
+    .imgFavoris2 {
+        object-fit: fill;
+        height: 200px;
+        width: 100%;
+        border-radius: 10px;
+    }
+    h2 {
+        font-size:20px;
+    }
+
+    span {
+        font-weight: bold;
+    }
+    .icon-overlay {
+        position: relative;
+        bottom: 19px;
+        right: -53px;
+        background-color: white;
+        border-radius: 50%;
+        padding: 18px;
+        z-index: 1;
+    }
+    .icon-overlay i {
+        font-size: 20px;
+    }
+
+    button {
+        height: 40px;
+    }
+}
+
+.dash {
+    color: $main-color-background;
+    margin-top: -100px;
+    .dash1 {
+        background: url('../../assets/img/article/sparkle4.png') no-repeat;
+        filter: brightness(99%);
+        border-radius: 30px;
+        height: 400px;
+        display: flex;
+        align-items: end;
+        .title {
+            position: absolute;
+            top: 50px;
+            left: 40px;
+            margin: 0;
+        }
+        .bloc1 {
+            background-color: $main-color-background;
+            height: 50%;
+            width: 50%;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                height: 90%;
+                width: 90%;
+                border-radius: 15px;
+                object-fit: none;
+                object-position: -70px -150px;
+            }
+
+            }
+        }
+        .bloc2 {
+            h3 {
+                font-size: 30px;
+                font-weight: 700;
+                color: $main-color-black;
+        }
+    }
+    .dash2 {
+        background-color: $main-color-black;
+        border-radius: 30px;
+        height: 400px;
+        h2{
+            color: $main-color-background;
+            font-size: 25px;
+        }
+        h3 {
+            color: $main-color-background;
+            font-size: 20px;
+            opacity: 0.8;
+        }
+        p{
+            font-size: 16px;
+            color: #47484F;
+            font-weight: bold;
+        }
+    }
+}
+
+
 
 @media screen and (max-width: 1200px) {
     .page {
@@ -296,139 +426,3 @@ ul li span:hover {
         height: 300px !important;
     }
 }
-
-.manageBloc {
-    background-color: $main-color-black;
-    height: 350px;
-    border-radius: 30px;
-    color: $main-color-background;
-    position: relative;
-    z-index: 1;
-
-    h1 {
-        font-size: 40px;
-    }
-    p {
-        font-size: 18px;
-    }
-    h3 {
-        font-size: 30px;
-        font-weight: 700;
-    }
-    .explore1{
-        color: $main-color-background;
-        opacity: 0.7;
-        margin-right: 30px;
-    }
-    .explore2{
-        color: #47484F;
-    }
-    .explore3{
-        color: #2C2D36;
-    }
-}
-
-.globe {
-    margin-top: -100px;
-    background-color: white;
-    z-index: 2;
-    border-radius: 15px;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 200px;
-    z-index: 2;
-    margin-bottom: 130px;
-
-    .imgFavoris2 {
-        object-fit: fill;
-        height: 200px;
-        width: 100%;
-        border-radius: 10px;
-    }
-    h2 {
-        font-size:20px;
-    }
-
-    span {
-        font-weight: bold;
-    }
-    .icon-overlay {
-        position: relative;
-        bottom: 19px;
-        right: -53px;
-        background-color: white;
-        border-radius: 50%;
-        padding: 18px;
-        z-index: 1;
-    }
-    .icon-overlay i {
-        font-size: 20px;
-    }
-
-    button {
-        height: 40px;
-    }
-}
-
-.dash {
-    color: $main-color-background;
-    margin-top: -100px;
-    .dash1 {
-        background: url('../../assets/img/article/sparkle4.png') no-repeat;
-        filter: brightness(99%);
-        border-radius: 30px;
-        height: 400px;
-        display: flex;
-        align-items: end;
-        .title {
-            position: absolute;
-            top: 50px;
-            left: 40px;
-            margin: 0;
-        }
-        .bloc1 {
-            background-color: $main-color-background;
-            height: 50%;
-            width: 50%;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            img{
-                height: 90%;
-                width: 90%;
-                border-radius: 15px;
-                object-fit: none;
-                object-position: -70px -150px;
-            }
-
-            }
-        }
-        .bloc2 {
-            h3 {
-                font-size: 30px;
-                font-weight: 700;
-                color: $main-color-black;
-        }
-    }
-    .dash2 {
-        background-color: $main-color-black;
-        border-radius: 30px;
-        height: 400px;
-        h2{
-            color: $main-color-background;
-            font-size: 25px;
-        }
-        h3 {
-            color: $main-color-background;
-            font-size: 20px;
-            opacity: 0.8;
-        }
-        p{
-            font-size: 16px;
-            color: #47484F;
-            font-weight: bold;
-        }
-    }
-}
-

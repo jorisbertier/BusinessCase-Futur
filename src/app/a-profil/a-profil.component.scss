@@ -7,19 +7,25 @@ body {
     width: 100%;
 }
 
-h1 {
-    font-size: 45px !important;
-    margin-top: 15px;
+#profiler {
+    h1 {
+        font-size: 45px !important;
+        margin-top: 15px;
+    }
+    h2 {
+        font-size: 1.4em !important;
+        color: $main-color-background;
+    }
 }
 
-h2 {
-    font-size: 1.4em !important;
-    color: #D9DAFF;
-}
 
 hr {
     height: 2px !important;
-    color: black !important;
+    color: $main-color-black !important;
+}
+
+ul {
+    flex-direction: column;
 }
 
 ul li span, ul li a{
@@ -33,19 +39,15 @@ input {
 small {
     font-size: 16px !important;
     font-weight: 400;
-    color: #D9DAFF;
+    color: $main-color-background;
 }
 
 span small {
-    color:#D9DAFF;
+    color:$main-color-background;
 }
-label{
+
+label, input{
     color: $main-color-background;
-    font-weight: 500;
-    font-size: 17px;
-}
-input {
-    color: $main-color-black;
     font-weight: 400;
 }
 
@@ -54,11 +56,8 @@ ul li i {
 }
 
 ul li span:hover {
-    // background-color: #5A3E51;
-//     padding: 10px;
-//     border-radius: 25px;
     transition: 400ms;
-color: #5A3E51;
+    color: $main-color-purple;
 }
 
 .page {
@@ -73,7 +72,7 @@ color: #5A3E51;
 }
 
 .menuProfil, .menuList {
-    color: #5A3E51;
+    color: $main-color-purple;
     font-size: 24px;
 }
 
@@ -83,12 +82,16 @@ color: #5A3E51;
 
 
 .sidebar {
-    background-color: #100E0E;
-    width: auto;
+    background-color: $main-color-black;
+    width: 15%;
+    .sidebarBloc {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .blocProfil {
-    background-color: #5A3E51;
+    background-color: $main-color-purple;
     border-radius: 25px;
 }
 
@@ -101,15 +104,15 @@ color: #5A3E51;
 }
 
 .bloc2 .btn {
-    background-color: #100E0E;
-    color: #D9DAFF;
+    background-color: $main-color-black;
+    color: $main-color-background;
     border-radius: 25px;
     padding: 10px;
 }
 .consignePassword {
     padding: 5px;
-    color: #D9DAFF;
-    background-color: #100E0E;
+    color: $main-color-background;
+    background-color: $main-color-black;
     border-radius: 5px;
     font-weight: 400;
 }
@@ -124,14 +127,47 @@ color: #5A3E51;
         width : 400px !important;
     }
     .bloc1, .bloc2 {
+        margin-top: 30px;
         width: 500px;
+    }
+
+    .profiler {
+        display: flex !important;
+        flex-direction: column !important;
+        .sidebar {
+            width: 100%;
+            height: 180px;
+            .sidebarBloc {
+                align-items: center;
+
+            }
+            .menuList {
+                visibility: hidden !important;
+                width: 0px;
+                margin-top: 30px;
+            }
+            ul {
+                justify-content: space-between;
+                flex-direction: row;
+                li {
+                    margin-left: 15px;
+                }
+            }
+        }
     }
 
 
 }
-@media screen and (max-width: 900px) {
-    .menuList {
-        font-size: 17px;
+@media screen and (max-width: 901px) {
+
+    .profiler {
+        .sidebar {
+            ul {
+                li {
+                    font-size: 10px;
+                }
+            }
+        }
     }
     input {
         width : 300px !important;
@@ -140,15 +176,15 @@ color: #5A3E51;
         width: 400px;
     }
 }
-@media screen and (max-width: 767px) {
-    ul li span {
-        font-size: 12px;
-    }
-    ul li {
-        font-size: 12px;
-    }
-    .menuList {
-        font-size: 15px;
+@media screen and (max-width: 657px) {
+    .profiler {
+        .sidebar {
+            ul {
+                li {
+                    font-size: 8px;
+                }
+            }
+        }
     }
 }
 
@@ -163,187 +199,55 @@ color: #5A3E51;
         width : 200px !important;
     }
     .bloc1, .bloc2 {
-        width: 280px;
+        display: flex;
+        justify-content: center;
+        width: 350px;
     }
     .consignePassword {
-        width: 200px;
-    }
-    .sidebar i {
-        font-size: 20px;
-        margin-top: 65px;
+        width: 250px;
+        font-size: 12px;
     }
 }
 
 @media screen and (max-width: 445px) {
     input {
-        width : 130px !important;
+        width : 180px !important;
+    }
+    .blocProfil {
+        display: flex;
+        justify-content: center;
     }
     .bloc1, .bloc2 {
-        width: 230px;
+        width: 280px;
+        margin-top: 10px;
         text-align: center;
     }
     .consignePassword {
-        width: 130px;
+        width: 180px;
+    }
+    ul li span {
+        font-size: 8px;
+    }
+    .parameters {
+        display: none;
+    }
+
+    .btn {
+        font-size: 12px;
     }
 }
 
-/*NAV BAR */
-nav {
-    background-color: black;
-    height: 80px;
-}
-
-.nav-link:hover {
-    color: var(--main-color-black) !important;
-    background-color: var(--main-color-purple);
-    border-radius: 20px !important;
-    transition: 600ms;
-    
-}
-
-
-.navbar .nav-link {
-    font-size: 16px;
-    font-weight: 500;
-    margin-left: 30px;
-    position: relative;
-    color: var(--main-color-purpleLight);
-    border-radius: 20px !important;
-}
-
-.navbar .navbar-brand img{
-    max-height: 70px;
-    
-}
-
-/*
-.navbar .nav-link::before {
-
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    width: 0px;
-    height: 2px;
-    color: #5A3E51 !important;
-    background-color: var(--main-color-purple);
-    box-shadow: 0px 0px 8px var(--main-color-purple);
-    transition: all .6s ease;
-    transform-origin: center;
-}*/
-/*
-.navbar .nav-item:hover .nav-link::before {
-    width: 100%;
-}*/
-
-.navbar .navbar-toggler {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.navbar .toggle-btn {
-    cursor: pointer;
-    position: relative;
-    top: 5px;
-    z-index: 1100;
-}
-
-.navbar .toggle-btn .bar {
-    width: 25px;
-    height: 3px;
-    margin: 7px 0 7px auto;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    background-color: var(--main-color-purpleLight);
-}
-
-.navbar .toggle-btn .bar:nth-child(2) {
-    width: 35px;
-}
-
-.navbar #toggle-menu {
-    display: none;
-}
-
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(2) {
-    -webkit-transform: translateX(50px);
-    -ms-transform: translateX(50px);
-    transform: translateX(50px);
-    opacity: 0;
-}
-
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(1) {
-
-    -webkit-transform: translateY(12px) rotate(45deg);
-    -ms-transform: translateY(12px) rotate(45deg);
-    transform: translateY(12px) rotate(45deg);
-}
-
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(3) {
-
-    -webkit-transform: translateY(-8px) rotate(-45deg);
-    -ms-transform: translateY(-8px) rotate(-45deg);
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-.modal-dialog {
-    margin-left: -3px;
-    margin-top: -3px;
-    width: 85%;
-}
-
-.modal-dialog .modal-content{
-    background-color: var(--main-color-purple);
-    
-}
-
-.modal-dialog .modal-header, .modal-dialog .modal-footer{
-    border: none;
-}
-
-.modal-dialog .modal-header img{
-    max-height: 40px;
-}
-
-.modal-dialog .modal-body {
-    padding-top: 65px;
-    background-color: var(--main-color-black);
-}
-
-.modal-dialog .nav-link {
-    font-weight: 500;
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: var(--main-color-purpleLight);
-    border-radius: 20px !important;
-}
-
-.modal-dialog .nav-link i {
-    font-size: 30px;
-    margin-right: 10px;
-    color: var(--main-color-purpleLight);
-}
-
-.dropdown-menu{
-    font-weight: 700 !important;
-    background-color: var(--main-color-purpleLight) !important;
-}
-
-.dropdown-item{
-    color: var(--main-color-black) !important;
-}
-
-.modal-dialog .btn-secondary{
-    font-weight: 700;
-    color: var(--main-color-purple);
-    background-color: var(--main-color-black);
-    border: none;
-}
-
-.fa-moon {
-    font-size: 20px;
-    color: var(--main-color-purpleLight);
+@media screen and (max-width: 365px) {
+    ul li {
+     span {
+        font-size: 6px;
+        margin: 0;
+    }
+    }
+    .bloc1, .bloc2 {
+        width: 240px;
+    }
+    .btn {
+        font-size: 10px;
+    }
 }

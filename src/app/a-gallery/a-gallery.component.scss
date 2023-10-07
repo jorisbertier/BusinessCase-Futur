@@ -40,6 +40,10 @@
       transition: 0.5s;
       z-index: 2;
       background-color: $main-color-black;
+      img {
+        object-fit: fill;
+        height: 320px;
+      }
     }
 
     .details {
@@ -72,20 +76,17 @@
       .infoCardGalerie {
         display: flex;
         justify-content: space-between;
+        .eth {
+          width: 10px;
+          height: 20px;
+        }
         
       }
     }
 
-      img {
-        object-fit: contain;
-        height: 320px;
-      }
   }
 
-  .eth {
-    width: 10px;
-    height: 20px;
-  }
+
 }
 
 .box:hover .imgGalerie {

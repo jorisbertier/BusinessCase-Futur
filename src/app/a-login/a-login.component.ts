@@ -17,8 +17,8 @@ export class ALoginComponent implements OnInit {
   ngOnInit(): void {}
 
   public form: FormGroup = new FormGroup ({
-    username: new FormControl('joris.bertier@gmail.com'),
-    password: new FormControl('root'),
+    username: new FormControl(''),
+    password: new FormControl(''),
 
   })
 

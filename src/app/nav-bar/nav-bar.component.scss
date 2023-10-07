@@ -35,28 +35,6 @@ nav {
     
 }
 
-/*
-.navbar .nav-link::before {
-
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    width: 0px;
-    height: 2px;
-    color: #5A3E51 !important;
-    background-color: var(--main-color-purple);
-    box-shadow: 0px 0px 8px var(--main-color-purple);
-    transition: all .6s ease;
-    transform-origin: center;
-}*/
-/*
-.navbar .nav-item:hover .nav-link::before {
-    width: 100%;
-}*/
-
 .navbar .navbar-toggler {
     border: none !important;
     outline: none !important;
@@ -68,6 +46,11 @@ nav {
     position: relative;
     top: 5px;
     z-index: 1100;
+}
+
+.login {
+    background-color: $main-color-purple;
+    color: $main-color-background;
 }
 
 .navbar .toggle-btn .bar {

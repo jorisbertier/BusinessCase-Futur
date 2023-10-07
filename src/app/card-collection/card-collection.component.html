@@ -6,7 +6,7 @@
     <div class="col-lg-2 col-md-4 col-6" *ngFor="let naruto of narutoList; let index = index">
 
         <div class="card card1 mx-auto">
-            <img src="https://127.0.0.1:8000/upload/{{naruto.filePath}}" class="card-img-top" alt="Image 1">
+            <img src="{{naruto.filePath}}" class="card-img-top" alt="Image 1">
             <h5 class="card-body">
                 <h5 class="card-title">{{naruto.title}}</h5>
                 <div class="card-text d-flex justify-content-between mt-4 align-items-end">

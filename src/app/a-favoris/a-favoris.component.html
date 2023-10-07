@@ -174,7 +174,7 @@
         <div class="row mx-auto d-flex justify-content-around">
             <div class="col-md-3 col-sm-1 globe" *ngFor="let nft of favoris">
                 <div class="text-center">
-                    <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris2">
+                    <img src="{{nft?.filePath}}" class="imgFavoris2">
                     <!-- <img src="https://127.0.0.1:8000/upload/{{nft?.filePath}}" class="imgFavoris2"> -->
                     <a (click)="removeFromFavoris(nft)" class="text-danger"><i class="fas fa-trash fa-lg icon-overlay"></i></a>
                 </div>

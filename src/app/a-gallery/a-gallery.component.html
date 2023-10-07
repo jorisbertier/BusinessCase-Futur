@@ -40,7 +40,8 @@
     <div class="spaceElement Classique box"  *ngIf="nft.title.toLowerCase().includes(searchQuery.toLowerCase())" [class.hidden]="!nft.title.toLowerCase().includes(searchQuery.toLowerCase())">
         
       <div class="imgGalerie">
-        <img src="https://127.0.0.1:8000/upload/{{nft.filePath}}" alt="image " class="groupeImage classique image-0">
+        <!-- <img src="https://127.0.0.1:8000/upload/{{nft.filePath}}" alt="image " class="groupeImage classique image-0"> -->
+        <img src="{{nft?.filePath}}" alt="{{nft.description}}" class="groupeImage classique image-0">
       </div>
 
       <div class="ajoutPanier">

@@ -410,12 +410,24 @@ ul li span:hover {
             height: 15px;
         }
     }
+    .parameters {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 375px) {
     .manageBloc{
         height: 280px !important;
     }
+}
+
+@media screen and (max-width: 365px) {
+    ul li {
+        span {
+           font-size: 6px;
+           margin: 0;
+       }
+       }
 }
 
 @media screen and (max-width: 350px) {

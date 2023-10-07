@@ -1,6 +1,6 @@
 <app-nav-bar></app-nav-bar>
 
-
+<!-- 
 <p>a-login works!</p>
 <p>a-login works!</p>
 <p>a-login works!</p>
@@ -19,4 +19,36 @@
         </div>
     <button class="btn btn-success mt-2">Se connecter</button>
     </form>
-</div>
+</div> -->
+<section class="container text-center text-lg-start">
+    <style>
+
+    </style>
+    <div class="card mb-3">
+      <div class="row g-0 d-flex align-items-center">
+        <div class="col-lg-4 d-none d-lg-flex">
+          <img src="https://static.displate.com/857x1200/displate/2023-07-21/d27be08da3ec697d76a95801fc5d8fc9_6e4b7f2ea06334b8bdd199482c058ab0.jpg" alt="Trendy Pants and Shoes"
+            class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+            <!-- <img src="https://i.pinimg.com/236x/89/01/ea/8901eae7726ac28b45ce1f2085a48d43.jpg" alt="Trendy Pants and Shoes"
+            class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" /> -->
+        </div>
+        <div class="col-lg-8">
+          <div class="card-body py-5 px-md-5">
+  
+      <form (ngSubmit)="handleSubmit()" [formGroup]="form">
+          <label for="username">Email:</label>
+          <input type="email" id="username" formControlName="username" class="form-control">
+  
+          <label for="password" class="mt-2">Mot de passe:</label>
+          <input type="password" formControlName="password" id="password" class="form-control">
+  
+        <br>
+          <input type="hidden">
+          <button type="submit" class="btn btn-block mb-4">Connexion</button>
+      </form>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -101,3 +101,9 @@
     cursor: pointer;
     
 }
+
+@media screen and (max-width: 1377px) {
+ #carouselDown{
+    display: none;
+ }
+}

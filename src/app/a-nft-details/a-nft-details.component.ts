@@ -63,7 +63,14 @@ export class ANftDetailsComponent {
           ethPrices.push(eth.currentPrice / 100 * this.nft?.price);
 
           const updateDate = new Date(eth.updateDate);
-          const formattedDate = `${updateDate.getDate()}/${updateDate.getMonth() + 1}/${updateDate.getFullYear()} ${updateDate.getHours()} h :${updateDate.getMinutes()} min`;
+          const day = updateDate.getDate();
+          const month = updateDate.getMonth() + 1;
+          const year = updateDate.getFullYear() % 100;
+
+          const formattedDay = day < 10 ? `0${day}` : day;
+          const formattedMonth = month < 10 ? `0${month}` : month;
+
+          const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
           ethUpdateDates.push(formattedDate);
         }
       

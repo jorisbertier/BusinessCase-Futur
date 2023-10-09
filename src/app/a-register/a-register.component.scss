@@ -1,0 +1,55 @@
+@import '/src/assets/variables.scss';
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    // font-size: 1rem;
+    // line-height: 2.15;
+    // padding-left: .75em;
+    // padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+.img-fluid {
+    border-radius: 50px !important;
+}
+.blocImg {
+    padding: 75px;
+}
+
+
+form {
+    input {
+        // height: 5px;
+    }
+    .btn {
+        background-color: $main-color-purple;
+        color: $main-color-background;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .img-fluid {
+        height: 400px;
+        width: 90%;
+    }
+    .blocImg {
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .img-fluid {
+        height: 300px;
+        
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .img-fluid {
+        height: 150px;
+        border-radius: 15px !important;
+    }
+    // input {
+    //     height: 30px;
+    // }
+}

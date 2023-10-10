@@ -21,13 +21,23 @@ export class NavBarComponent implements OnInit {
     {}
 
   ngOnInit() : void {
-    // this.cartService.getProducts().subscribe( res => {
-    //   this.totalItem = res.length;
-    // })
+
 
     this.getUserData();
     console.log(this.getUserData());
     console.log('yoooo');
+
+    // this.userService.getUserData().subscribe(
+    //   (userData) => {
+    //     if (userData) {
+    //       this.userData = userData;
+    //     }
+    //   },
+    //   (error) => {
+    //     console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
+    //   }
+    // );
+    this.getUserData();
 
   }
 

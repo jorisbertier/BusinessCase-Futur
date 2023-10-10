@@ -1,26 +1,28 @@
 @import '/src/assets/variables.scss';
 
-.card-registration .select-input.form-control[readonly]:not([disabled]) {
+// .card-registration .select-input.form-control[readonly]:not([disabled]) {
     // font-size: 1rem;
     // line-height: 2.15;
     // padding-left: .75em;
     // padding-right: .75em;
-    }
-    .card-registration .select-arrow {
+    // }
+.card-registration .select-arrow {
     top: 13px;
-    }
+}
+
 .img-fluid {
     border-radius: 50px !important;
 }
+
 .blocImg {
     padding: 75px;
 }
 
 
 form {
-    input {
+    // input {
         // height: 5px;
-    }
+    // }
     .btn {
         background-color: $main-color-purple;
         color: $main-color-background;

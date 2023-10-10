@@ -3,22 +3,29 @@
 nav {
     background-color: $main-color-black;
     height: 80px;
+    input {
+        width: 300px;
+        background-color: $main-color-purpleLight;
+    }
+    
+    .nav-link:hover {
+        color: $main-color-purple!important;
+        // background-color: $main-color-purple;
+        // border-radius: 20px !important;
+        transition: 600ms;
+        
+    }
+    ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .imgProfil {
+        object-fit: fill;
+    }
     
 }
-
-.navbar input {
-    width: 300px;
-    background-color: $main-color-purpleLight;
-}
-
-.nav-link:hover {
-    color: $main-color-black !important;
-    background-color: $main-color-purple;
-    border-radius: 20px !important;
-    transition: 600ms;
-    
-}
-
 
 .navbar .nav-link {
     font-size: 16px;

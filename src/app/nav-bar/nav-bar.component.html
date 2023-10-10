@@ -15,7 +15,7 @@
         </button>
         <div class="collapse navbar-collapse">
             <!-- ms-auto -->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
                 <li>
                     <input type="search" id="form1" class="form-control" placeholder="Rechercher collection,NFT,....">
                 </li>
@@ -35,40 +35,69 @@
                     <a class="nav-link" routerLink="/favoris" *ngIf="checkIsLogged()">Favoris</a>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/register">Register</a>
+                    <a class="nav-link" routerLink="/register" *ngIf="!checkIsLogged()">Register</a>
                 </li>
-                <li class="nav-item" *ngIf="userData">
+                <!-- <li class="nav-item" *ngIf="userData">
                     <a class="nav-link" [routerLink]="'/profil/' + (userData?.id || '')" *ngIf="checkIsLogged()">Profil</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/cart" *ngIf="checkIsLogged()">Cart<span>{{totalItem}}</span></a>
+                    <a class="nav-link" routerLink="/cart" *ngIf="checkIsLogged()">Panier</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn login" routerLink="/login" *ngIf="!checkIsLogged()">Connexion</a>
                 </li>
-                <li class="nav-item">
-                    <button class="btn btn-danger" (click)="logout()" *ngIf="checkIsLogged()">Logout</button>
-                </li>
                 <!-- <li class="nav-item">
-                    <a class="nav-link" href="./login.html">LOGIN</a>
+                    <button class="btn btn-danger" (click)="logout()" *ngIf="checkIsLogged()">Logout</button>
                 </li> -->
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        GALERIE
+                <li class="nav-item dropdown" *ngIf="checkIsLogged()">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{userData?.avatar}}" class="rounded-circle imgProfil" height="35" width="35" alt="Photo de profil"
+                        loading="lazy"/>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">COLLECTION</a></li>
-                        <li><a class="dropdown-item" href="#">NFT</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">FUTURE PRO</a></li>
+                    <ul class="dropdown-menu">
+                        <li *ngIf="userData"><a class="dropdown-item" [routerLink]="'/profil/' + (userData?.id || '')" *ngIf="checkIsLogged()">Profil</a></li>
+                        <li><a class="dropdown-item" href="#">Future pro</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" (click)="logout()" *ngIf="checkIsLogged()">Déconnexion</a></li>
                     </ul>
-                </li> -->
+                </li>
             </ul>
-        </div>
+    <!-- <div class="dropdown">
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+            class="rounded-circle"
+            height="25"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="#">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+        </ul>
+      </div> -->
     </div>
+            
+        </div>
+    
 </nav>
 
 

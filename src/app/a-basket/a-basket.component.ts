@@ -11,53 +11,22 @@ import { CartService } from 'src/service/Cart/cart.service';
 export class ABasketComponent implements OnInit {
 
   carts: any[] = [];
+  totalPriceNfts: number = 0;
 
   constructor(private cartService: CartService) {}
   ngOnInit() {
     this.carts = this.cartService.getCarts();
     console.log(this.carts);
+    this.calculateTotal();
   }
 
   removeFromCart(nft: any) {
     this.cartService.removeFromCart(nft);
+    this.calculateTotal();
   }
 
-  // cart: INft[] = [];
-  // public products : any = [];
-  // public grandTotal!: number;
- 
-  // constructor(private cartService: CartService, private cookieService: CookieService) {
-  // }
+  calculateTotal() {
+    this.totalPriceNfts = this.carts.reduce((total, item) => total + item.price, 0);
+  }
 
-  // ngOnInit() {
-    // this.showCartContents();
-    // this.getCart(); 
-    // this.cartService.getProducts().subscribe(res => {
-    //   this.products = res;
-    //   this.grandTotal = this.cartService.getTotalPrice();
-    //   console.log(this.grandTotal);
-      
-    // })
-    
-  // }
-
-  // removeItem(item: any) {
-  //   this.cartService.removeCartItem(item);
-  // }
-
-  // emptyCart() {
-  //   this.cartService.removeAllCart();
-  // }
-  // getCart(): INft[] {
-  //   const currentCart = this.cookieService.get('cart') || '[]';
-  //   return JSON.parse(currentCart);
-  // }
-
-  // showCartContents() {
-  //   const cart = this.getCart();
-  //   console.log('Contenu du panier :', cart);
-  //   console.log(cart);
-    
-    // Vous pouvez maintenant utiliser "cart" pour afficher ou manipuler le contenu du panier
-  // }
 }

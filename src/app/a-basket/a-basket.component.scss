@@ -1,5 +1,66 @@
-.imgBasket {
-    object-fit: fill;
-    height: 100px;
-    width: 75px;
+@import '/src/assets/variables.scss';
+
+.container {
+    margin-top: 100px;
+        .imgBasket {
+            object-fit: fill;
+            height: 100px;
+            width: 75px;
+            border-radius: 10px;
+        }
+        h3 {
+            font-weight: bold;
+            font-size: 35px;
+        }
+        h5 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .card {
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        }
+        i{
+            font-size: 20px;
+        }
+        .btn {
+            background-color: $main-color-purple;
+            color: $main-color-background;
+        }
+}
+.emptyShop {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .btn {
+        background-color: $main-color-purple;
+        color: $main-color-background;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    i {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+.container {
+    p {
+        font-size: 10px;
+    }
+    h5 {
+        font-size: 12px;
+    }
+    i {
+        font-size: 14px;
+    }
+    .collection {
+        display: none;
+        
+    }
+}
 }

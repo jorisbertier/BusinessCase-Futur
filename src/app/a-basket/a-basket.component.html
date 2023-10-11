@@ -1,47 +1,169 @@
 <app-nav-bar></app-nav-bar>
-<br>
-<br>
-<br>
-<br>
+
+
 
 <ng-container class="container" *ngIf="carts.length !== 0">
-    <h1>Mon Panier</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nb</th>
-          <th>Nft</th>
-          <th>Prix</th>
-          <th>Options</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of carts; let i = index">
-          <td>{{i+1}}</td>
-          <td><img src="https://127.0.0.1:8000/upload/{{item.filePath}}" alt="{{ item.alt }}" class="imgBasket"></td>
-          <td>{{ item.title }}</td>
-          <td>{{ item.price }} ♦️ ({{ 1600000 / 1000 * item.price }} €)</td>
-          <td>{{ item.total }}</td>
-          <td><button (click)="removeFromCart(item)" class="btn bg-danger">X</button>></td>
-        </tr>
-        <tr>
-            <td colspan="4"></td>
-            <td><button class="btn bg-danger">Empty Card</button></td>
-            <td><button routerLink="/gallery" class="btn bg-primary">Shop More</button></td>
-            <td><button class="btn bg-success">Checkout</button></td>
-            <td>Total :  €</td>
-        </tr>
-      </tbody>
-    </table>
-  </ng-container>
+  <div class="container h-100 py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-10 col-sm-12">
 
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3 class="text-black">Votre panier</h3>
+
+        </div>
+        <div class="card mb-4" *ngFor="let item of carts; let i = index">
+          <div class="card-body">
+
+            <div class="row align-items-center flex-nowrap">
+              <div class="col-md-2 col-sm-2 col-2">
+                <img src="{{item.filePath}}"
+                  class="imgBasket" alt="{{item.alt}}">
+              </div>
+              <div class="col-md-2 col-sm-2 col-2 d-flex justify-content-center collection">
+                <div class="collection">
+                  <h5>Collection</h5>
+                  <p class="text-center"><i class="fas fa-circle me-2" style="color: #fdd8d2;"></i>
+                    </p>
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2 col-2 d-flex justify-content-center">
+                <div>
+                  <h5>Nom</h5>
+                  <p>{{item.title}}</p>
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2 col-2 d-flex justify-content-center">
+                <div>
+                  <h5>Quantite</h5>
+                  <p>1</p>
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2 col-2 d-flex justify-content-center">
+                <div>
+                  <h5>Prix</h5>
+                  <p>{{item.price}} eth</p>
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2 col-2 d-flex justify-content-center">
+                <div>
+                  <!-- <p class="small text-muted mb-4 pb-2">Total</p> -->
+                  <a (click)="removeFromCart(item)" class="text-danger"><i class="bi bi-trash"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card shadow-2-strong mb-5 mb-lg-0" style="border-radius: 16px;">
+          <div class="card-body p-4">
+
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-3 mb-4 mb-md-0">
+                <form>
+                  <div class="d-flex flex-row pb-3">
+                    <div class="d-flex align-items-center pe-2">
+                      <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1v"
+                        value="" aria-label="..." checked />
+                    </div>
+                    <div class="rounded border w-100 p-3">
+                      <p class="d-flex align-items-center mb-0">
+                        <i class="fab fa-cc-mastercard fa-2x text-dark pe-2"></i>Credit
+                        Card
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row pb-3">
+                    <div class="d-flex align-items-center pe-2">
+                      <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel2v"
+                        value="" aria-label="..." />
+                    </div>
+                    <div class="rounded border w-100 p-3">
+                      <p class="d-flex align-items-center mb-0">
+                        <i class="fab fa-cc-visa fa-2x fa-lg text-dark pe-2"></i>Debit Card
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row">
+                    <div class="d-flex align-items-center pe-2">
+                      <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel3v"
+                        value="" aria-label="..." />
+                    </div>
+                    <div class="rounded border w-100 p-3">
+                      <p class="d-flex align-items-center mb-0">
+                        <i class="fab fa-cc-paypal fa-2x fa-lg text-dark pe-2"></i>PayPal
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-6 col-lg-4 col-xl-6">
+                <div class="row">
+                  <div class="col-12 col-xl-6">
+                    <div class="form-outline mb-4 mb-xl-5">
+                      <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                        placeholder="Votre nom" />
+                      <label class="form-label" for="typeName">Name on card</label>
+                    </div>
+
+                    <div class="form-outline mb-4 mb-xl-5">
+                      <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YY"
+                        size="7" id="exp" minlength="7" maxlength="7" />
+                      <label class="form-label" for="typeExp">Expiration</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6">
+                    <div class="form-outline mb-4 mb-xl-5">
+                      <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
+                        placeholder="1111 2222 3333 4444" minlength="19" maxlength="19" />
+                      <label class="form-label" for="typeText">Card Number</label>
+                    </div>
+
+                    <div class="form-outline mb-4 mb-xl-5">
+                      <input type="password" id="typeText" class="form-control form-control-lg"
+                        placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                      <label class="form-label" for="typeText">Cvv</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-xl-3">
+                <div class="d-flex justify-content-between" style="font-weight: 500;">
+                  <p class="mb-2">Sous-totale</p>
+                  <p class="mb-2">{{ totalPriceNfts | number : '1.0-2' }} Eth</p>
+                </div>
+
+                <div class="d-flex justify-content-between" style="font-weight: 500;">
+                  <p class="mb-0">TVA (20%)</p>
+                  <p class="mb-0">${{ totalPriceNfts * 0.2 | number : '1.0-2'}} Eth</p>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
+                  <p class="mb-2">Totale (TTC)</p>
+                  <p class="mb-2">{{totalPriceNfts *0.2 +totalPriceNfts | number : '1.0-2'}} Eth</p>
+                </div>
+
+                <button type="button" class="btn">Acheter</button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</ng-container>
 
 
 <ng-container *ngIf="carts.length == 0">
-    <div>
+    <div  class="emptyShop">
         <img>
-        <h4>Your cart is empty</h4>
-        <h6>Add item now</h6>
-        <button routerLink="/gallery" class="btn bg-success">Shop now</button>
+        <h4>Ton panier est vide.</h4>
+        <h6>Ajoute un nft maintenant</h6>
+        <button routerLink="/gallery" class="btn mt-2">Shop now</button>
     </div>
 </ng-container>

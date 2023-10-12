@@ -24,6 +24,8 @@ nav {
     }
     .imgProfil {
         object-fit: fill;
+        height: 35px;
+         width: 35px;
     }
     
 }
@@ -109,75 +111,46 @@ nav {
             background-color: $main-color-black;
             width: 100%;
             .list {
-
                 ul {
-                    text-align: center;
+                    // text-align: center;
                     .mobil {
                         visibility: visible;
                     }
                 }
-                input{
-                    text-align: center;
-                }
+            }
+            .liPicture {
+                width: 105%;
             }
         }
     }
 }
-// .modal-dialog {
-//     margin-left: -3px;
-//     margin-top: -3px;
-//     width: 100%;
-// }
 
-// .modal-dialog .modal-content{
-//     background-color: $main-color-purple;
-    
-// }
+@media screen and (max-width: 580px) {
+    .container-fluid {
+        .collapse {
+            .liPicture {
+                width: 107%;
+            }
+        }
+    }
+}
 
-// .modal-dialog .modal-header, .modal-dialog .modal-footer{
-//     border: none;
-// }
+@media screen and (max-width: 440px) {
+    .container-fluid {
+        .collapse {
+            .liPicture {
+                width: 109%;
+            }
+        }
+    }
+}
 
-// .modal-dialog .modal-header img{
-//     max-height: 40px;
-// }
-
-// .modal-dialog .modal-body {
-//     padding-top: 65px;
-//     background-color: $main-color-black;
-// }
-
-// .modal-dialog .nav-link {
-//     font-weight: 500;
-//     font-size: 18px;
-//     margin-bottom: 30px;
-//     color: $main-color-purpleLight;
-//     border-radius: 20px !important;
-// }
-
-// .modal-dialog .nav-link i {
-//     font-size: 30px;
-//     margin-right: 10px;
-//     color: $main-color-purpleLight;
-// }
-
-// .dropdown-menu{
-//     font-weight: 700 !important;
-//     background-color: $main-color-purpleLight !important;
-// }
-
-// .dropdown-item{
-//     color: $main-color-black !important;
-// }
-
-// .modal-dialog .btn-secondary{
-//     font-weight: 700;
-//     color: $main-color-purple;
-//     background-color: $main-color-black;
-//     border: none;
-// }
-
-// .fa-moon {
-//     font-size: 20px;
-//     color: $main-color-purpleLight;
-// }
+@media screen and (max-width: 370px) {
+    .container-fluid {
+        .collapse {
+            .liPicture {
+                width: 110%;
+            }
+        }
+    }
+}

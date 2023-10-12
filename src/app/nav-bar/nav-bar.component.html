@@ -83,8 +83,8 @@
                     <li class="d-md-none d-sm-none d-none d-lg-block">
                         <input type="search" id="form1" class="form-control" placeholder="Rechercher collection,NFT,....">
                     </li>
-                    <li class="d-lg-none d-flex justify-content-center">
-                        <img src="{{userData?.avatar}}" class="rounded-circle imgProfil" height="35" width="35" alt="Photo de profil"
+                    <li class="d-lg-none d-flex justify-content-center liPicture">
+                        <img src="{{userData?.avatar}}" class="rounded-circle imgProfil" alt="Photo de profil"
                         loading="lazy"/>
                     </li>
                     <li class="nav-item mobil d-lg-none" *ngIf="userData">
@@ -110,7 +110,7 @@
                     </li>
                     <li class="nav-item dropdown d-md-none d-sm-none d-none d-lg-block" *ngIf="checkIsLogged()">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{userData?.avatar}}" class="rounded-circle imgProfil" height="35" width="35" alt="Photo de profil"
+                            <img src="{{userData?.avatar}}" class="rounded-circle imgProfil" alt="Photo de profil"
                             loading="lazy"/>
                         </a>
                         <ul class="dropdown-menu">

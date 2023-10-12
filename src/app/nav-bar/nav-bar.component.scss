@@ -3,6 +3,7 @@
 nav {
     background-color: $main-color-black;
     height: 80px;
+    z-index: 3;
     input {
         width: 300px;
         background-color: $main-color-purpleLight;

@@ -80,7 +80,7 @@
             </ul>
             <div class="d-flex flex-row" role="search" class="list">
                 <ul class="navbar-nav mb-2 mb-lg-0 me-5">
-                    <li class="d-md-none d-lg-block">
+                    <li class="d-md-none d-sm-none d-none d-lg-block">
                         <input type="search" id="form1" class="form-control" placeholder="Rechercher collection,NFT,....">
                     </li>
                     <li class="d-lg-none d-flex justify-content-center">
@@ -108,7 +108,7 @@
                     <li class="d-lg-none">
                         <a class="nav-link" (click)="logout()" *ngIf="checkIsLogged()">Déconnexion</a>
                     </li>
-                    <li class="nav-item dropdown d-md-none d-lg-block" *ngIf="checkIsLogged()">
+                    <li class="nav-item dropdown d-md-none d-sm-none d-none d-lg-block" *ngIf="checkIsLogged()">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="{{userData?.avatar}}" class="rounded-circle imgProfil" height="35" width="35" alt="Photo de profil"
                             loading="lazy"/>

@@ -30,6 +30,11 @@ ul {
 
 ul li span, ul li a{
     color : white;
+    
+}
+
+ul li {
+    cursor: pointer;
 }
 
 input {
@@ -270,6 +275,7 @@ ul li span:hover {
         display: flex !important;
         flex-direction: column !important;
         width: auto;
+        margin-top: 10px;
     }
     .bloc1, .bloc2 {
         width: 500px;
@@ -279,7 +285,8 @@ ul li span:hover {
         flex-direction: column;
         .sidebar {
             width: 100%;
-            height: 180px;
+            height: 150px;
+            margin-top: -90px;
             .sidebarBloc {
                 align-items: center;
 

@@ -216,11 +216,7 @@ button {
             height: 180px !important;
         }
         .button1 {
-            display: flex;
-            justify-self: center;
-            align-items: center;
-            font-size: 10px !important;
-            width: 105px !important;
+            width: auto !important;
         }
         .textActu {
             font-size: 12px !important;
@@ -243,11 +239,11 @@ button {
         h3 {
             font-size: 20px !important;
         }
-        .button1 {
-            font-size: 10px !important;
-            width: 110px !important;
-            height: 30px !important;
-        }
+        // .button1 {
+        //     font-size: 10px !important;
+        //     width: 110px !important;
+        //     height: 30px !important;
+        // }
     }
 }
 

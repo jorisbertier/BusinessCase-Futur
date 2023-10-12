@@ -13,6 +13,7 @@ export class NftService {
 
   url = "https://127.0.0.1:8000/nft/api/nft/";
   urlNaruto= "https://127.0.0.1:8000/nft/api/naruto";
+  urlShadow= "https://127.0.0.1:8000/nft/api/shadow";
 
   constructor(private http: HttpClient, private authService: AuthService, private userService: UserService) { }
 
@@ -40,6 +41,11 @@ export class NftService {
   getSixLastNaruto(): Observable<INft[]>{
     
     return this.http.get<INft[]>(this.urlNaruto);
+  }
+
+  getSixLastShadow(): Observable<INft[]>{
+    
+    return this.http.get<INft[]>(this.urlShadow);
   }
 
   

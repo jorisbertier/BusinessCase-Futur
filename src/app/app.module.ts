@@ -26,6 +26,7 @@ import { ALoginComponent } from './a-login/a-login.component';
 import { TokenInterceptor } from './token.interceptor';
 import { ArticleComponent } from './article/article.component';
 import { ACollectionComponent } from './a-collection/a-collection.component';
+import { CardSecondCollectionComponent } from './card-second-collection/card-second-collection.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ACollectionComponent } from './a-collection/a-collection.component';
     ALoginComponent,
     ArticleComponent,
     ACollectionComponent,
+    CardSecondCollectionComponent,
   ],
   imports: [
     BrowserModule,

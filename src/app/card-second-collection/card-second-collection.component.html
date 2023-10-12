@@ -1,18 +1,17 @@
-<!--CARD CONTENT 2-->
 
-<h2 class="mb-3 mt-2 ms-3">Collection naruto</h2>
+<h2 class="mb-3 mt-2 ms-3">Collection shadow</h2>
 
 <div class="row mx-auto gy-md-4 gy-sm-5">
-    <div class="col-lg-2 col-md-4 col-6" *ngFor="let naruto of narutoList; let index = index">
+    <div class="col-lg-2 col-md-4 col-6" *ngFor="let nft of shadowList; let index = index">
 
         <div class="card card1 mx-auto">
-            <img src="{{naruto.filePath}}" class="card-img-top" alt="Image 1">
+            <img src="{{nft.filePath}}" class="card-img-top" alt="Image 1">
             <h5 class="card-body">
-                <h5 class="card-title">{{naruto.title}}</h5>
+                <h5 class="card-title">{{nft.title}}</h5>
                 <div class="card-text d-flex justify-content-between mt-4 align-items-end">
                     <div>
                         <h6>Floor</h6>
-                        <p>{{naruto.price}} ETH</p>
+                        <p>{{nft.price}} ETH</p>
                     </div>
                     <div>
                         <h6 >Volume</h6>
@@ -23,7 +22,5 @@
 
     </div>
 </div>
+
 <button type="submit" class="button1 mt-5 ms-3">Voir catégorie</button>
-
-
-

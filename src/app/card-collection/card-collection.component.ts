@@ -11,19 +11,19 @@ import { NftService } from '../nft.service';
 })
 export class CardCollectionComponent implements OnInit {
 
-   
   narutoList: INft[] = [];
- 
+
   constructor(private service: NftService) {
   }
+
   ngOnInit() {
 
-  
   this.service.getSixLastNaruto().subscribe(narutoListResult => {
-  
       this.narutoList = narutoListResult;
         console.table(this.narutoList);
       });
+
   }
+
 
 }

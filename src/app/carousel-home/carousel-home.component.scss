@@ -45,7 +45,7 @@ button {
     width: 90% !important;
     border-radius: 30px;
     background-color: $main-color-purple;
-    margin-top: 80px;
+    margin-top: 10px;
 
     .carousel-indicators button {
         width: 75px !important;
@@ -199,7 +199,6 @@ button {
 @media screen and (max-width: 1200px) {
 
     #actualite {
-        margin-top: 150px;
         height: 400px !important;
         button {
             width: 100px;
@@ -254,7 +253,6 @@ button {
 
 @media screen and (max-width: 870px) {
     #actualite{
-        
         h1 {
             font-size: 28px !important;
         }
@@ -284,7 +282,7 @@ button {
         visibility: visible;
         color: var(--main-color-black);
         text-align: center;
-        margin-top: 110px;
+        margin-top: 5px;
         font-weight: bold;
         font-size: 40px;
     }

@@ -77,82 +77,106 @@ nav {
     display: none;
 }
 
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(2) {
-    -webkit-transform: translateX(50px);
-    -ms-transform: translateX(50px);
-    transform: translateX(50px);
-    opacity: 0;
+// .mobil {
+//     display: none !important;
+// }
+// .navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(2) {
+//     -webkit-transform: translateX(50px);
+//     -ms-transform: translateX(50px);
+//     transform: translateX(50px);
+//     opacity: 0;
+// }
+
+// .navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(1) {
+
+//     -webkit-transform: translateY(12px) rotate(45deg);
+//     -ms-transform: translateY(12px) rotate(45deg);
+//     transform: translateY(12px) rotate(45deg);
+// }
+
+// .navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(3) {
+
+//     -webkit-transform: translateY(-8px) rotate(-45deg);
+//     -ms-transform: translateY(-8px) rotate(-45deg);
+//     transform: translateY(-8px) rotate(-45deg);
+// }
+@media screen and (max-width: 992px) {
+
+    .container-fluid {
+        background-color: $main-color-black;
+        .collapse {
+            background-color: $main-color-black;
+            width: 100%;
+            .list {
+
+                ul {
+                    text-align: center;
+                    .mobil {
+                        visibility: visible;
+                    }
+                }
+                input{
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
+// .modal-dialog {
+//     margin-left: -3px;
+//     margin-top: -3px;
+//     width: 100%;
+// }
 
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(1) {
-
-    -webkit-transform: translateY(12px) rotate(45deg);
-    -ms-transform: translateY(12px) rotate(45deg);
-    transform: translateY(12px) rotate(45deg);
-}
-
-.navbar #toggle-menu:checked+label.toggle-btn .bar:nth-child(3) {
-
-    -webkit-transform: translateY(-8px) rotate(-45deg);
-    -ms-transform: translateY(-8px) rotate(-45deg);
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-.modal-dialog {
-    margin-left: -3px;
-    margin-top: -3px;
-    width: 100%;
-}
-
-.modal-dialog .modal-content{
-    background-color: $main-color-purple;
+// .modal-dialog .modal-content{
+//     background-color: $main-color-purple;
     
-}
+// }
 
-.modal-dialog .modal-header, .modal-dialog .modal-footer{
-    border: none;
-}
+// .modal-dialog .modal-header, .modal-dialog .modal-footer{
+//     border: none;
+// }
 
-.modal-dialog .modal-header img{
-    max-height: 40px;
-}
+// .modal-dialog .modal-header img{
+//     max-height: 40px;
+// }
 
-.modal-dialog .modal-body {
-    padding-top: 65px;
-    background-color: $main-color-black;
-}
+// .modal-dialog .modal-body {
+//     padding-top: 65px;
+//     background-color: $main-color-black;
+// }
 
-.modal-dialog .nav-link {
-    font-weight: 500;
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: $main-color-purpleLight;
-    border-radius: 20px !important;
-}
+// .modal-dialog .nav-link {
+//     font-weight: 500;
+//     font-size: 18px;
+//     margin-bottom: 30px;
+//     color: $main-color-purpleLight;
+//     border-radius: 20px !important;
+// }
 
-.modal-dialog .nav-link i {
-    font-size: 30px;
-    margin-right: 10px;
-    color: $main-color-purpleLight;
-}
+// .modal-dialog .nav-link i {
+//     font-size: 30px;
+//     margin-right: 10px;
+//     color: $main-color-purpleLight;
+// }
 
-.dropdown-menu{
-    font-weight: 700 !important;
-    background-color: $main-color-purpleLight !important;
-}
+// .dropdown-menu{
+//     font-weight: 700 !important;
+//     background-color: $main-color-purpleLight !important;
+// }
 
-.dropdown-item{
-    color: $main-color-black !important;
-}
+// .dropdown-item{
+//     color: $main-color-black !important;
+// }
 
-.modal-dialog .btn-secondary{
-    font-weight: 700;
-    color: $main-color-purple;
-    background-color: $main-color-black;
-    border: none;
-}
+// .modal-dialog .btn-secondary{
+//     font-weight: 700;
+//     color: $main-color-purple;
+//     background-color: $main-color-black;
+//     border: none;
+// }
 
-.fa-moon {
-    font-size: 20px;
-    color: $main-color-purpleLight;
-}
+// .fa-moon {
+//     font-size: 20px;
+//     color: $main-color-purpleLight;
+// }

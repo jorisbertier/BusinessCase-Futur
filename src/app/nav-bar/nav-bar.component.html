@@ -1,11 +1,11 @@
-<header>
+<!-- <header>
 <nav class="navbar navbar-expand-md fixed-top">
-    <!-- container -->
+    
     <div class="container-fluid">
         <a class="navbar-brand" routerLink="">
             <img src="../../assets/img/logo/logoFutur.png" alt="Logo">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#staticBackdrop">
             <input type='checkbox' id='toggle-menu' />
             <label type="button" class='toggle-btn' for='toggle-menu'>
                 <div class="bar"></div>
@@ -14,7 +14,7 @@
             </label>
         </button>
         <div class="collapse navbar-collapse">
-            <!-- ms-auto -->
+            
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
                 <li>
                     <input type="search" id="form1" class="form-control" placeholder="Rechercher collection,NFT,....">
@@ -22,34 +22,25 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" routerLink="/formNft" *ngIf="checkIsLogged()">Créez</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./profil.html">PROFIL</a>
-                </li> -->
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">WALLET</a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/gallery" *ngIf="checkIsLogged()">Galerie</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" routerLink="/favoris" *ngIf="checkIsLogged()">Favoris</a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/register" *ngIf="!checkIsLogged()">Register</a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item" *ngIf="userData">
                     <a class="nav-link" [routerLink]="'/profil/' + (userData?.id || '')" *ngIf="checkIsLogged()">Profil</a>
                 </li> -->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" routerLink="/cart" *ngIf="checkIsLogged()">Panier</a>
                 </li>
                 <li class="nav-item">
                     <a class="btn login" routerLink="/login" *ngIf="!checkIsLogged()">Connexion</a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item">
                     <button class="btn btn-danger" (click)="logout()" *ngIf="checkIsLogged()">Logout</button>
                 </li> -->
-                <li class="nav-item dropdown" *ngIf="checkIsLogged()">
+                <!-- <li class="nav-item dropdown" *ngIf="checkIsLogged()">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="{{userData?.avatar}}" class="rounded-circle imgProfil" height="35" width="35" alt="Photo de profil"
                         loading="lazy"/>
@@ -62,88 +53,75 @@
                     </ul>
                 </li>
             </ul>
-    <!-- <div class="dropdown">
-        <a
-          class="dropdown-toggle d-flex align-items-center hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuAvatar"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-            class="rounded-circle"
-            height="25"
-            alt="Black and White Portrait of a Man"
-            loading="lazy"
-          />
-        </a>
-        <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuAvatar"
-        >
-          <li>
-            <a class="dropdown-item" href="#">My profile</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Settings</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Logout</a>
-          </li>
-        </ul>
-      </div> -->
-    </div>
+        </div>
             
         </div>
     
 </nav>
+</header> -->
 
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="">
+            <img src="../../assets/img/logo/logoFutur.png" alt="Logo">
+        </a>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#staticBackdrop"  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <input type='checkbox' id='toggle-menu' />
+            <label type="button" class='toggle-btn' for='toggle-menu'>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </label>
+        </button>
 
-
-<!-- MODAL NAVBAR -->
-
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <!-- <img src="img/logo.png" alt="Logo"> -->
-            </div>
-            <div class="modal-body">
-                <!-- ms-auto -->
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-wallet"></i> WALLET</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <div class="d-flex flex-row" role="search" class="list">
+                <ul class="navbar-nav mb-2 mb-lg-0 me-5">
+                    <li class="d-md-none d-lg-block">
+                        <input type="search" id="form1" class="form-control" placeholder="Rechercher collection,NFT,....">
+                    </li>
+                    <li class="d-lg-none d-flex justify-content-center">
+                        <img src="{{userData?.avatar}}" class="rounded-circle imgProfil" height="35" width="35" alt="Photo de profil"
+                        loading="lazy"/>
+                    </li>
+                    <li class="nav-item mobil d-lg-none" *ngIf="userData">
+                        <a class="nav-link" [routerLink]="'/profil/' + (userData?.id || '')" *ngIf="checkIsLogged()">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="#"><i class="fas fa-folder-open"></i> GALERIE</a>
+                        <a class="nav-link active" aria-current="page" routerLink="/formNft" *ngIf="checkIsLogged()">Créez</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-user"></i> LOGIN</a>
+                        <a class="nav-link" routerLink="/gallery" *ngIf="checkIsLogged()">Galerie</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-panorama"></i> GALERIE
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/cart" *ngIf="checkIsLogged()">Panier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn login mt-2" routerLink="/login" *ngIf="!checkIsLogged()">Connexion</a>
+                    </li>
+                    <li class="d-lg-none">
+                        <hr class="dropdown-divider" *ngIf="checkIsLogged()">
+                    </li>
+                    <li class="d-lg-none">
+                        <a class="nav-link" (click)="logout()" *ngIf="checkIsLogged()">Déconnexion</a>
+                    </li>
+                    <li class="nav-item dropdown d-md-none d-lg-block" *ngIf="checkIsLogged()">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="{{userData?.avatar}}" class="rounded-circle imgProfil" height="35" width="35" alt="Photo de profil"
+                            loading="lazy"/>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">COLLECTION</a></li>
-                            <li><a class="dropdown-item" href="#">NFT</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">FUTURE PRO</a></li>
+                        <ul class="dropdown-menu">
+                            <li *ngIf="userData"><a class="dropdown-item" [routerLink]="'/profil/' + (userData?.id || '')" *ngIf="checkIsLogged()">Profil</a></li>
+                            <li><a class="dropdown-item" href="#">Future pro</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" (click)="logout()" *ngIf="checkIsLogged()">Déconnexion</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><label for='toggle-menu'>Close</label></button>
-            </div>
         </div>
     </div>
-</div>
-</header>
+</nav>

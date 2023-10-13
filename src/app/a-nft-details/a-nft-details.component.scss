@@ -2,7 +2,7 @@
 
 #divChart{
     // display: block;
-    width: 700px;
+    width: auto;
     height: 400px;
 }
 
@@ -29,18 +29,34 @@
         height: 300px;
         border-radius: 10px;
         background-color: $main-color-purple;
+        div, p {
+          font-size: 18px;
+        }
     }
     .blocDetails3 {
         width: 90%;
         height: 300px;
         border-radius: 10px;
         background-color: $main-color-purple;
+        p {
+          font-size: 20px;
+          font-weight: bold;
+        }
     }
     .blocDetails4 {
         width: 90%;
         height: 300px;
         border-radius: 10px;
         background-color: $main-color-purple;
+        div {
+          font-size: 18px;
+        }
+        .details4 {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+        }
     }
 }
 
@@ -183,5 +199,53 @@
 
 .card:hover {
   transform: scale(1.04) rotate(-1deg);
+}
+
+@media screen and (max-width:992px) {
+  .blocDetails1, .blocDetails2, .blocDetails3, .blocDetails4 {
+    width: 75% !important;
+    text-align: center!important;
+    align-items: center !important;
+  }
+  .blocDetails2 h2 {
+    margin-top: 35px;
+  }
+  .blocDetails6 {
+    display: flex;
+    justify-content: center;
+  }
+  .details3 {
+    display: flex;
+    justify-content: center;
+  }
+  #divChart{
+    width: auto;
+}
+}
+
+@media screen and (max-width:710px) {
+.details4 {
+  display: flex !important;
+  flex-direction: column !important;
+  div {
+    margin-top: 5px;
+    font-size: 12px !important;
+  }
+}
+p, div {
+  font-size: 12px !important;
+}
+}
+
+@media screen and (max-width:425px) {
+  .blocDetails1 {
+    height: 300px !important;
+  }
+  .blocDetails1 {
+    height: 209px;
+  }
+  // .imgDetails {
+  //   height: 40%!important;
+  // }
 }
 

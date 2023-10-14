@@ -58,24 +58,6 @@
     filter: brightness(0.7);
 }
 
-//test
-
-// .test {
-//     border-radius: 15px;
-//     overflow: hidden;
-//     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-// }
-
-// .test img {
-//     width: 100%;
-//     height: auto;
-// }
-
-// .test:hover {
-//     transform: translatey(-15px); /* Dézoome légèrement l'intérieur de .test au survol */
-//     filter: brightness(0.7); /* Rend l'intérieur de .test légèrement plus foncé au survol */
-// }
-
 h2 {
     color: $main-color-black;
     font-weight: 700 !important;

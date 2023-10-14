@@ -1,13 +1,18 @@
 @import '/src/assets/variables.scss';
 
-
+h2 {
+    color: $main-color-black;
+    font-weight: 700 !important;
+    font-size: 38px !important;
+    text-transform: uppercase;
+}
 
 #carouselDown {
     height: 550px !important;
     width: 90% !important;
     border-radius: 30px;
     background-color: $main-color-purple;
-    margin-top: 170px;
+    // margin-top: 50px;
     .nomCollection {
         color: $main-color-purpleLight;
         font-size: 25px;
@@ -106,4 +111,14 @@
  #carouselDown{
     display: none;
  }
+}
+
+@media screen and (max-width: 765px) {
+    h2 {
+        text-align: center;
+    }
+    .buttonCategory {
+        display: flex;
+        justify-content: center;
+    }
 }

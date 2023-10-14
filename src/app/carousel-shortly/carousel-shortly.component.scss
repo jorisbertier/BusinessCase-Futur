@@ -46,4 +46,34 @@
     width: auto;
     height: auto;
 }
+@media screen and (max-width: 768px) {
+    .carouselShortly {
+        .carousel-item img {
+            height: 450px !important;
+        }
+    } 
+}
 
+@media screen and (max-width: 625px) {
+    .carouselShortly {
+        .carousel-item img {
+            height: 410px !important;
+        }
+    } 
+}
+
+@media screen and (max-width: 500px) {
+    .carouselShortly {
+        .carousel-item img {
+            height: 385px !important;
+        }
+    } 
+}
+
+@media screen and (max-width: 425px) {
+    .carouselShortly {
+        .carousel-item img {
+            height: 320px !important;
+        }
+    } 
+}

@@ -109,6 +109,12 @@ h2 {
     user-select: none;
 }
 
+@media screen and (max-width: 765px) {
+    h2 {
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
     .card1 {

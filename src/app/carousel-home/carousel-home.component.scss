@@ -48,9 +48,10 @@ button {
     margin-top: 10px;
 
     .carousel-indicators button {
+        border-radius: 0;
         width: 75px !important;
         background-color: grey !important;
-        color: red !important;
+        // color: red !important;
         bottom: 100px !important;
         height: 5px;
     }

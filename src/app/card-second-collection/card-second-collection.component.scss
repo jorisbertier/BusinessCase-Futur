@@ -1,8 +1,6 @@
 @import '/src/assets/variables.scss';
 
-
 .card1 {
-
     border-radius: 40px;
     border-style: solid;
     border-width: 1px;
@@ -29,17 +27,13 @@
         max-width: auto;
         height: 350px;
     }
-    
     .card-img-top {
         object-fit: cover;
         height: 224px;
     }
-    
-    
     .card-text {
         font-size: 10px;
     }
-    
 }
 
 .card:hover {
@@ -57,24 +51,6 @@
     transition: 500ms;
     filter: brightness(0.7);
 }
-
-//test
-
-// .test {
-//     border-radius: 15px;
-//     overflow: hidden;
-//     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-// }
-
-// .test img {
-//     width: 100%;
-//     height: auto;
-// }
-
-// .test:hover {
-//     transform: translatey(-15px); /* Dézoome légèrement l'intérieur de .test au survol */
-//     filter: brightness(0.7); /* Rend l'intérieur de .test légèrement plus foncé au survol */
-// }
 
 h2 {
     color: $main-color-black;
@@ -120,7 +96,6 @@ h2 {
 }
 
 @media screen and (max-width: 600px) {
-
     .card1 {
         margin-bottom: 20px;
         height: 320px;
@@ -130,5 +105,15 @@ h2 {
                 height: 200px;
             }
     }
+}
 
+@media screen and (max-width: 425px) {
+    h2 {
+        font-size: 28px !important;
+    }
+    .card1 {
+        p {
+            font-size: 10px;
+        }
+    }
 }

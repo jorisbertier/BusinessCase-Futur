@@ -102,15 +102,23 @@ h2 {
 }
 
 @media screen and (max-width: 600px) {
-
     .card1 {
         margin-bottom: 20px;
         height: 320px;
         overflow-x: auto;
-        
             .card-img-top {
-                height: 200px;
+                height: 190px;
             }
     }
+}
 
+@media screen and (max-width: 425px) {
+    h2 {
+        font-size: 28px !important;
+    }
+    .card1 {
+        p {
+            font-size: 10px;
+        }
+    }
 }

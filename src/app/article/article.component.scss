@@ -93,9 +93,12 @@ h2 {
 }
 
 @media screen and (max-width: 425px) {
+    h2 {
+        font-size: 28px !important;
+    }
     .card2 {
         .card-img-top {
-            max-height: 100px;
+            max-height: 135px !important;
         }
         .card-body {
             height: 80px;

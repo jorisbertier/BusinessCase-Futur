@@ -113,6 +113,10 @@ h2 {
     h2 {
         text-align: center;
     }
+    .buttonCategory {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 600px) {

@@ -16,7 +16,6 @@
     background-color: $main-color-black;
     border-radius: 50%;
     display:none;
-
 }
 
 .scrollHigth i {
@@ -31,4 +30,10 @@
     right: 19px;
     bottom: 28px;
     
+}
+
+@media screen and (max-width: 425px){
+    .scrollHigth i {
+        right: 35px;
+    }
 }

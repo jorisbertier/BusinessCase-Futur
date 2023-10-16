@@ -109,8 +109,26 @@ h2 {
 
 @media screen and (max-width: 1377px) {
  #carouselDown{
-    display: none;
+
+    .imgCarouselDown {
+        width: 250px;
+        height: 250px;
+    }
+    .timer {
+        display: none;
+    }
+    .changeTitle2 {
+        font-size: 25px !important;
+    }
+    .changeText {
+        font-size: 14px !important;
+    }
  }
+}
+@media screen and (max-width: 875px) {
+    #carouselDown {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 765px) {

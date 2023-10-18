@@ -100,7 +100,10 @@
                         <a class="nav-link" routerLink="/cart" *ngIf="checkIsLogged()">Panier</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn login mt-2" routerLink="/login" *ngIf="!checkIsLogged()">Connexion</a>
+                        <a class="ms-4 register" routerLink="/register" *ngIf="!checkIsLogged()">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn login ms-4" routerLink="/login" *ngIf="!checkIsLogged()">Connexion</a>
                     </li>
                     <li class="d-lg-none">
                         <hr class="dropdown-divider" *ngIf="checkIsLogged()">

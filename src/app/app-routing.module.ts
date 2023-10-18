@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'cart', component: ABasketComponent, canActivate:[authGuard]},
   {path: 'favoris', component: AFavorisComponent, canActivate:[authGuard]},
   {path: 'login', component: ALoginComponent},
-  {path: 'collection', component: ACollectionComponent},
+  {path: 'collection', component: ACollectionComponent, canActivate:[authGuard]},
 ];
 
 @NgModule({

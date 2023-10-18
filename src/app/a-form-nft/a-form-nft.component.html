@@ -25,6 +25,7 @@
                 <div class="form-outline mb-4">
                   <label for="price">Prix :</label>
                   <input type="number" id="price" name="price" class="form-control" [(ngModel)]="nftData.price" required>
+                  <small *ngIf="priceErrorMessage" class="text-danger">{{ priceErrorMessage }}</small>
                 </div>
                 <div class="form-outline mb-4">
                   <label for="filePath">Url du NFT :</label>

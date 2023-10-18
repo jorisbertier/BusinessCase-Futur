@@ -1,77 +1,4 @@
 <app-nav-bar></app-nav-bar><br><br>
-<!-- 
-<div>works</div>
-<div>works</div>
-<div>works</div>
-<div>works</div>
-<div>works</div>
-
- <form class="container" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-
-    <div class="mb-3">
-      <label class="form-label">Prénom</label>
-      <input type="text" formControlName="firstName" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Nom de famille</label>
-      <input type="text" formControlName="lastName" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Pseudo</label>
-      <input type="text" formControlName="pseudo" required>
-        <div *ngIf="userForm.get('pseudo')?.hasError('required')">
-    Le pseudo est requis.
-  </div>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Email</label>
-      <input type="email" formControlName="email" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Mot de passe</label>
-      <input type="password" formControlName="password" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Date de naissance</label>
-        <input type="date" formControlName="birth" required>
-      </div>
-    <div class="mb-3">
-      <label class="form-label">Téléphone:</label>
-      <input type="text" formControlName="phoneNumber" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Avatar</label>
-      <input type="text" formControlName="avatar" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Genre</label>
-      <input type="text" formControlName="gender" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Numéro et Rue</label>
-      <input type="text" formControlName="street" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Code postal</label>
-      <input type="text" formControlName="zipCode" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Ville</label>
-      <input type="text" formControlName="city" required>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Pays</label>
-      <input type="text" formControlName="country" required>
-    </div>
-    <div *ngIf="subscriptionValid" class="alert alert-success">
-      Inscription validée
-    </div>
-
-  
-    <button type="submit" >Valider</button>
-    <br><br>
-  </form> -->
-
 
   <section class="h-100 bg-dark">
     <div class="container py-5 h-100">
@@ -115,6 +42,7 @@
                       <div class="form-outline">
                         <label class="form-label" for="form3Example1n1">Email</label>
                         <input type="text" id="form3Example1n1" class="form-control" formControlName="email"/>
+                        <small *ngIf="emailErrorMessage" class="text-danger">{{ emailErrorMessage }}</small>
                       </div>
                     </div>
                   </div>
@@ -186,7 +114,11 @@
   
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form3Example99">Mot de passe</label>
-                    <input type="text" id="form3Example99" class="form-control" formControlName="password"/>
+                    <input type="password" id="form3Example99" class="form-control" formControlName="password"/>
+                    <!-- <small class="text-danger" *ngIf="userForm.get('password')?.hasError('pattern')">
+                      Le mot de passe doit contenir au moins 10 caractères, au moins une lettre majuscule, un chiffre et un caractère spécial.
+                    </small> -->
+                    <small *ngIf="passwordErrorMessage" class="text-danger">{{ passwordErrorMessage }}</small>
                   </div>
   
                   <div class="form-outline mb-4">

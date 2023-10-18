@@ -13,80 +13,15 @@ import { ChangeDetectorRef } from '@angular/core';
 export class ARegisterComponent {
 
   subscriptionValid: boolean = false;
-
-  // listUsers: IUser[] = [];
-  // userDetail: IUser | undefined;
-
-  // public form: FormGroup = new FormGroup({
-  //   firstName: new FormControl(''),
-  //   lastName: new FormControl(''),
-  //   pseudo: new FormControl(''),
-  //   email: new FormControl(''),
-  //   password: new FormControl(''),
-  //   birthDate: new FormControl(''),
-  //   phoneNumber: new FormControl(''),
-  //   avatar: new FormControl(''),
-  //   gender: new FormControl(''),
-  //   street: new FormControl(''),
-  //   city: new FormControl(''),
-  //   zipCode: new FormControl(''),
-  //   country: new FormControl(''),
-  // });
-
-  // ngOnInit() {
-  //   console.log(this.listUsers);
-  //   this.service.getAllUser().subscribe(userListResult => {
-  //     this.listUsers = userListResult;
-  //     });
-    
-  // }
-
-  // getUser(){
-  //   this.service.getAllUser().subscribe(Users => {
-  //     this.listUsers = Users;
-  //   });
-  // }
-
-
-  // onSubmit() {   // Form danny
-  //   // window.location.reload();
-  //   if (this.form.valid) {
-  //     // window.location.reload();
-  //     // const formattedBirth = this.datePipe.transform(this.form.value.birth, 'dd/MM/yyyy');
-
-  //     const user: IUser = {
-
-  //       firstName: this.form.value.firstName,
-  //       lastName: this.form.value.lastName,
-  //       pseudo: this.form.value.pseudo,
-  //       email: this.form.value.email,
-  //       password: this.form.value.password,
-  //       birthDate: this.form.value.birthDate,
-  //       phoneNumber: this.form.value.phoneNumber,
-  //       avatar: this.form.value.avatar,
-  //       gender: this.form.value.gender,
-  //       adress: {
-  //         street: this.form.value.street,
-  //         city: this.form.value.city,
-  //         zipCode: this.form.value.zipCode,
-  //         country: this.form.value.country
-  //       },
-        
-  //     };
-
-  //     this.service.addUser(user).subscribe(response => {
-  //       // this.getUser();
-  //       this.form.reset();
-  //     });
-  //   } else {
-  //     console.log('Formulaire invalide');
-  //   }
-  // }
   userForm: FormGroup;
+  passwordPattern: string = '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])';
+  passwordErrorMessage: string = '';
+  emailErrorMessage : string = '';
+
   constructor(private formBuilder: FormBuilder, private userService: UserService, private cd: ChangeDetectorRef) {
     this.userForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [Validators.required, Validators.pattern(this.passwordPattern)]],
       pseudo: ['', [Validators.required, Validators.minLength(5)]],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -100,6 +35,7 @@ export class ARegisterComponent {
       country: ['', Validators.required],
     });
   }
+
 
   onSubmit() {
     console.log('test');
@@ -131,21 +67,36 @@ export class ARegisterComponent {
       console.log(formData.pseudo);
       console.log(formData);
       
-      this.userService.createUser(user).subscribe(
-        (response) => {
-          console.log('User created successfully', response);
-          this.subscriptionValid = true;
-          this.userForm.reset();
-          console.log(this.subscriptionValid);
-          console.log(this.userForm.value);
-          
-          this.cd.detectChanges();
-        },
-        (error) => {
-          console.error('Error creating user', error);
-        }
-      );
-    // }
-  }
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&!*])[A-Za-z\d@#$%^&!*]{10,}$/;
+    const emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+    if (!passwordRegex.test(user.password)) {
+      console.log('Le mot de passe ne respecte pas les critères.');
+      this.passwordErrorMessage = 'Le mot de passe doit contenir au moins, 1 lettre majuscule, 1 chiffre, 1 caractère spécial et faire au moins 10 caractères de long';
+    } else {
+      this.passwordErrorMessage = '';
+    
+      if (!emailRegex.test(user.email)) {
+        console.log("L'adresse e-mail n'est pas valide.");
+        this.emailErrorMessage = "L'adresse e-mail n'est pas valide.";
+      } else {
+        this.emailErrorMessage = '';
+    
+        this.userService.createUser(user).subscribe(
+          (response) => {
+            console.log('User created successfully', response);
+            this.subscriptionValid = true;
+            this.userForm.reset();
+            console.log(this.subscriptionValid);
+            console.log(this.userForm.value);
+    
+            this.cd.detectChanges();
+          },
+          (error) => {
+            console.error('Error creating user', error);
+          }
+        );
+      }
+    }
+  }
 }

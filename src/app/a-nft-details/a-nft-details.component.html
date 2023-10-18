@@ -23,7 +23,7 @@
                 <article class="col-12 blocDetails2 mt-5">
                     <h2>Description</h2>
                     <div class="mt-2">{{nft?.description}}</div>
-                    <div class="mt-0">Date de sortie : {{nft.updateDate}}</div>
+                    <div class="mt-0">Date de sortie : {{nft.dateCreation | date}}</div>
                     <div class="mt-0">Créer par : {{nft?.user.pseudo}}</div>
                     <div class="mt-0">Collection : {{nft?.collection.label}}</div>
                      <div>Categorie   <ng-container *ngFor="let category of nft?.categories">

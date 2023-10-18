@@ -4,7 +4,7 @@
 <div class="row mx-auto gy-md-4 gy-sm-5 ms-md-5 me-md-5 ms-sm-0 me-sm-0">
     <div class="col-lg-2 col-md-4 col-6" *ngFor="let nft of shadowList; let index = index">
 
-        <div class="card card1 mx-auto">
+        <div class="card card1 mx-auto" routerLink="/gallery/{{nft.id}}">
             <img src="{{nft.filePath}}" class="card-img-top" alt="Image 1">
             <h5 class="card-body">
                 <h5 class="card-title">{{nft.title}}</h5>

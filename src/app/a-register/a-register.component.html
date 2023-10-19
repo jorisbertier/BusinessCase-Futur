@@ -69,14 +69,37 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="country">Pays</label>
-                    <input type="text" id="country" class="form-control" formControlName="country"/>
-                  </div>
+                    <select id="country" class="form-select" formControlName="country">
+                        <option value="">Sélectionnez un pays</option>
+                        <option value="États-Unis">États-Unis</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Mexique">Mexique</option>
+                        <option value="Brésil">Brésil</option>
+                        <option value="Royaume-Uni">Royaume-Uni</option>
+                        <option value="France">France</option>
+                        <option value="Kenya">Pérou</option>
+                        <option value="Égypte">Colombie</option>
+                        <option value="Maroc">Irlande</option>
+                        <option value="Allemagne">Allemagne</option>
+                        <option value="Italie">Italie</option>
+                        <option value="Espagne">Espagne</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Russie">Russie</option>
+                        <option value="Chine">Chine</option>
+                        <option value="Japon">Japon</option>
+                        <option value="Australie">Australie</option>
+                        <option value="Inde">Inde</option>
+                        <option value="Afrique du Sud">Afrique du Sud</option>
+                        <option value="Nigéria">Phillipines</option>
+                    </select>
+                </div>
 
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <label class="form-label" for="phoneNumber">Téléphone</label>
                         <input type="text" id="phoneNumber" class="form-control" formControlName="phoneNumber"/>
+                        <small *ngIf="phoneNumberErrorMessage" class="text-danger">{{ phoneNumberErrorMessage }}</small>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">

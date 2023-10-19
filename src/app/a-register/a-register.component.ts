@@ -17,6 +17,7 @@ export class ARegisterComponent {
   passwordPattern: string = '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])';
   passwordErrorMessage: string = '';
   emailErrorMessage : string = '';
+  phoneNumberErrorMessage : string = '';
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private cd: ChangeDetectorRef) {
     this.userForm = this.formBuilder.group({
@@ -68,6 +69,7 @@ export class ARegisterComponent {
       
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&!*])[A-Za-z\d@#$%^&!*]{10,}$/;
     const emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phoneNumberRegex: RegExp = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
 
     if (!passwordRegex.test(user.password)) {
       console.log('Le mot de passe ne respecte pas les critères.');
@@ -80,21 +82,28 @@ export class ARegisterComponent {
         this.emailErrorMessage = "L'adresse e-mail n'est pas valide.";
       } else {
         this.emailErrorMessage = '';
+      
+        if (!phoneNumberRegex.test(user.phoneNumber)) {
+          console.log("Le numéro de téléphone n'est pas valide.");
+          this.phoneNumberErrorMessage = "Le numéro de téléphone n'est pas valide.";
+        } else {
+          this.phoneNumberErrorMessage = '';
     
-        this.userService.createUser(user).subscribe(
-          (response) => {
-            console.log('User created successfully', response);
-            this.subscriptionValid = true;
-            this.userForm.reset();
-            console.log(this.subscriptionValid);
-            console.log(this.userForm.value);
-    
-            this.cd.detectChanges();
-          },
-          (error) => {
-            console.error('Error creating user', error);
-          }
-        );
+          this.userService.createUser(user).subscribe(
+            (response) => {
+              console.log('User created successfully', response);
+              this.subscriptionValid = true;
+              this.userForm.reset();
+              console.log(this.subscriptionValid);
+              console.log(this.userForm.value);
+      
+              this.cd.detectChanges();
+            },
+            (error) => {
+              console.error('Error creating user', error);
+            }
+          );
+        }
       }
     }
   }

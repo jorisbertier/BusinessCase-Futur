@@ -46,16 +46,6 @@
     cursor: pointer;
     transform: translateY(-0.75em);
     transition: 500ms;
-    
-    .card-img-top:hover {
-        transition: 500ms;
-        filter: brightness(0.7);
-    }
-}
-
-.card-img-top:hover {
-    transition: 500ms;
-    filter: brightness(0.7);
 }
 
 h2 {

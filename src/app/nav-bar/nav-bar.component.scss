@@ -118,6 +118,13 @@ nav {
 // }
 @media screen and (max-width: 992px) {
 
+    nav {
+        position:sticky !important;
+        top: 0; /* Spécifiez la position désirée (0 signifie en haut de la fenêtre) */
+        background-color: $main-color-black;
+        height: 80px;
+        z-index: 3;
+    }
     .container-fluid {
         background-color: $main-color-black;
         .collapse {
@@ -131,8 +138,8 @@ nav {
                     }
                 }
             }
-            .liPicture {
-                width: 105%;
+            .imgProfil {
+                margin-left: 30px;
             }
         }
     }

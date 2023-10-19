@@ -85,7 +85,7 @@
                     </li>
                     <li class="d-lg-none d-flex justify-content-center liPicture">
                         <img src="{{userData?.avatar}}" class="rounded-circle imgProfil" alt="Photo de profil"
-                        loading="lazy"/>
+                        />
                     </li>
                     <li class="nav-item mobil d-lg-none" *ngIf="userData">
                         <a class="nav-link" [routerLink]="'/profil/' + (userData?.id || '')" *ngIf="checkIsLogged()">Profil</a>

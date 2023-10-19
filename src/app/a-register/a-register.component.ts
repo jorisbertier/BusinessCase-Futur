@@ -38,7 +38,6 @@ export class ARegisterComponent {
 
 
   onSubmit() {
-    console.log('test');
     
     // if (this.userForm.valid) {
       console.log('onSubmit() called');

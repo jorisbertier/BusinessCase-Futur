@@ -1,26 +1,41 @@
-<h1>Modifier un NFT</h1>
+<app-nav-bar></app-nav-bar>
 
+<div class="container mt-3">
+    <button class="button mb-5" routerLink="/collection">
+        <div class="button-box">
+          <span class="button-elem">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 40">
+              <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+            </svg>
+          </span>
+          <span class="button-elem">
+            <svg viewBox="0 0 46 40">
+              <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+            </svg>
+          </span>
+        </div>
+      </button>
+    <h1 class="mt-5 mb-3">Modifier un NFT</h1>
 
-<div class="container text-light">
     <form [formGroup]="editNft" (ngSubmit)="update()">
       <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
+        <label for="title" class="form-label">Titre</label>
         <div class="col-md-6">
           <input type="text" id="title" formControlName="title" class="form-control" required>
         </div>
       </div>
       <div class="mb-3">
-        <label for="filePath" class="form-label">File Path</label>
+        <label for="filePath" class="form-label">Url lien Nft</label>
         <div class="col-md-6">
           <input type="text" id="filePath" formControlName="filePath" class="form-control" required>
         </div>
       </div>
       <div class="mb-3">
-        <label for="price" class="form-label">Price</label>
+        <label for="price" class="form-label">Prix</label>
         <div class="col-md-6">
           <input type="number" id="price" formControlName="price" class="form-control" required>
         </div>
       </div>
-      <button type="submit" [disabled]="!editNft.valid" class="btn btn-primary">Save modification</button>
+      <button type="submit" [disabled]="!editNft.valid" class="btn">Enregistrer les modifications</button>
     </form>
   </div>

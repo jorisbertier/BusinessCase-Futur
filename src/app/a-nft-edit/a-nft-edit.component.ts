@@ -39,7 +39,7 @@ export class ANftEditComponent implements OnInit{
   update(){
   this.nftService.editNft(this.route.snapshot.params['id'], this.editNft.value).subscribe((result)  => {
     console.log(result);
-    this.router.navigate(['/nft/'+ this.route.snapshot.params['id']]);
+    this.router.navigate(['/collection']);
   })
   }
   }

@@ -27,6 +27,7 @@ import { TokenInterceptor } from './token.interceptor';
 import { ArticleComponent } from './article/article.component';
 import { ACollectionComponent } from './a-collection/a-collection.component';
 import { CardSecondCollectionComponent } from './card-second-collection/card-second-collection.component';
+import { ANftEditComponent } from './a-nft-edit/a-nft-edit.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { CardSecondCollectionComponent } from './card-second-collection/card-sec
     ArticleComponent,
     ACollectionComponent,
     CardSecondCollectionComponent,
+    ANftEditComponent,
   ],
   imports: [
     BrowserModule,

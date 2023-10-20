@@ -11,6 +11,7 @@ import { ABasketComponent } from './a-basket/a-basket.component';
 import { AFavorisComponent } from './a-favoris/a-favoris.component';
 import { ALoginComponent } from './a-login/a-login.component';
 import { ACollectionComponent } from './a-collection/a-collection.component';
+import { ANftEditComponent } from './a-nft-edit/a-nft-edit.component';
 
 const routes: Routes = [
   {path: '', component: AHomeComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'favoris', component: AFavorisComponent, canActivate:[authGuard]},
   {path: 'login', component: ALoginComponent},
   {path: 'collection', component: ACollectionComponent, canActivate:[authGuard]},
+  {path: 'nft/:id', component: ANftEditComponent, canActivate:[authGuard]},
 ];
 
 @NgModule({

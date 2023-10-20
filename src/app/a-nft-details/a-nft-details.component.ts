@@ -24,6 +24,9 @@ export class ANftDetailsComponent {
   ethActualPrice: IEth | undefined;
   public productList: any;
 
+  addToCartMessage: string = '';
+  addToFavoritetMessage: string = '';
+
 
  
   constructor(
@@ -109,21 +112,10 @@ export class ANftDetailsComponent {
   getNftById(id:number) {
     this.nft = this.nftService.getNftById(id);
   }
-// cookie
-
-  // addToCart(nft: INft) {
-  //   const currentCart = this.cookieService.get('cart') || '[]';
-  //   const cart = JSON.parse(currentCart);
-    
-  //   cart.push(nft);
-    
-  //   this.cookieService.set('cart', JSON.stringify(cart));
-
-  //   console.log('Contenu du cookie après ajout :', this.cookieService.get('cart'));
-  // }
 
   addToCart(nftCart : INft) {
     this.CartService.addToCart(nftCart);
+    this.addToCartMessage = "Ajout au panier effectué";
     console.log(nftCart);
     
   }
@@ -138,6 +130,7 @@ export class ANftDetailsComponent {
 
   addToFavoris(nft: INft) {
     this.favorisService.addToFavoris(nft);
+    this.addToFavoritetMessage = "Ajout aux favoris effectué";
     console.log(nft);
   }
 

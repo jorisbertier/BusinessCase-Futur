@@ -26,22 +26,9 @@ export class UserService {
     );
   }
 
-  // addUser(user: IUser): Observable<result> {
-  //   const body = JSON.stringify(user);
-  //   const header = { 'content-type': 'application/x-www-form-urlencoded'};
-  //   return this.http.post<result>("https://127.0.0.1:8000/user/api/user", body, {'headers': header})
-
-  // }
-
-
   createUser(user: any): Observable<any> {
     return this.http.post('https://localhost:8000/user/api/user/', user, { responseType: 'text' as 'json' });
   }
-
-  //get user connected
-  // getUserInfo(): Observable<any> {
-  //   return this.http.get('https://127.0.0.1:8000/user/api/user/info'); // L'URL doit correspondre à votre route Symfony
-  // }
 
   updateUser(id :number, data :any){
     const body = JSON.stringify(data);

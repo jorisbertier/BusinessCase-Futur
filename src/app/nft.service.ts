@@ -31,7 +31,7 @@ export class NftService {
     return this.http.post<INft>('https://localhost:8000/nft/api/nft', nft);
   }
 
-  editNft(data :any, id: number) : Observable<INft>{
+  editNft(id: number, data :any) : Observable<INft>{
     const body = JSON.stringify(data);
     const header = { 'content-type': 'application/x-www-form-urlencoded'};
     return this.http.put<any>(`https://localhost:8000/nft/api/nft/${id}`, body,  {'headers': header});

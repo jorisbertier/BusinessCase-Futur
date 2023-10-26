@@ -27,16 +27,6 @@ export class NavBarComponent implements OnInit {
     console.log(this.getUserData());
     console.log('yoooo');
 
-    // this.userService.getUserData().subscribe(
-    //   (userData) => {
-    //     if (userData) {
-    //       this.userData = userData;
-    //     }
-    //   },
-    //   (error) => {
-    //     console.error('Erreur lors de la récupération des données de l\'utilisateur :', error);
-    //   }
-    // );
     this.getUserData();
 
   }

@@ -4,6 +4,7 @@ import { UserService } from 'src/service/user/user.service';
 import {ActivatedRoute, Router} from "@angular/router";
 import { HttpClient } from '@angular/common/http';
 import {FormControl, FormGroup} from "@angular/forms";
+import { AuthService } from 'src/service/Auth/auth.service';
 
 @Component({
   selector: 'app-a-profil',
@@ -18,6 +19,7 @@ export class AProfilComponent implements OnInit{
 
   constructor(
     private userService: UserService,
+    private authService: AuthService,
     private http: HttpClient,
     private route:ActivatedRoute,
     private router: Router
@@ -92,6 +94,24 @@ export class AProfilComponent implements OnInit{
         this.updateUser = true;
         this.router.navigate(['/profil/'+ this.route.snapshot.params['id']]);
       })
+      }
+
+      deleteUser(id: number) {
+        this.userService.deleteUserById(id).subscribe(resultatDelete => {
+          const index = this.userList.findIndex(user => user.id === id);
+          if (index !== -1) {
+            this.userList.splice(index, 1);
+            this.authService.clearToken();
+            this.router.navigate(['/login']);
+          }
+        });
+      }
+
+      confirmDeleteUser(id: number): void {
+        const confirmation = window.confirm('Êtes-vous sûr de vouloir votre compte ? Cela sera définitif');
+        if (confirmation) {
+          this.deleteUser(id);
+        }
       }
 }
 

@@ -35,4 +35,8 @@ export class UserService {
     const header = { 'content-type': 'application/x-www-form-urlencoded'};
     return this.http.put<result>(`https://127.0.0.1:8000/user/api/user/${id}`, body,  {'headers': header});
   }
+
+  deleteUserById(id: number): Observable<any>{
+    return this.http.delete<any>('https://127.0.0.1:8000/user/api/delete/' + id);
+  }
 }

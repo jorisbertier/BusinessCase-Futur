@@ -134,7 +134,8 @@
                 <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
             </div><br> -->
             <div *ngIf="updateUser" class="alert alert-success mt-3">Profil mis à jour</div>
-            <button type="submit" [disabled]="!editUser.valid" class="btn mx-auto mt-3">Sauvegarder les modifications</button>
+            <button type="submit" [disabled]="!editUser.valid" class="save mx-auto mt-3">Sauvegarder les modifications</button>
+            <button (click)="confirmDeleteUser(userData.id)" class="btn btn-danger">Supprimer compte</button>
 
     </form>
             </div>

@@ -22,11 +22,8 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit() : void {
 
-
     this.getUserData();
-    console.log(this.getUserData());
-    console.log('yoooo');
-
+    // console.log(this.getUserData());
     this.getUserData();
 
   }
@@ -42,7 +39,7 @@ export class NavBarComponent implements OnInit {
   getUserData() {
     this.userService.getUserData().subscribe(
       (userData) => {
-        console.log('Données de l\'utilisateur connecté :', userData);
+        // console.log('Données de l\'utilisateur connecté :', userData);
         this.userData = userData;
       },
       (error) => {

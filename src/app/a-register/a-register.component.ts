@@ -51,7 +51,7 @@ export class ARegisterComponent {
         pseudo: formData.pseudo,
         firstName: formData.firstName,
         lastName: formData.lastName,
-        birth: formattedBirthDate, // Make sure the date format matches what your Symfony API expects
+        birth: formattedBirthDate, 
         phoneNumber: formData.phoneNumber,
         avatar: formData.avatar,
         gender: formData.gender,

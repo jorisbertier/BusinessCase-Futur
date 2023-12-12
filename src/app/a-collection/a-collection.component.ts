@@ -67,36 +67,33 @@ export class ACollectionComponent implements OnInit {
         ethUpdateDates.push(formattedDate);
       }
     
-      console.log(ethPrices);
-      myChart.data.labels = ethUpdateDates;
-      myChart.data.datasets[0].data = ethPrices;
-      myChart.update(); // Update the chart to reflect the new data
-      console.log(myChart);
+      // myChart.data.labels = ethUpdateDates;
+      // myChart.data.datasets[0].data = ethPrices;
+      // myChart.update(); // Update the chart to reflect the new data
     });
 
 
-    let myChart = new Chart("myChart", {
-      type: 'bar',
-      data: {
-        labels: ethUpdateDates, // Use the array for labels
-        datasets: [{
-          label: 'Prix ETH en €',
-          data: ethPrices,
-          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-          borderColor: 'rgb(75, 192, 192)',
-          borderWidth: 1,
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
+    // let myChart = new Chart("myChart", {
+    //   type: 'bar',
+    //   data: {
+    //     labels: ethUpdateDates, // Use the array for labels
+    //     datasets: [{
+    //       label: 'Prix ETH en €',
+    //       data: ethPrices,
+    //       backgroundColor: 'rgba(75, 192, 192, 0.2)',
+    //       borderColor: 'rgb(75, 192, 192)',
+    //       borderWidth: 1,
+    //     }]
+    //   },
+    //   options: {
+    //     scales: {
+    //       y: {
+    //         beginAtZero: true
+    //       }
+    //     }
+    //   }
+    // });
 
-    console.log(myChart);
     this.productList.array.forEach((a:any) => {
       Object.assign(a,{quantity:1, total:a.price})
     });
@@ -145,7 +142,6 @@ export class ACollectionComponent implements OnInit {
     for (const nft of this.nftList) {
       total += nft.price;
     }
-    console.log(total);
     return total;
   }
 

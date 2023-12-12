@@ -32,19 +32,14 @@ export class AFormNftComponent implements OnInit {
   }
 
   createNft() {
-    // Récupérer le token d'authentification
     const token = this.authService.getToken();
   
-    // Vérifier si l'utilisateur est connecté en fonction du token
     if (token) {
-      // L'utilisateur est connecté, vous pouvez maintenant envoyer les données du formulaire à votre API avec le token d'authentification.
       const priceRegex = /^\d+$/;
       if (this.nftData.price > 0 && priceRegex.test(this.nftData.price)) {
       const headers = {
-        'Authorization': `Bearer ${token}`, // Utilisation d'un token JWT, ajustez en fonction de votre système d'authentification.
+        'Authorization': `Bearer ${token}`,
       };
-  
-      // Envoyer les données du formulaire à votre API avec le token dans les en-têtes
       this.http.post('https://localhost:8000/nft/api/nft', this.nftData, { headers, responseType: 'text' as 'json' }).subscribe(
         (response: any) => {
           console.log(response);
@@ -64,7 +59,6 @@ export class AFormNftComponent implements OnInit {
     }
   } else {
       console.log('Utilisateur non connecté. Vous devez vous connecter pour effectuer cette action.');
-      // Gérer le cas où l'utilisateur n'est pas connecté, par exemple, en affichant un message d'erreur ou en redirigeant vers la page de connexion.
     }
   }
 

@@ -20,7 +20,6 @@ export class CardCollectionComponent implements OnInit {
 
   this.service.getSixLastNaruto().subscribe(narutoListResult => {
       this.narutoList = narutoListResult;
-        console.table(this.narutoList);
       });
 
   }
